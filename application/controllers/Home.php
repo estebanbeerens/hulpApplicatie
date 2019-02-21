@@ -1,25 +1,72 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+/**
+ * @property Template $template
+ * @property Authex $authex
+ */
+class Home extends CI_Controller
+{
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-		$this->load->view('login');
-	}
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('form');
+    }
+
+    public function index()
+    {
+        $data['titel'] = 'Inloggen';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $partials = array('hoofding' => 'main_header',
+            'menu' => 'main_menu',
+            'inhoud' => 'login',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function meldAan()
+    {
+        $data['titel'] = 'Aanmelden';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $partials = array('hoofding' => 'main_header',
+            'menu' => 'main_menu',
+            'inhoud' => 'home_aanmelden',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function toonFout()
+    {
+        $data['titel'] = 'Fout';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $partials = array('hoofding' => 'main_header',
+            'menu' => 'main_menu',
+            'inhoud' => 'home_fout',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function controleerAanmelden()
+    {
+        $email = $this->input->post('email');
+        $wachtwoord = $this->input->post('wachtwoord');
+
+        if ($this->authex->meldAan($email, $wachtwoord)) {
+            redirect('home/index');
+        } else {
+            redirect('home/toonFout');
+        }
+    }
+
+    public function meldAf()
+    {
+        $this->authex->meldAf();
+        redirect('home/index');
+    }
 }
