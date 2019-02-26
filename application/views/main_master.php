@@ -21,7 +21,13 @@
     <title>
         <?php echo $titel; ?>
     </title>
-    <?php echo pasStylesheetAan('css/style.css'); ?>
+    <?php echo pasStylesheetAan("bootstrap.css"); ?>
+    <?php echo pasStylesheetAan("style.css"); ?>
+
+    <?php echo haalJavascriptOp("jquery-3.3.1.js"); ?>
+    <?php echo haalJavascriptOp("bootstrap.bundle.js"); ?>
+
+
 </head>
 
 <body>

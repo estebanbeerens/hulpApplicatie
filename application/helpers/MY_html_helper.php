@@ -19,7 +19,12 @@
 
     function pasStylesheetAan($css)
     {
-        return "<link rel=\"stylesheet\" href=\"" . geefVolledigeNaam($css) . "\" />";
+        return "<link rel=\"stylesheet\" href=\"" . base_url("assets/css/" . $css) . "\" />";
+    }
+
+    function haalJavascriptOp($js)
+    {
+        return "<script src=\"" . base_url("assets/js/" . $js) . "\"></script>";
     }
 
     function exporteerTabel($array)
