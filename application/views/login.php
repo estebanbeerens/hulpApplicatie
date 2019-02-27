@@ -32,4 +32,5 @@ echo form_open('home/controleerAanmelden', $attributes);
 
     <?php echo anchor('gebruiker/maakGebruiker', 'Registreren'); ?>
 
+
 </p>
