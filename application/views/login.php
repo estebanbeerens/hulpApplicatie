@@ -6,7 +6,7 @@ echo form_open('home/controleerAanmelden', $attributes);
 <table>
     <tr>
         <td><?php echo form_label('E-mail:', 'email'); ?></td>
-        <td><?php echo form_input(array('name' => 'email', 'id' => 'email', 'size' => '30')); ?></td>
+        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
     </tr>
     <tr>
         <td><?php echo form_label('Wachtwoord:', 'wachtwoord'); ?></td>
