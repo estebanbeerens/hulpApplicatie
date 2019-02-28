@@ -1,17 +1,21 @@
+
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Varela Round', sans-serif;
 }
 
 /** header **/
 nav{
     background-color: lightgray;
+
 }
 
 
 /** inhoud **/
 #inhoud{
     padding: 20px;
+
 }
 
 
