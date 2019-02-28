@@ -11,6 +11,17 @@ nav{
 
 }
 
+.nav-item a{
+    color: black;
+    float: left;
+    padding: 10px 0px;
+}
+
+.nav-item a:hover{
+    text-decoration: none;
+    color: Gray;
+}
+
 
 /** inhoud **/
 #inhoud{
