@@ -26,7 +26,7 @@ class Home extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
-    public function registeer()
+    public function registreer()
     {
         $data['titel'] = 'Registreer';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
