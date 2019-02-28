@@ -26,6 +26,20 @@ class Home extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+    public function registeer()
+    {
+        $data['titel'] = 'Registreer';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'login',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+
     public function meldAan()
     {
         $data['titel'] = 'Aanmelden';
