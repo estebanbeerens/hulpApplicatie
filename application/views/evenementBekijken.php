@@ -8,11 +8,17 @@
     <title><?php echo $titel ?></title>
 </head>
 <body>
-
-<?php foreach ($evenement as $q){
-    echo $q->naam;
+<div>
+<?php foreach ($evenement as $item){
+    echo $item->naam;
+    echo $item->beschrijving;
+    echo $item->meldingTijd;
     /* Dit was om de db connectie te testen */
 }
 ?>
+</div>
+
+
+
 </body>
 </html>
