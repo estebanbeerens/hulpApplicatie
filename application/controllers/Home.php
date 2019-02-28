@@ -19,8 +19,8 @@ class Home extends CI_Controller
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
-            'menu' => 'main_menu',
             'inhoud' => 'login',
+            'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);

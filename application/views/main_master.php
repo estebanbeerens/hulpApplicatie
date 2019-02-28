@@ -35,9 +35,6 @@
         <?php echo $hoofding; ?>
     </div>
     <div id="inhoud">
-        <h4>
-            <?php echo $titel; ?>
-        </h4>
         <?php echo $inhoud; ?>
     </div>
     <div id="menu">

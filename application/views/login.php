@@ -1,8 +1,4 @@
 <h1>Welkom op de inlog pagina</h1>
-
-<input type="button" value="Registreer" href="registeer" />
-<div><a href='application/views/registreer.php'>Registreer</a></div>
-
 <?php
 $attributes = array('name' => 'mijnFormulier');
 echo form_open('home/controleerAanmelden', $attributes);
@@ -30,7 +26,7 @@ echo form_open('home/controleerAanmelden', $attributes);
 
 <p>Geen account?
 
-    <?php echo anchor('gebruiker/maakGebruiker', 'Registreren'); ?>
+    <a href='application/views/registreer.php'>Registreer</a></div>
 
 
 </p>
