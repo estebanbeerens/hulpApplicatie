@@ -13,9 +13,9 @@ class evenement_model extends CI_Model
         parent::__construct();
     }
 
-    function getEvenement($id)
+    function getEvenement()
     {
-        $this->db->where('id', $id);
+        $this->db->where('id', 1);
         $query = $this->db->get('evenement');
         return $query->result();
     }
