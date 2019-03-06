@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: LiamM
- * Date: 27-2-2019
- * Time: 18:42
- */
 
 class evenement_model extends CI_Model
 {
@@ -20,4 +14,10 @@ class evenement_model extends CI_Model
         return $query->result();
     }
 
+    function evenementId($id)
+    {
+        $this->db->where('id', $id);
+        $query = $this->db->get('evenement');
+        return $query->result();
+    }
 }

@@ -34,4 +34,19 @@ class Evenement extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+    Public function agendaBekijken($id)
+    {
+        $data['titel'] = 'Agenda bekijken';
+
+
+        $this->load->model('gebruiker_model');
+        $data['agendaPatiënt'] =$this->gebruiker_model->getEvenementWithPersoon($id);
+        $partials = array('hoofding' => 'main_header',
+            'menu' => 'main_menu',
+            'inhoud' => 'agendaBekijken',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
 }
