@@ -1,5 +1,16 @@
 <?php
 /**
+ * @mainpage Team29 test doxygen
+ *
+ * # Wat?
+ * Hier vind je de Doxygen-commentaar bij het PHP-project team29.
+ * De commentaar voor de volgende dingen vind je terug in
+ * - De commentaar voor de klassen vind je terug onder Klassen
+ * - De commentaar voor onze viewbestanden vind je terug onder Bestanden
+ * # Wie?
+ * Dit project is geschreven en becommentarieerd door team 29, bestaande uit: Esteban Beerens, Liam Mentens, Seppe Peeters, Tomas Marlein, Rene Vanhoof, Jeroen Jansen
+ */
+/**
  * CodeIgniter
  *
  * An open source application development framework for PHP

@@ -1,4 +1,5 @@
-<h1>Welkom op de inlog pagina</h1>
+<h1>Welkom op de registreer pagina</h1>
+<p>In deze pagina kan je je registreren voor onze Mantelzorg applicatie</p>
 <?php
 $attributes = array('name' => 'mijnFormulier');
 echo form_open('home/controleerAanmelden', $attributes);
