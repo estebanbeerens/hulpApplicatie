@@ -9,17 +9,16 @@ class Gebruiker_model extends CI_Model
     }
 
 
-    function getGebruiker($email, $wachtwoord)
+    function getGebruiker($gebruikersnaam, $passwoord)
     {
         // geef gebruiker-object met $email en $wachtwoord EN geactiveerd = 1
-        $this->db->where('email', $email);
-        $this->db->where('geactiveerd', 1);
-        $query = $this->db->get('tv_gebruiker');
+        $this->db->where('gebruikersnaam', $gebruikersnaam);
+        $query = $this->db->get('persoon');
 
         if ($query->num_rows() == 1) {
             $gebruiker = $query->row();
             // controleren of het wachtwoord overeenkomt
-            if (password_verify($wachtwoord, $gebruiker->wachtwoord)) {
+            if (password_verify($passwoord, $gebruiker->passwoord)) {
                 return $gebruiker;
             } else {
                 return null;

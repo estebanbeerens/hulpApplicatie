@@ -55,18 +55,16 @@
             }
         }
 
-        function meldAan($email, $wachtwoord)
+        function meldAan($gebruikersnaam, $passwoord)
         {
             // gebruiker aanmelden met opgegeven email en wachtwoord
             $CI =& get_instance();
 
-            $gebruiker = $CI->gebruiker_model->getGebruiker($email, $wachtwoord);
+            $gebruiker = $CI->gebruiker_model->getGebruiker($gebruikersnaam, $passwoord);
 
             if ($gebruiker == null) {
-                return false;
+                return $gebruiker;
             } else {
-                $CI->gebruiker_model->updateLaatstAangemeld($gebruiker->id);
-                $CI->session->set_userdata('gebruiker_id', $gebruiker->id);
                 return true;
             }
         }

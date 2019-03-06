@@ -69,9 +69,9 @@ class Home extends CI_Controller
     public function controleerAanmelden()
     {
         $gebruikersnaam = $this->input->post('gebruikersnaam');
-        $wachtwoord = $this->input->post('wachtwoord');
+        $passwoord = $this->input->post('passwoord');
 
-        if ($this->authex->meldAan($gebruikersnaam, $wachtwoord)) {
+        if ($this->authex->meldAan($gebruikersnaam, $passwoord)) {
             redirect('home/index');
         } else {
             redirect('home/toonFout');
