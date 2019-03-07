@@ -116,14 +116,24 @@ class Evenement extends CI_Controller
         $data['titel'] = 'Evenement Toevoegen';
 
         $naam = $this->input->post('naam');
-        $meldingTijd = $this->input->post('meldingTijd');
+        $meldingTijd = $this->input->post('meldingtijd');
         $beschrijving = $this->input->post('beschrijving');
         $locatie = $this->input->post('locatie');
         $verplicht = $this->input->post('verplicht');
         $isHerhaling = $this->input->post('isHerhaling');
         $datum = $this->input->post('datum');
-        $startTijd = $this->input->post('startTijd');
-        $eindTijd = $this->input->post('eindTijd');
+        $startTijd = $this->input->post('starttijd');
+        $eindTijd = $this->input->post('eindtijd');
+
+        $this->load->model('evenement_model');
+        $this->evenement_model->insert($naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd);
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'evenementBeheren',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
     }
 
 }
