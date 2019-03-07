@@ -12,26 +12,57 @@
 <div id="eventbeheren">
 <?php foreach ($evenement as $item){ ?>
 
-    <form action="<?php echo ""; ?>" method="post">
-        <input style="display: none;" type="tel" name="id" value="<?php echo $item->id; ?>">
-        <label for="naam">Naam</label>
-        <input type="text" name="naam" value="<?php echo $item->naam; ?>">
-        <label for="beschrijving">Beschrijving</label>
-        <input type="text" name="beschrijving" value="<?php echo $item->beschrijving; ?>">
-        <label for="startTijd">Starttijd</label>
-        <input type="text" name="startTijd" value="<?php echo $item->startTijd; ?>">
-        <label for="eindTijd">Eindtijd</label>
-        <input type="text" name="eindTijd" value="<?php echo $item->eindTijd; ?>">
-        <label for="locatie">Locatie</label>
-        <input type="text" name="locatie" value="<?php echo $item->locatie; ?>">
-        <label for="meldingTijd">Meldingtijd</label>
-        <input type="text" name="meldingTijd" value="<?php echo $item->meldingTijd; ?>">
-        <label for="verplicht">Verplicht</label>
-        <input type="text" name="verplicht" value="<?php echo $item->verplicht; ?>">
-        <label for="isHerhaling">Herhaling?</label>
-        <input type="text" name="isHerhaling" value="<?php echo $item->isHerhaling; ?>">
-        <button type="submit">Submit</button>
-    </form>
+
+    <?php
+    $attributes = array('name' => 'mijnFormulier');
+    echo form_open('Evenement/...', $attributes);
+    ?>
+    <table>
+        <tr>
+            <td><?php echo form_label('id:', 'id'); ?></td>
+            <td><?php echo form_input(array('name' => 'id', 'id' => 'id', 'size' => '30', 'value' => $item->id)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Naam:', 'naam'); ?></td>
+            <td><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'size' => '30', 'value' => $item->naam)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Meldingtijd:', 'meldingtijd'); ?></td>
+            <td><?php echo form_input(array('name' => 'meldingtijd', 'id' => 'meldingtijd', 'size' => '30', 'value' => $item->meldingTijd)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Beschrijving:', 'beschrijving'); ?></td>
+            <td><?php echo form_input(array('name' => 'beschrijving', 'id' => 'beschrijving', 'size' => '30', 'value' => $item->beschrijving)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Locatie:', 'locatie'); ?></td>
+            <td><?php echo form_input(array('name' => 'locatie', 'id' => 'locatie', 'size' => '30', 'value' => $item->locatie)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Verplicht:', 'verplicht'); ?></td>
+            <td><?php echo form_input(array('name' => 'verplicht', 'id' => 'verplicht', 'size' => '30', 'value' => $item->verplicht)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Herhaling?', 'herhaling'); ?></td>
+            <td><?php echo form_input(array('name' => 'herhaling', 'id' => 'herhaling', 'size' => '30', 'value' => $item->isHerhaling)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Datum:', 'datum'); ?></td>
+            <td><?php echo form_input(array('name' => 'datum', 'id' => 'datum', 'size' => '30', 'value' => $item->datum)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Starttijd:', 'starttijd'); ?></td>
+            <td><?php echo form_input(array('name' => 'starttijd', 'id' => 'starttijd', 'size' => '30', 'value' => $item->startTijd)); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo form_label('Eindtijd:', 'eindtijd'); ?></td>
+            <td><?php echo form_input(array('name' => 'eindtijd', 'id' => 'eindtijd', 'size' => '30', 'value' => $item->eindTijd)); ?></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><?php echo form_submit('knop', 'Verzenden'); ?></td>
+        </tr>
+    </table>
 
 <?php } ?>
 </div>
