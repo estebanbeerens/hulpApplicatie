@@ -15,7 +15,7 @@
 <div>
     <?php
     $attributes = array('name' => 'mijnFormulier');
-    echo form_open('Evenement/...', $attributes);
+    echo form_open('Evenement/evenementUpdaten', $attributes);
     ?>
     <table>
         <th>Evenement wijzigen</th>

@@ -21,6 +21,7 @@
     <title>
         <?php echo $titel; ?>
     </title>
+
     <?php echo pasStylesheetAan("bootstrap.css"); ?>
     <?php echo pasStylesheetAan("style.css"); ?>
 
