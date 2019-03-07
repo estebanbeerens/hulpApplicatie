@@ -78,6 +78,7 @@ class Evenement extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+
     public function toonEvenementUpdateNietOk(){
 
     }
@@ -101,6 +102,21 @@ class Evenement extends CI_Controller
                 $this->toonEvenementUpdateNietOk();
             }
         }
+    }
+
+    public function evenementToevoegen()
+    {
+        $data['titel'] = 'Evenement Toevoegen';
+
+        $naam = $this->input->post('naam');
+        $meldingTijd = $this->input->post('meldingTijd');
+        $beschrijving = $this->input->post('beschrijving');
+        $locatie = $this->input->post('locatie');
+        $verplicht = $this->input->post('verplicht');
+        $isHerhaling = $this->input->post('isHerhaling');
+        $datum = $this->input->post('datum');
+        $startTijd = $this->input->post('startTijd');
+        $eindTijd = $this->input->post('eindTijd');
     }
 
 }
