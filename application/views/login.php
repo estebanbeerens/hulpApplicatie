@@ -5,11 +5,11 @@ echo form_open('home/controleerAanmelden', $attributes);
 ?>
 <table>
     <tr>
-        <td><?php echo form_label('E-mail:', 'email'); ?></td>
+        <td><?php echo form_label('Gebruikersnaam:', 'gebruikersnaam'); ?></td>
         <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
     </tr>
     <tr>
-        <td><?php echo form_label('Passwoord:', 'passwoord'); ?></td>
+        <td><?php echo form_label('Wachtwoord:', 'passwoord'); ?></td>
         <td><?php
             $data = array('name' => 'passwoord', 'id' => 'passwoord', 'size' => '30');
             echo form_password($data);
@@ -24,10 +24,4 @@ echo form_open('home/controleerAanmelden', $attributes);
 
 <?php echo form_close(); ?>
 
-<p>Geen account?
-
-
-    <?php echo anchor('home/registreer', 'Registreer'); ?></div>
-
-
-</p>
+<p>Geen account?  <?php echo anchor('home/registreer', 'Registreer'); ?></p>
