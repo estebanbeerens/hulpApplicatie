@@ -3,7 +3,7 @@
  * @property evenement_model $evenement_model
  * @property  persoonevenement_model $persoonevenement_model
  */
-class Gebruiker_model extends CI_Model
+class gebruiker_model extends CI_Model
 {
 
     function __construct()
