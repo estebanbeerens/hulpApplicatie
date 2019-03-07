@@ -19,13 +19,16 @@
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Home'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""><?php echo anchor('Evenement/evenementBeheren', 'Evenement Beheren'); ?></a>
+                    <a class="nav-link" href=""><?php echo anchor('evenement/evenementBeheren', 'Evenement Beheren'); ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Link'); ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('home/patientBekijken', 'Patient bekijken'); ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><?php echo anchor('licentie/licentieAankopen', 'Licentie aankopen'); ?></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
