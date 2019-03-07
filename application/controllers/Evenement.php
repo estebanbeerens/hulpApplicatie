@@ -78,28 +78,39 @@ class Evenement extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+<<<<<<< HEAD
 
     public function toonEvenementUpdateNietOk(){
+=======
+    public function toonEvenementUpdateNietOk($fout){
+        if($fout = 1){
+>>>>>>> Evenementen wijzigen afwerken
 
+        } else {
+
+        }
     }
 
     public function evenementUpdaten(){
 
+        $id = $this->input->post('id');
         $naam = $this->input->post('naam');
         $beschrijving = $this->input->post('beschrijving');
         $startTijd = $this->input->post('startTijd');
         $eindTijd = $this->input->post('eindTijd');
         $locatie = $this->input->post('locatie');
 
-        if(($naam || $beschrijving || $startTijd || $eindTijd || $locatie) == ""){
-            $this->toonEvenementUpdateNietOk();
+        if(($id || $naam || $beschrijving || $startTijd || $eindTijd || $locatie) == ""){
+            $fout = 1;
+            $this->toonEvenementUpdateNietOk($fout);
         }else{
-            $updateGelukt = $this->evenement_model->evenementUpdaten($naam, $beschrijving, $startTijd, $eindTijd, $locatie);
+            $updateGelukt = $this->evenement_model->evenementUpdaten($id, $naam, $beschrijving, $startTijd, $eindTijd, $locatie);
 
             if($updateGelukt){
                 $this->evenementBeheren();
             } else {
-                $this->toonEvenementUpdateNietOk();
+                $fout = 2;
+                $this->toonEvenementUpdateNietOk($fout);
             }
         }
     }
