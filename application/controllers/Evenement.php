@@ -62,6 +62,10 @@ class Evenement extends CI_Controller
 
     public function evenementBeheren()
     {
+        /**
+         * Weergeven van de pagina Evenement Beheren op het scherm
+         */
+
         $data['titel'] = 'Evenement Beheren';
 
         $this->load->model('evenement_model');
