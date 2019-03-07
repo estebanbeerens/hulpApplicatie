@@ -13,13 +13,15 @@
 
     <form action="" method="post">
         <input type="text" name="naam" value="<?php echo $item->naam; ?>">
+        <input type="text" name="naam" value="<?php echo $item->beschrijving; ?>">
+        <input type="text" name="naam" value="<?php echo $item->startTijd; ?>">
+        <input type="text" name="naam" value="<?php echo $item->eindTijd; ?>">
+        <input type="text" name="naam" value="<?php echo $item->locatie; ?>">
+        <input type="text" name="naam" value="<?php echo $item->meldingTijd; ?>">
+        <input type="text" name="naam" value="<?php echo $item->verplicht; ?>">
+        <input type="text" name="naam" value="<?php echo $item->isHerhaling; ?>">
+        <button type="submit">Submit</button>
     </form>
-
-
-    echo "<h3>".$item->naam."</h3>";
-    echo "<p>".$item->beschrijving."</p>";
-    echo "<p>"."Het evenement start om: ".$item->startTijd." en eindigt om ". $item->eindTijd."</p>";
-    echo "<p>"."Locatie: ".$item->locatie."</p>";
 
 <?php } ?>
 </body>
