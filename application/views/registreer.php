@@ -6,7 +6,23 @@ echo form_open('home/controleerAanmelden', $attributes);
 ?>
 <table>
     <tr>
-        <td><?php echo form_label('E-mail:', 'email'); ?></td>
+        <td><?php echo form_label('Naam:', 'email'); ?></td>
+        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
+    </tr>
+    <tr>
+        <td><?php echo form_label('Voornaam:', 'email'); ?></td>
+        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
+    </tr>
+    <tr>
+        <td><?php echo form_label('Straat:', 'email'); ?></td>
+        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
+    </tr>
+    <tr>
+        <td><?php echo form_label('Gemeente:', 'email'); ?></td>
+        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
+    </tr>
+    <tr>
+        <td><?php echo form_label('Huisnummer:', 'email'); ?></td>
         <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
     </tr>
     <tr>
@@ -25,10 +41,8 @@ echo form_open('home/controleerAanmelden', $attributes);
 
 <?php echo form_close(); ?>
 
-<p>Geen account?
 
-    <a href='application/views/registreer.php'>Registreer</a>
-    <?php echo anchor('home/registreer', 'Registreer'); ?></div>
+<div class='col-12 mt-4'> <?php echo anchor('home', 'Terug'); ?> </div>
 
 
 </p>

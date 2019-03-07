@@ -26,7 +26,7 @@ echo form_open('home/controleerAanmelden', $attributes);
 
 <p>Geen account?
 
-    <a href='application/views/registreer.php'>Registreer</a>
+
     <?php echo anchor('home/registreer', 'Registreer'); ?></div>
 
 
