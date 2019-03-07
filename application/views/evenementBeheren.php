@@ -12,7 +12,7 @@
 <div id="eventbeheren">
 <?php foreach ($evenement as $item){ ?>
 
-<<<<<<< HEAD
+
 <div>
     <?php
     $attributes = array('name' => 'mijnFormulier');
@@ -66,8 +66,7 @@
         </tr>
     </table>
 </div>
-=======
->>>>>>> evenement toevoegen functie aanpassing
+
 
     <?php
     $attributes = array('name' => 'mijnFormulier');
