@@ -9,9 +9,9 @@ echo form_open('home/controleerAanmelden', $attributes);
         <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
     </tr>
     <tr>
-        <td><?php echo form_label('Wachtwoord:', 'wachtwoord'); ?></td>
+        <td><?php echo form_label('Passwoord:', 'passwoord'); ?></td>
         <td><?php
-            $data = array('name' => 'wachtwoord', 'id' => 'wachtwoord', 'size' => '30');
+            $data = array('name' => 'passwoord', 'id' => 'passwoord', 'size' => '30');
             echo form_password($data);
             ?>
         </td>

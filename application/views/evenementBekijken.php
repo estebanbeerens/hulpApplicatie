@@ -8,11 +8,20 @@
     <title><?php echo $titel ?></title>
 </head>
 <body>
+<div>
+<?php foreach ($evenement as $item){
+    echo "<h3>".$item->naam."</h3>";
+    echo "<p>".$item->beschrijving."</p>";
+    echo "<p>"."Het evenement start om: ".$item->startTijd." en eindigt om ". $item->eindTijd."</p>";
+    echo "<p>"."Locatie: ".$item->locatie."</p>";
 
-<?php foreach ($evenement as $q){
-    echo $q->naam;
-    /* Dit was om de db connectie te testen */
+
 }
 ?>
+
+</div>
+
+
+
 </body>
 </html>
