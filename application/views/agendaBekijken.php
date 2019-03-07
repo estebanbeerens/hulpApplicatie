@@ -10,9 +10,10 @@
 <body>
 <div>
     <?php
-        foreach ($agendaPatiënt as $item){
-            echo $item->naam;
-        }
+    foreach ($evenementen as $item){
+        echo $item->naam . "<br>";
+    }
+
 
     ?>
 </div>

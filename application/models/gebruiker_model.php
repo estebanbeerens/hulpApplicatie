@@ -75,29 +75,10 @@ class Gebruiker_model extends CI_Model
         $this->db->update('tv_gebruiker', $gebruiker);
     }
 
-    function getEvenementWithPersoon($id)
-    {
-        $this->load->model('persoonevenement_model');
-        $this->load->model('evenement_model');
-        $this->db->where('id',$id);
+    function getPersoon($id){
+        $this->db->where('id', $id);
         $query = $this->db->get('persoon');
-        $persoon = $query->result();
-        foreach ($persoon as $p){
-            if ($p == $this->persoonevenement_model->getPersoonId($p->id)){
-                $this->db->where('persoonId', $p->id);
-                $persoonEvenement = $this->db->get('persoonEvenement');
-                $pe = $persoonEvenement;
-                foreach ($pe as $e){
-                    if($e == $this->evenement_model->evenementId($e->evenementId)){
-                        $this->db->where('id', $e->evenementId);
-                        $evenement = $this->db->get('evenement');
-                        return $resultaat = $evenement->result();
-                    }
-                }
-            }
-        }
-
-
+        return $query->result();
     }
 }
 

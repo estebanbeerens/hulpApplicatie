@@ -38,9 +38,19 @@ class Evenement extends CI_Controller
     {
         $data['titel'] = 'Agenda bekijken';
 
+        $this->load->model('persoonevenement_model');
+        $this->load->model('evenement_model');
 
-        $this->load->model('gebruiker_model');
-        $data['agendaPatiënt'] =$this->gebruiker_model->getEvenementWithPersoon($id);
+        $query = $this->persoonevenement_model->getWherePersoonId($id);
+        $evenementen = array();
+
+        foreach ($query as $row){
+            $id = $row->evenementId;
+            $evenementen[] = $this->evenement_model->getEvenementById($id);
+        }
+
+        $data['evenementen'] = $evenementen;
+
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
             'inhoud' => 'agendaBekijken',
