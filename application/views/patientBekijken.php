@@ -8,7 +8,5 @@
     <title><?php echo $titel?></title>
 </head>
 <body>
-<div>
-    
-</div>
+<p>Test</p>
 </body>

@@ -38,6 +38,18 @@ class Home extends CI_Controller
 
         $this->template->load('main_master', $partials, $data);
     }
+    public function patientBekijken()
+    {
+        $data['titel'] = 'Patient Bekijken';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'patientBekijken',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
 
     public function registreer()
     {
