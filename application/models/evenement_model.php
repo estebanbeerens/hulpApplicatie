@@ -21,8 +21,6 @@ class evenement_model extends CI_Model
         return $query->row();
     }
 
-<<<<<<< HEAD
-
     function toevoegenEvenement()
     {
 
@@ -44,7 +42,7 @@ class evenement_model extends CI_Model
         $evenement->eindTijd = $eindTijd;
         $this->db->insert('evenement', $evenement);
         return $this->db->insert_id();
-=======
+    }
     function  evenementUpdaten($id, $naam, $beschrijving, $startTijd, $eindTijd, $locatie){
 
         // zet geactiveerd op 1
@@ -56,7 +54,6 @@ class evenement_model extends CI_Model
         $evenement->locatie = $locatie;
         $this->db->where('id', $id);
         $this->db->update('evenement', $evenement);
->>>>>>> Evenementen wijzigen afwerken
     }
 
 }

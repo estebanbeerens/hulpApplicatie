@@ -78,13 +78,9 @@ class Evenement extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
-<<<<<<< HEAD
 
-    public function toonEvenementUpdateNietOk(){
-=======
     public function toonEvenementUpdateNietOk($fout){
         if($fout = 1){
->>>>>>> Evenementen wijzigen afwerken
 
         } else {
 
