@@ -19,7 +19,7 @@
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Home'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""><?php echo anchor('home/evenementBeheren', 'Evenement Beheren'); ?></a>
+                    <a class="nav-link" href=""><?php echo anchor('Evenement/evenementBeheren', 'Evenement Beheren'); ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Link'); ?></a>

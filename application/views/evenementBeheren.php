@@ -9,10 +9,18 @@
 </head>
 <body>
 
-<?php foreach ($evenement as $q){
-    echo $q->naam;
-    /* Dit was om de db connectie te testen */
-}
-?>
+<?php foreach ($evenement as $item){ ?>
+
+    <form action="" method="post">
+        <input type="text" name="naam" value="<?php echo $item->naam; ?>">
+    </form>
+
+
+    echo "<h3>".$item->naam."</h3>";
+    echo "<p>".$item->beschrijving."</p>";
+    echo "<p>"."Het evenement start om: ".$item->startTijd." en eindigt om ". $item->eindTijd."</p>";
+    echo "<p>"."Locatie: ".$item->locatie."</p>";
+
+<?php } ?>
 </body>
 </html>

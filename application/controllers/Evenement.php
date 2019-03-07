@@ -59,4 +59,19 @@ class Evenement extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+
+    public function evenementBeheren()
+    {
+        $data['titel'] = 'Evenement Beheren';
+
+        $this->load->model('evenement_model');
+        $data['evenement'] =$this->evenement_model->getEvenement();
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'evenementBeheren',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
 }
