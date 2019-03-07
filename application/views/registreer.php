@@ -2,7 +2,7 @@
 <p>In deze pagina kan je je registreren voor onze Mantelzorg applicatie</p>
 <?php
 $attributes = array('name' => 'mijnFormulier');
-echo form_open('home/controleerAanmelden', $attributes);
+echo form_open('home/registreerGebruiker', $attributes);
 ?>
 <table>
     <tr>
@@ -18,12 +18,16 @@ echo form_open('home/controleerAanmelden', $attributes);
         <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
     </tr>
     <tr>
-        <td><?php echo form_label('Gemeente:', 'email'); ?></td>
-        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
+        <td><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
+        <td><?php echo form_input(array('name' => 'Gemeente', 'id' => 'Gemeente', 'size' => '30')); ?></td>
     </tr>
     <tr>
         <td><?php echo form_label('Huisnummer:', 'email'); ?></td>
-        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
+        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'huisnummer', 'size' => '30')); ?></td>
+    </tr>
+    <tr>
+        <td><?php echo form_label('email:', 'email'); ?></td>
+        <td><?php echo form_input(array('name' => 'email', 'id' => 'email', 'size' => '30')); ?></td>
     </tr>
     <tr>
         <td><?php echo form_label('Wachtwoord:', 'wachtwoord'); ?></td>
