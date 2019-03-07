@@ -9,7 +9,8 @@ class evenement_model extends CI_Model
 
     function getEvenement()
     {
-        $this->db->where('id', 1);
+        $sql = "SELECT * FROM evenement";
+        $this->db->query($sql);
         $query = $this->db->get('evenement');
         return $query->result();
     }
