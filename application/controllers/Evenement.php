@@ -62,6 +62,10 @@ class Evenement extends CI_Controller
 
     public function evenementBeheren()
     {
+        /**
+         * Weergeven van de pagina Evenement Beheren op het scherm
+         */
+
         $data['titel'] = 'Evenement Beheren';
 
         $this->load->model('evenement_model');
@@ -72,6 +76,47 @@ class Evenement extends CI_Controller
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);
+    }
+
+
+    public function toonEvenementUpdateNietOk(){
+
+    }
+
+    public function evenementUpdaten(){
+
+        $naam = $this->input->post('naam');
+        $beschrijving = $this->input->post('beschrijving');
+        $startTijd = $this->input->post('startTijd');
+        $eindTijd = $this->input->post('eindTijd');
+        $locatie = $this->input->post('locatie');
+
+        if(($naam || $beschrijving || $startTijd || $eindTijd || $locatie) == ""){
+            $this->toonEvenementUpdateNietOk();
+        }else{
+            $updateGelukt = $this->evenement_model->evenementUpdaten($naam, $beschrijving, $startTijd, $eindTijd, $locatie);
+
+            if($updateGelukt){
+                $this->evenementBeheren();
+            } else {
+                $this->toonEvenementUpdateNietOk();
+            }
+        }
+    }
+
+    public function evenementToevoegen()
+    {
+        $data['titel'] = 'Evenement Toevoegen';
+
+        $naam = $this->input->post('naam');
+        $meldingTijd = $this->input->post('meldingTijd');
+        $beschrijving = $this->input->post('beschrijving');
+        $locatie = $this->input->post('locatie');
+        $verplicht = $this->input->post('verplicht');
+        $isHerhaling = $this->input->post('isHerhaling');
+        $datum = $this->input->post('datum');
+        $startTijd = $this->input->post('startTijd');
+        $eindTijd = $this->input->post('eindTijd');
     }
 
 }
