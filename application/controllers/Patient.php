@@ -6,6 +6,8 @@
  * Time: 12:41
  */
 
+
+
 class Patient extends CI_Controller
 {
     public function __construct()
@@ -18,5 +20,18 @@ class Patient extends CI_Controller
     {
 
     }
+    public function toonPatient()
+    {
+        $data['titel'] = 'Patient tonen';
 
+
+        $this->load->model('Patient_model');
+        $data['patient'] =$this->Patient_model->getPatient();
+        $partials = array('hoofding' => 'main_header',
+            'menu' => 'main_menu',
+            'inhoud' => 'patientBekijken',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
 }

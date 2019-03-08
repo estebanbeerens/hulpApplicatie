@@ -6,7 +6,14 @@
  * Time: 12:51
  */
 
-class patient_model extends CI_Model
+
+/**
+ * @class Patient_model
+ * @brief Model-klasse voor patienten
+ *
+ * Model-klasse die alle methodes bevat om te
+ */
+class Patient_model extends CI_Model
 {
     function __construct()
     {
@@ -14,13 +21,15 @@ class patient_model extends CI_Model
     }
     function getPatient()
     {
-        $this->db->where('id', 1);
+        $array = array('id' => 1, 'soortPersoonId' => 5);
+        $this->db->where($array);
         $query = $this->db->get('persoon');
         return $query->result();
     }
 
-    function getEvenementById($id)
+    function getPatientById($id)
     {
+        /**Klopt nog niet, chill*/
         $this->db->where('id', $id);
         $query = $this->db->get('persoon');
         return $query->row();

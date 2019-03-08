@@ -8,5 +8,16 @@
     <title><?php echo $titel?></title>
 </head>
 <body>
-<p>Test</p>
+<?php foreach ($patient as $item){
+    echo "<p>".$item->naam."</p>";
+    echo "<p>".$item->voornaam."</p>";
+    echo "<p>".$item->geboortedatum."</p>";
+    echo "<p>".$item->woonplaats."</p>";
+    echo "<p>".$item->adres."</p>";
+    echo "<p>".$item->rekeningnummer."</p>";
+    echo "<p>".$item->gebruikersnaam."</p>";
+    echo "<p>".$item->password."</p>";
+    echo "<p>".$item->email."</p>";
+}
+?>
 </body>
