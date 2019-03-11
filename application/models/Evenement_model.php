@@ -52,7 +52,7 @@ class evenement_model extends CI_Model
         $evenement->eindTijd = $eindTijd;
         $evenement->locatie = $locatie;
         $this->db->where('id', $id);
-        $this->db->update('evenement', $evenement);
+        $this->db->replace('evenement', $evenement);
     }
 
 }

@@ -80,27 +80,39 @@ class Evenement extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+    public function evenementFout()
+    {
+        /**
+         * Weergeven van de pagina Evenement Beheren op het scherm
+         */
 
-    public function toonEvenementUpdateNietOk($fout){
-        if($fout = 1){
+        $data['titel'] = 'test';
 
-        } else {
+        $this->load->model('evenement_model');
+        $data['evenement'] =$this->evenement_model->getEvenement();
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'evenementBeheren',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
 
-        }
+        $this->template->load('main_master', $partials, $data);
     }
 
+
     public function evenementUpdaten(){
+
+        $this->load->model('evenement_model');
 
         $id = $this->input->post('id');
         $naam = $this->input->post('naam');
         $beschrijving = $this->input->post('beschrijving');
-        $startTijd = $this->input->post('startTijd');
-        $eindTijd = $this->input->post('eindTijd');
+        $startTijd = $this->input->post('starttijd');
+        $eindTijd = $this->input->post('eindtijd');
         $locatie = $this->input->post('locatie');
 
         if(($id || $naam || $beschrijving || $startTijd || $eindTijd || $locatie) == ""){
             $fout = 1;
-            $this->toonEvenementUpdateNietOk($fout);
+            $this->evenementFout();
         }else{
             $updateGelukt = $this->evenement_model->evenementUpdaten($id, $naam, $beschrijving, $startTijd, $eindTijd, $locatie);
 
@@ -108,7 +120,7 @@ class Evenement extends CI_Controller
                 $this->evenementBeheren();
             } else {
                 $fout = 2;
-                $this->toonEvenementUpdateNietOk($fout);
+
             }
         }
     }
