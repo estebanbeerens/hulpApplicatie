@@ -9,11 +9,25 @@ class evenement_model extends CI_Model
 
     function getEvenement()
     {
+        /**
+         * Evenementen ophalen en tonen op pagina Evenement beheren
+         */
+
         $query = $this->db->get('evenement');
         return $query->result();
     }
 
+    function getEvenementById($id){
 
+        /**
+         *  Evenement gegevens oproepen en en tonen na het klikken op de een bepaalde evenement
+         */
+
+        $event->id = $id;
+
+        $query = $this->db->get('evenement')->where('id', $id);
+        return $query->result();
+    }
 
     function toevoegenEvenement()
     {

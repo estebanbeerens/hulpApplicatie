@@ -37,6 +37,8 @@
         </table>
     </div>
 
+    <br><br>
+
     <?php
     $attributes = array('name' => 'evenementUpdatenFormulier');
     echo form_open('evenement/evenementUpdaten', $attributes);
