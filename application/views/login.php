@@ -1,4 +1,4 @@
-<h1>Welkom op de inlog pagina</h1>
+<h1>Inloggen</h1>
 <?php
 $attributes = array('name' => 'mijnFormulier');
 echo form_open('home/controleerAanmelden', $attributes);
