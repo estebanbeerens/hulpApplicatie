@@ -26,7 +26,6 @@ nav{
     padding: 20px;
 }
 
-
 /** footer **/
 footer {
     position: absolute;
@@ -38,3 +37,19 @@ footer {
 .footer-copyright {
     background-color: #66c1f9;
 }
+
+
+/** Evenement beheren **/
+.eventbeheren table{
+    border-collapse: collapse;
+}
+
+.eventbeheren table tr td{
+   padding: 5px 10px;
+    border-bottom: 2px solid lightgrey;
+}
+
+
+
+
+

@@ -25,7 +25,7 @@
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Link'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><?php echo anchor('home/patientBekijken', 'Patient bekijken'); ?></a>
+                    <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('licentie/licentieAankopen', 'Licentie aankopen'); ?></a>
