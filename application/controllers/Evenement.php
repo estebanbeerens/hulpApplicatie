@@ -83,15 +83,13 @@ class Evenement extends CI_Controller
     public function evenementFout()
     {
         /**
-         * Weergeven van de pagina Evenement Beheren op het scherm
+         * Weergeven van de foutpagina
          */
 
         $data['titel'] = 'test';
 
-        $this->load->model('evenement_model');
-        $data['evenement'] =$this->evenement_model->getEvenement();
         $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'evenementBeheren',
+            'inhoud' => 'home_fout',
             'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 
@@ -103,26 +101,22 @@ class Evenement extends CI_Controller
 
         $this->load->model('evenement_model');
 
-        $id = $this->input->post('id');
         $naam = $this->input->post('naam');
+        $meldingTijd = $this->input->post('meldingtijd');
         $beschrijving = $this->input->post('beschrijving');
+        $locatie = $this->input->post('locatie');
+        $verplicht = $this->input->post('verplicht');
+        $isHerhaling = $this->input->post('herhaling');
+        $datum = $this->input->post('datum');
         $startTijd = $this->input->post('starttijd');
         $eindTijd = $this->input->post('eindtijd');
-        $locatie = $this->input->post('locatie');
+        $id = $this->input->post('id');
 
-        if(($id || $naam || $beschrijving || $startTijd || $eindTijd || $locatie) == ""){
-            $fout = 1;
-            $this->evenementFout();
-        }else{
-            $updateGelukt = $this->evenement_model->evenementUpdaten($id, $naam, $beschrijving, $startTijd, $eindTijd, $locatie);
+        $this->evenement_model->updaten($id, $naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd);
 
-            if($updateGelukt){
-                $this->evenementBeheren();
-            } else {
-                $fout = 2;
 
-            }
-        }
+
+        redirect('evenement/evenementBeheren');
     }
 
     public function evenementToevoegen()
