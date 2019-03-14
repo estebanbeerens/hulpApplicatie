@@ -23,7 +23,7 @@
             <div class="col-md-3 mb-md-0 mb-3">
 
                 <!-- Links -->
-                <h5 class="text-uppercase">Ontwerper</h5>
+                <h5 class="text-uppercase">Ontwerper(s)</h5>
 
                 <ul class="list-unstyled">
                     <li>
@@ -38,7 +38,7 @@
             <div class="col-md-3 mb-md-0 mb-3">
 
                 <!-- Links -->
-                <h5 class="text-uppercase">Tester</h5>
+                <h5 class="text-uppercase">Tester(s)</h5>
 
                 <ul class="list-unstyled">
                     <li>
