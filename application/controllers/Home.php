@@ -101,7 +101,7 @@ class Home extends CI_Controller
         $passwoord = $this->input->post('passwoord');
 
         if ($this->authex->meldAan($gebruikersnaam, $passwoord)) {
-            redirect('home/index');
+            redirect('evenement/toonevenement');
         } else {
             redirect('home/toonFout');
         }
@@ -138,15 +138,16 @@ class Home extends CI_Controller
         $naam = $this->input->post('naam');
         $email = $this->input->post('email');
         $wachtwoord = $this->input->post('wachtwoord');
+        $gebruikersnaam = $this->input->post('gebruikersnaam');
 
         if (strlen($naam) >= 2 && strpos($email, '@') != null && strlen($wachtwoord) >= 3) {
-            $id = $this->authex->registreer($naam, $email, $wachtwoord);
+            $id = $this->authex->registreer($naam, $email, $wachtwoord, $gebruikersnaam);
             if ($id != 0) {
                 $this->session->set_userdata('titel', 'Registreren');
                 $this->session->set_userdata('boodschap', 'Gebruiker werd aangemaakt! Er werd een e-mail verstuurd met een activatielink. Nadat u deze link hebt aangeklikt, kan u zich aanmelden.');
                 $this->session->set_userdata('link', null);
                 $boodschap = "U bent geregistreerd. Klik op onderstaande link om uw registratie te activeren.\n<a href='" . site_url('/home/activeer/' . $id) . "'>" . site_url('/gebruiker/activeer/' . $id) . "</a>";
-                $this->stuurMail($email, $boodschap, 'TV Shop: activatielink');
+                $this->stuurMail($email, $boodschap, 'Mantelzorg: Activatielink');
             } else {
                 $this->session->set_userdata('titel', 'Fout');
                 $this->session->set_userdata('boodschap', 'E-mail bestaat reeds. Probeer opnieuw.');

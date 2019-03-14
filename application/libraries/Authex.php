@@ -77,13 +77,13 @@
             $CI->session->unset_userdata('gebruiker_id');
         }
 
-        function registreer($naam, $email, $wachtwoord)
+        function registreer($naam, $email, $wachtwoord, $gebruikersnaam)
         {
             // nieuwe gebruiker registreren als email nog niet bestaat
             $CI =& get_instance();
 
             if ($CI->gebruiker_model->controleerEmailVrij($email)) {
-                $id = $CI->gebruiker_model->insert($naam, $email, $wachtwoord);
+                $id = $CI->gebruiker_model->insert($naam, $email, $wachtwoord, $gebruikersnaam);
                 return $id;
             } else {
                 return 0;

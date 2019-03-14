@@ -51,14 +51,14 @@ class gebruiker_model extends CI_Model
         }
     }
 
-    function insert($naam, $email, $wachtwoord)
+    function insert($naam, $email, $wachtwoord, $gebruikersnaam)
     {
         // voeg nieuwe gebruiker toe
         $gebruiker = new stdClass();
         $gebruiker->naam = $naam;
         $gebruiker->email = $email;
         $gebruiker->passwoord = password_hash($wachtwoord, PASSWORD_DEFAULT);
-
+        $gebruiker->gebruikersnaam = $gebruikersnaam;
         $this->db->insert('persoon', $gebruiker);
         return $this->db->insert_id();
     }

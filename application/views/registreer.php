@@ -10,6 +10,10 @@ echo form_open('home/registreerGebruiker', $attributes);
         <td><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'size' => '30')); ?></td>
     </tr>
     <tr>
+        <td><?php echo form_label('Gebruikersnaam:', 'gebruikersnaam'); ?></td>
+        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
+    </tr>
+    <tr>
         <td><?php echo form_label('E-mail:', 'email'); ?></td>
         <td><?php echo form_input(array('name' => 'email', 'id' => 'email', 'size' => '30')); ?></td>
     </tr>
