@@ -123,6 +123,19 @@ class Evenement extends CI_Controller
     {
         $data['titel'] = 'Evenement Toevoegen';
 
+        $data['ontwerper'] = 'Liam Mentens';
+        $data['tester'] = 'vul mij in';
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'evenementToevoegen',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function evenementToevoegenGoed()
+    {
         $naam = $this->input->post('naam');
         $meldingTijd = $this->input->post('meldingtijd');
         $beschrijving = $this->input->post('beschrijving');
@@ -136,12 +149,7 @@ class Evenement extends CI_Controller
         $this->load->model('evenement_model');
         $this->evenement_model->insert($naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd);
 
-        $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'evenementBeheren',
-            'menu' => 'main_menu',
-            'voetnoot' => 'main_footer');
-
-        $this->template->load('main_master', $partials, $data);
+        redirect('evenement/evenementBeheren');
     }
 
 }

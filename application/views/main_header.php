@@ -22,6 +22,9 @@
                     <a class="nav-link" href=""><?php echo anchor('evenement/evenementBeheren', 'Evenement Beheren'); ?></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href=""><?php echo anchor('evenement/evenementToevoegen', 'Evenement Toevoegen'); ?></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Link'); ?></a>
                 </li>
                 <li class="nav-item">

@@ -38,6 +38,7 @@
     </div>
 
 
+<<<<<<< HEAD
     <div>
         <?php
         $attributes = array('name' => 'evenementToevoegenFormulier');
@@ -95,6 +96,8 @@
     <br>
     <br>
 </div>
+=======
+>>>>>>> evenement toevoegen op andere pagina
 
 </div>
 </body>
