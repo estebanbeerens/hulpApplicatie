@@ -57,7 +57,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">Team29 © 2018-2019 -
-        <span class="font-weight-bold">Opdrachtgever:</span> Tinne Van Eccelpoel
+        <span class="font-weight-bold">Opdrachtgever:</span> Tinne Van Echelpoel
     </div>
     <!-- Copyright -->
 
