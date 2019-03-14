@@ -23,6 +23,8 @@ class Patient extends CI_Controller
     public function toonPatient()
     {
         $data['titel'] = 'Patient tonen';
+        $data['ontwerper'] = 'René Vanhoof';
+        $data['tester'] = 'Geen Idee';
 
 
         $this->load->model('Patient_model');
