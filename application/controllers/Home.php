@@ -16,14 +16,11 @@ class Home extends CI_Controller
     public function index()
     {
         $data['titel'] = 'Inloggen';
-<<<<<<< HEAD
         $data['ontwerper'] = '????';
         $data['tester'] = '???';
 
-=======
         $data['ontwerper'] = 'Vul mij in';
         $data['tester'] = 'vul mij in';
->>>>>>> evenement toevoegen op andere pagina
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
