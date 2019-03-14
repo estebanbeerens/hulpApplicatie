@@ -23,6 +23,6 @@
         function getLicentie()
         {
             $query = $this->db->get('soortLicentie');
-            return $query->row();
+            return $query->result();
         }
     }
