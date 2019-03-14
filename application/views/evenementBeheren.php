@@ -14,6 +14,15 @@
 
     <div class="eventbeheren">
         <table>
+            <tr>
+                <td>id</td>
+                <td>Naam</td>
+                <td>Datum</td>
+                <td>Starttijd</td>
+                <td>Eindtijd</td>
+                <td>Locatie</td>
+                <td>Beschrijving</td>
+            </tr>
             <?php foreach ($evenement as $item){ ?>
             <tr>
                 <td><?php echo $item->id; ?></td>
@@ -21,14 +30,14 @@
                 <td><?php echo $item->datum; ?></td>
                 <td><?php echo $item->startTijd; ?></td>
                 <td><?php echo $item->eindTijd; ?></td>
-                <td><?php echo $item->beschrijving; ?></td>
                 <td><?php echo $item->locatie; ?></td>
+                <td><?php echo $item->beschrijving; ?></td>
             </tr>
             <?php } ?>
         </table>
     </div>
 
-    
+
     <div>
         <?php
         $attributes = array('name' => 'evenementToevoegenFormulier');
