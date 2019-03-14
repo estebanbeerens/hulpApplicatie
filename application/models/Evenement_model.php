@@ -60,7 +60,7 @@ class evenement_model extends CI_Model
         $evenement->startTijd = $startTijd;
         $evenement->eindTijd = $eindTijd;
 
-        $this->db->where('id', $id)->replace('evenement', $evenement);
+        $this->db->where('id', $id)->update('evenement', $evenement);
     }
 
 }

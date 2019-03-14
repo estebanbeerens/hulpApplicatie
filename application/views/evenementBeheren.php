@@ -41,7 +41,7 @@
     <div>
         <?php
         $attributes = array('name' => 'evenementToevoegenFormulier');
-        echo form_open('evenement/evenementToevoegen', $attributes);
+        echo form_open('evenement/evenementUpdaten', $attributes);
         ?>
         <table>
             <th>Evenement toevoegen</th>
