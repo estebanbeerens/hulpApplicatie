@@ -9,12 +9,14 @@
 </head>
 <body>
 <?php foreach ($patient as $item){
-    echo "<h2>"."Naam: " .$item->naam. " ". $item->voornaam."</h2>";
+
+    echo "<h3>"."Naam: " .$item->naam. " ". $item->voornaam."</h3>";
     echo "<p>"."Geboortedatum: " .$item->geboortedatum."</p>";
     echo "<p>"."Woonplaats: " .$item->woonplaats."</p>";
     echo "<p>"."Adres: " .$item->adres."</p>";
     echo "<p>"."Rekeningnummer: " .$item->rekeningnummer."</p>";
     echo "<p>"."Gebruikersnaam: " .$item->gebruikersnaam."</p>";
+    echo "<p>"."password: " .$item->passwoord."</p>";
     echo "<p>"."Email: " .$item->email."</p>";
 }
 ?>
