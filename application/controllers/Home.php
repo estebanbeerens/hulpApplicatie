@@ -55,6 +55,8 @@ class Home extends CI_Controller
     {
         $data['titel'] = 'Registreer';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
+        $data['ontwerper'] = 'Seppe Peeters';
+        $data['tester'] = 'vul in';
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'registreer',
@@ -109,77 +111,76 @@ class Home extends CI_Controller
         redirect('home/index');
     }
 
+
+    private function stuurMail($geadresseerde, $boodschap, $titel)
+    {
+        $this->load->library('email');
+
+        $this->email->from('info@tvshop.be', 'TV Shop');
+        $this->email->to($geadresseerde);
+        $this->email->subject($titel);
+        $this->email->message($boodschap);
+
+        if (!$this->email->send()) {
+            $this->session->set_userdata('titel', 'Fout');
+            $this->session->set_userdata('boodschap', 'Onverwachte fout bij versturen mail. Contacteer de administrator.');
+            $this->session->set_userdata('link', null);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public function registreerGebruiker()
     {
-        $info['naam'] = $this->input->post('naam');
-        $info['email'] = $this->input->post('email');
-        $info['wachtwoord'] = $this->input->post('wachtwoord');
+        $naam = $this->input->post('naam');
+        $email = $this->input->post('email');
+        $wachtwoord = $this->input->post('wachtwoord');
 
-        if ((strlen($info['naam']) < 2) || (strlen($info['wachtwoord']) < 3) || (!strpos($info['email'], "@"))) {
-            $this->session->set_userdata('titel', 'Fout');
-            $this->session->set_userdata('boodschap', 'Gelieve alle tekstvakken (naam, email & wachtwoord) correct in te vullen!');
-            $this->session->set_userdata('link', array('url'=>'/home/registreer', 'tekst' => 'Terug'));
-        }
-        else{//velden goed ingevuld
-
-            $id = $this->authex->registreer($info['naam'],$info['email'],$info['wachtwoord']);
-            $this->session->set_userdata('id', $id);
-
-            if ($id!==0){
-
-                if ($this->stuurMail($info['email'],anchor('gebruiker/activeer/' . $id),"Registratie")){
-                    $this->session->set_userdata('titel', 'Success');
-                    $this->session->set_userdata('boodschap', 'Gebruiker werd aangemaakt! Er werd een E-mail verzonden met een activatielink. nadat u deze link hebt aangeklikt kan u zich aanmelden');
-                    $this->session->set_userdata('link', null);
-                }
-                else{
-                    $this->session->set_userdata('titel', 'Fout');
-                    $this->session->set_userdata('boodschap', 'onverwachte fout bij het verzenden mail. contacteer de administrator');
-                    $this->session->set_userdata( array('url'=>'/home/registreer', 'tekst' => 'Terug'));
-                }
-            }
-            else{
+        if (strlen($naam) >= 2 && strpos($email, '@') != null && strlen($wachtwoord) >= 3) {
+            $id = $this->authex->registreer($naam, $email, $wachtwoord);
+            if ($id != 0) {
+                $this->session->set_userdata('titel', 'Registreren');
+                $this->session->set_userdata('boodschap', 'Gebruiker werd aangemaakt! Er werd een e-mail verstuurd met een activatielink. Nadat u deze link hebt aangeklikt, kan u zich aanmelden.');
+                $this->session->set_userdata('link', null);
+                $boodschap = "U bent geregistreerd. Klik op onderstaande link om uw registratie te activeren.\n<a href='" . site_url('/home/activeer/' . $id) . "'>" . site_url('/gebruiker/activeer/' . $id) . "</a>";
+                $this->stuurMail($email, $boodschap, 'TV Shop: activatielink');
+            } else {
                 $this->session->set_userdata('titel', 'Fout');
-                $this->session->set_userdata('boodschap', 'E-mail bestaat reeds, probeer opnieuw');
-                $this->session->set_userdata('link', array('url'=>'/home/registreer', 'tekst' => 'Terug'));
+                $this->session->set_userdata('boodschap', 'E-mail bestaat reeds. Probeer opnieuw.');
+                $this->session->set_userdata('link', array('url' => '/home/registreer', 'tekst' => 'Terug'));
             }
+        } else {
+            $this->session->set_userdata('titel', 'Fout');
+            $this->session->set_userdata('boodschap', 'Gelieve alle tekstvakken (naam, e-mail én wachtwoord) correct in te vullen.');
+            $this->session->set_userdata('link', array('url' => '/home/registreer', 'tekst' => 'Terug'));
         }
-
-        redirect('gebruiker/toonmelding');
+        redirect('/home/toonMelding');
     }
 
     public function activeer($id)
     {
-//            $sessionID = $this->session->get_userdata('id', $id);
-//            if ($id==$sessionID){
         $this->authex->activeer($id);
-        $this->session->set_userdata('titel', 'Succes');
-        $this->session->set_userdata('boodschap', 'account is geactiveerd! u kan zich nu aanmelden');
-//            }else{
-//                $this->session->set_userdata('titel', 'fout');
-//                $this->session->set_userdata('boodschap', 'er is een fout opgetreden' . $s);
-//            }
-
-
-        redirect('gebruiker/toonmelding');
+        $this->session->set_userdata('titel', 'Activeren');
+        $this->session->set_userdata('boodschap', 'Account werd geactiveerd. U kan nu aanmelden.');
+        $this->session->set_userdata('link', null);
+        redirect('/gebruiker/toonMelding');
     }
 
     public function toonMelding()
-        #public function toonMelding($titel, $boodschap, $link = null)
     {
         $data['titel'] = $this->session->userdata('titel');
         $data['boodschap'] = $this->session->userdata('boodschap');
         $data['link'] = $this->session->userdata('link');
-
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
-
-        $partials = array(
-            'hoofding' => 'main_header',
-            'menu' => 'main_menu',
-            'inhoud' => 'gebruiker_melding',
-            'voetnoot' => 'main_footer'
+        $data['ontwerper'] = 'Seppe Peeters';
+        $data['tester'] = 'vul in';
+        $partials = array('hoofding'=>'main_header',
+            'menu'=>'main_menu',
+            'inhoud'=>'gebruiker_melding',
+            'voetnoot'=>'main_footer'
         );
-
         $this->template->load('main_master', $partials, $data);
     }
+
 }

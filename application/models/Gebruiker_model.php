@@ -42,7 +42,7 @@ class gebruiker_model extends CI_Model
     {
         // is email al dan niet aanwezig
         $this->db->where('email', $email);
-        $query = $this->db->get('tv_gebruiker');
+        $query = $this->db->get('persoon');
 
         if ($query->num_rows() == 0) {
             return true;
@@ -57,11 +57,8 @@ class gebruiker_model extends CI_Model
         $gebruiker = new stdClass();
         $gebruiker->naam = $naam;
         $gebruiker->email = $email;
-        $gebruiker->wachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT);
-        $gebruiker->niveau = 1;
-        $gebruiker->creatie = date("Y-m-d H:i:s");
-        $gebruiker->laatstAangemeld = 0;
-        $gebruiker->geactiveerd = 0;
+        $gebruiker->passwoord = password_hash($wachtwoord, PASSWORD_DEFAULT);
+
         $this->db->insert('persoon', $gebruiker);
         return $this->db->insert_id();
     }
@@ -72,7 +69,7 @@ class gebruiker_model extends CI_Model
         $gebruiker = new stdClass();
         $gebruiker->geactiveerd = 1;
         $this->db->where('id', $id);
-        $this->db->update('tv_gebruiker', $gebruiker);
+        $this->db->update('persoon', $gebruiker);
     }
 
     function getPersoon($id){
