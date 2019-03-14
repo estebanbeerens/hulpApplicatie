@@ -15,6 +15,8 @@ class Licentie extends CI_Controller
     public function licentieAankopen()
     {
         $data['titel'] = 'Licentie aankopen';
+        $data['ontwerper'] = 'Esteban Beerens';
+        $data['tester'] = 'VUL MIJ IN <3';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
