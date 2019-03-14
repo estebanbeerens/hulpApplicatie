@@ -139,9 +139,15 @@ class Home extends CI_Controller
         $email = $this->input->post('email');
         $wachtwoord = $this->input->post('wachtwoord');
         $gebruikersnaam = $this->input->post('gebruikersnaam');
+        $woonplaats = $this->input->post('woonplaats');
+        $geboortedatum = $this->input->post('geboortedatum');
+        $voornaam = $this->input->post('voornaam');
+        $adres = $this->input->post('adres');
+        $rekeningnummer = $this->input->post('rekeningnummer');
+
 
         if (strlen($naam) >= 2 && strpos($email, '@') != null && strlen($wachtwoord) >= 3) {
-            $id = $this->authex->registreer($naam, $email, $wachtwoord, $gebruikersnaam);
+            $id = $this->authex->registreer($naam, $email, $wachtwoord, $gebruikersnaam, $woonplaats, $voornaam, $adres, $rekeningnummer, $geboortedatum);
             if ($id != 0) {
                 $this->session->set_userdata('titel', 'Registreren');
                 $this->session->set_userdata('boodschap', 'Gebruiker werd aangemaakt! Er werd een e-mail verstuurd met een activatielink. Nadat u deze link hebt aangeklikt, kan u zich aanmelden.');
