@@ -13,12 +13,7 @@ class evenement_model extends CI_Model
         return $query->result();
     }
 
-    function getEvenementById($id)
-    {
-        $this->db->where('id', $id);
-        $query = $this->db->get('evenement');
-        return $query->row();
-    }
+
 
     function toevoegenEvenement()
     {

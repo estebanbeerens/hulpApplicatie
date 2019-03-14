@@ -18,8 +18,8 @@
 
 </head>
 
-<body>
-    <div class="wrapper">
+<body class="">
+
         <div id="hoofding">
             <?php echo $hoofding; ?>
         </div>
@@ -32,7 +32,7 @@
         <div id="voetnoot">
             <?php echo $voetnoot; ?>
         </div>
-    </div>
+
 </body>
 
 </html>
