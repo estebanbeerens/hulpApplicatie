@@ -118,7 +118,7 @@ class Home extends CI_Controller
         if ((strlen($info['naam']) < 2) || (strlen($info['wachtwoord']) < 3) || (!strpos($info['email'], "@"))) {
             $this->session->set_userdata('titel', 'Fout');
             $this->session->set_userdata('boodschap', 'Gelieve alle tekstvakken (naam, email & wachtwoord) correct in te vullen!');
-            $this->session->set_userdata('link', array('url'=>'/home/RegisteerGebruiker', 'tekst' => 'Terug'));
+            $this->session->set_userdata('link', array('url'=>'/home/registreer', 'tekst' => 'Terug'));
         }
         else{//velden goed ingevuld
 
@@ -127,21 +127,41 @@ class Home extends CI_Controller
 
             if ($id!==0){
 
-
+                if ($this->stuurMail($info['email'],anchor('gebruiker/activeer/' . $id),"Registratie")){
                     $this->session->set_userdata('titel', 'Success');
                     $this->session->set_userdata('boodschap', 'Gebruiker werd aangemaakt! Er werd een E-mail verzonden met een activatielink. nadat u deze link hebt aangeklikt kan u zich aanmelden');
                     $this->session->set_userdata('link', null);
-
-
+                }
+                else{
+                    $this->session->set_userdata('titel', 'Fout');
+                    $this->session->set_userdata('boodschap', 'onverwachte fout bij het verzenden mail. contacteer de administrator');
+                    $this->session->set_userdata( array('url'=>'/home/registreer', 'tekst' => 'Terug'));
+                }
             }
             else{
                 $this->session->set_userdata('titel', 'Fout');
                 $this->session->set_userdata('boodschap', 'E-mail bestaat reeds, probeer opnieuw');
-                $this->session->set_userdata('link', array('url'=>'/home/RegisteerGebruiker\'', 'tekst' => 'Terug'));
+                $this->session->set_userdata('link', array('url'=>'/home/registreer', 'tekst' => 'Terug'));
             }
         }
 
-        redirect('home/toonmelding');
+        redirect('gebruiker/toonmelding');
+    }
+
+    public function activeer($id)
+    {
+//            $sessionID = $this->session->get_userdata('id', $id);
+//            if ($id==$sessionID){
+        $this->authex->activeer($id);
+        $this->session->set_userdata('titel', 'Succes');
+        $this->session->set_userdata('boodschap', 'account is geactiveerd! u kan zich nu aanmelden');
+//            }else{
+//                $this->session->set_userdata('titel', 'fout');
+//                $this->session->set_userdata('boodschap', 'er is een fout opgetreden' . $s);
+//            }
+
+
+        redirect('gebruiker/toonmelding');
     }
 
     public function toonMelding()

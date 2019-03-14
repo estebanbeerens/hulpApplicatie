@@ -62,7 +62,7 @@ class gebruiker_model extends CI_Model
         $gebruiker->creatie = date("Y-m-d H:i:s");
         $gebruiker->laatstAangemeld = 0;
         $gebruiker->geactiveerd = 0;
-        $this->db->insert('tv_gebruiker', $gebruiker);
+        $this->db->insert('persoon', $gebruiker);
         return $this->db->insert_id();
     }
 

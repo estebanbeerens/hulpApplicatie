@@ -6,27 +6,11 @@ echo form_open('home/registreerGebruiker', $attributes);
 ?>
 <table>
     <tr>
-        <td><?php echo form_label('Naam:', 'email'); ?></td>
-        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
+        <td><?php echo form_label('Naam:', 'naam'); ?></td>
+        <td><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'size' => '30')); ?></td>
     </tr>
     <tr>
-        <td><?php echo form_label('Voornaam:', 'email'); ?></td>
-        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
-    </tr>
-    <tr>
-        <td><?php echo form_label('Straat:', 'email'); ?></td>
-        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
-    </tr>
-    <tr>
-        <td><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
-        <td><?php echo form_input(array('name' => 'Gemeente', 'id' => 'Gemeente', 'size' => '30')); ?></td>
-    </tr>
-    <tr>
-        <td><?php echo form_label('Huisnummer:', 'email'); ?></td>
-        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'huisnummer', 'size' => '30')); ?></td>
-    </tr>
-    <tr>
-        <td><?php echo form_label('email:', 'email'); ?></td>
+        <td><?php echo form_label('E-mail:', 'email'); ?></td>
         <td><?php echo form_input(array('name' => 'email', 'id' => 'email', 'size' => '30')); ?></td>
     </tr>
     <tr>
