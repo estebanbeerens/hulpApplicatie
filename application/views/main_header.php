@@ -19,10 +19,10 @@
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Home'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""><?php echo anchor('evenement/evenementBeheren', 'Evenement Beheren'); ?></a>
+                    <a class="nav-link" href=""><?php echo anchor('evenement/evenementBeheren', 'Evenement beheren'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""><?php echo anchor('evenement/evenementToevoegen', 'Evenement Toevoegen'); ?></a>
+                    <a class="nav-link" href=""><?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen'); ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Link'); ?></a>
