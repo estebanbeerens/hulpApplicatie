@@ -19,17 +19,19 @@
 </head>
 
 <body>
-    <div id="hoofding">
-        <?php echo $hoofding; ?>
-    </div>
-    <div id="inhoud" class="container">
-        <?php echo $inhoud; ?>
-    </div>
-    <div id="menu">
-        <?php echo $menu; ?>
-    </div>
-    <div id="voetnoot">
-        <?php echo $voetnoot; ?>
+    <div class="wrapper">
+        <div id="hoofding">
+            <?php echo $hoofding; ?>
+        </div>
+        <div id="inhoud" class="container">
+            <?php echo $inhoud; ?>
+        </div>
+        <div id="menu">
+            <?php echo $menu; ?>
+        </div>
+        <div id="voetnoot">
+            <?php echo $voetnoot; ?>
+        </div>
     </div>
 </body>
 

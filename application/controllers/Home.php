@@ -18,6 +18,7 @@ class Home extends CI_Controller
         $data['titel'] = 'Inloggen';
         $data['ontwerper'] = '????';
         $data['tester'] = '???';
+
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
