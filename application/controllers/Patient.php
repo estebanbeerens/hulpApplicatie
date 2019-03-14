@@ -26,6 +26,9 @@ class Patient extends CI_Controller
     {
         $data['titel'] = 'Patient tonen';
 
+        $data['ontwerper'] = 'René Vanhoof';
+        $data['tester'] = 'Geen Idee';
+
 
         $this->load->model('Patient_model');
         $data['patient'] =$this->Patient_model->getPatient();

@@ -2,6 +2,12 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Varela Round', sans-serif;
+    margin-bottom: 180px;
+}
+
+html{
+    position: relative;
+    min-height: 100%;
 }
 
 /** header **/
@@ -20,25 +26,28 @@ nav{
     color: Gray;
 }
 
-
 /** inhoud **/
 #inhoud{
     padding: 20px;
+    /*min-height: 80vh;*/
 }
 
+
+
 /** footer **/
-footer {
+#voetnoot {
     position: absolute;
     bottom: 0;
     width: 100%;
     background-color: lightskyblue;
+    height: 180px;
+    /*line-height: 100px;*/
+
 }
 
 .footer-copyright {
     background-color: #66c1f9;
 }
-
-
 /** Evenement beheren **/
 .eventbeheren table{
     border-collapse: collapse;

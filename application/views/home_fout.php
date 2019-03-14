@@ -14,6 +14,5 @@
 
     <p>Probeer opnieuw!</p>
 
-<?php echo $gebruiker ?>
 
 <?php echo divanchor('home/index', 'Terug');
