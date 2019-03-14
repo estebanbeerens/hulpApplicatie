@@ -21,8 +21,8 @@ class Patient_model extends CI_Model
     }
     function getPatient()
     {
-        $array = array('id' => 1, 'soortPersoonId' => 5);
-        $this->db->where($array);
+
+        $this->db->where('soortPersoonId', 5);
         $query = $this->db->get('persoon');
         return $query->result();
     }
@@ -30,6 +30,7 @@ class Patient_model extends CI_Model
     function getPatientById($id)
     {
         /**Klopt nog niet, chill*/
+        $array = array('id' => $id,'soortPersoonId' => 5);
         $this->db->where('id', $id);
         $query = $this->db->get('persoon');
         return $query->row();
