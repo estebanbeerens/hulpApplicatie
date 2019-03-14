@@ -2,6 +2,7 @@
     /**
      * @property Template $template
      * @property Authex $authex
+     * @property Licentie_model $licentie_model
      */
 
 class Licentie extends CI_Controller
@@ -17,7 +18,9 @@ class Licentie extends CI_Controller
         $data['titel'] = 'Licentie aankopen';
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
         $data['tester'] = 'vul mij in';
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $this->load->model('licentie_model');
+        $data['licentie'] = $this->licentie_model->getLicentie();
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'licentieAankopen',

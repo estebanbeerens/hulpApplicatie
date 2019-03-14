@@ -5,8 +5,10 @@
  * Date: 7/03/2019
  * Time: 12:41
  */
-
-
+    /**
+     * @property Template $template
+     * @property Patient_model $patient_model
+     */
 
 class Patient extends CI_Controller
 {
