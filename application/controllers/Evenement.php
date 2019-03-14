@@ -23,6 +23,8 @@ class Evenement extends CI_Controller
     {
         $data['titel'] = 'Evenement tonen';
 
+        $data['ontwerper'] = 'Liam Mentens';
+        $data['tester'] = 'vul mij in';
 
         $this->load->model('evenement_model');
         $data['evenement'] =$this->evenement_model->getEvenement();
