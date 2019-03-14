@@ -41,18 +41,26 @@ class evenement_model extends CI_Model
         $evenement->eindTijd = $eindTijd;
         $this->db->insert('evenement', $evenement);
         return $this->db->insert_id();
-    }
-    function  evenementUpdaten($id, $naam, $beschrijving, $startTijd, $eindTijd, $locatie){
 
-        // zet geactiveerd op 1
+    }
+
+    function updaten($id, $naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd)
+    {
+
+
         $evenement = new stdClass();
+        $evenement->id = $id;
         $evenement->naam = $naam;
+        $evenement->meldingTijd = $meldingTijd;
         $evenement->beschrijving = $beschrijving;
+        $evenement->locatie = $locatie;
+        $evenement->verplicht = $verplicht;
+        $evenement->isHerhaling = $isHerhaling;
+        $evenement->datum = $datum;
         $evenement->startTijd = $startTijd;
         $evenement->eindTijd = $eindTijd;
-        $evenement->locatie = $locatie;
-        $this->db->where('id', $id);
-        $this->db->update('evenement', $evenement);
+
+        $this->db->where('id', $id)->update('evenement', $evenement);
     }
 
 }

@@ -20,7 +20,6 @@ nav{
     color: Gray;
 }
 
-
 /** inhoud **/
 #inhoud{
     padding: 20px;
@@ -37,8 +36,6 @@ footer {
 .footer-copyright {
     background-color: #66c1f9;
 }
-
-
 /** Evenement beheren **/
 .eventbeheren table{
     border-collapse: collapse;

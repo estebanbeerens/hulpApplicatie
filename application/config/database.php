@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'db.sinners.be',
-	'username' => 'vanhoof',
-	'password' => 'Team29Best',
-	'database' => 'vanhoof',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => 'mysql',
+	'database' => 'team29',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

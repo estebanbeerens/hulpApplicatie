@@ -80,37 +80,43 @@ class Evenement extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+    public function evenementFout()
+    {
+        /**
+         * Weergeven van de foutpagina
+         */
 
-    public function toonEvenementUpdateNietOk($fout){
-        if($fout = 1){
+        $data['titel'] = 'test';
 
-        } else {
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'home_fout',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
 
-        }
+        $this->template->load('main_master', $partials, $data);
     }
+
 
     public function evenementUpdaten(){
 
-        $id = $this->input->post('id');
+        $this->load->model('evenement_model');
+
         $naam = $this->input->post('naam');
+        $meldingTijd = $this->input->post('meldingtijd');
         $beschrijving = $this->input->post('beschrijving');
-        $startTijd = $this->input->post('startTijd');
-        $eindTijd = $this->input->post('eindTijd');
         $locatie = $this->input->post('locatie');
+        $verplicht = $this->input->post('verplicht');
+        $isHerhaling = $this->input->post('herhaling');
+        $datum = $this->input->post('datum');
+        $startTijd = $this->input->post('starttijd');
+        $eindTijd = $this->input->post('eindtijd');
+        $id = $this->input->post('id');
 
-        if(($id || $naam || $beschrijving || $startTijd || $eindTijd || $locatie) == ""){
-            $fout = 1;
-            $this->toonEvenementUpdateNietOk($fout);
-        }else{
-            $updateGelukt = $this->evenement_model->evenementUpdaten($id, $naam, $beschrijving, $startTijd, $eindTijd, $locatie);
+        $this->evenement_model->updaten($id, $naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd);
 
-            if($updateGelukt){
-                $this->evenementBeheren();
-            } else {
-                $fout = 2;
-                $this->toonEvenementUpdateNietOk($fout);
-            }
-        }
+
+
+        redirect('evenement/evenementBeheren');
     }
 
     public function evenementToevoegen()

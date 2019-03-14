@@ -9,9 +9,7 @@
 </head>
 <body>
 <?php foreach ($patient as $item){
-    echo "<p>"."Id: " .$item->id."</p>";
-    echo "<p>"."Naam: " .$item->naam."</p>";
-    echo "<p>"."Voornaam: " .$item->voornaam."</p>";
+    echo "<h2>"."Naam: " .$item->naam. " ". $item->voornaam."</h2>";
     echo "<p>"."Geboortedatum: " .$item->geboortedatum."</p>";
     echo "<p>"."Woonplaats: " .$item->woonplaats."</p>";
     echo "<p>"."Adres: " .$item->adres."</p>";
