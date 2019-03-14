@@ -9,15 +9,15 @@
 </head>
 <body>
 <?php foreach ($patient as $item){
-    echo "<p>".$item->naam."</p>";
-    echo "<p>".$item->voornaam."</p>";
-    echo "<p>".$item->geboortedatum."</p>";
-    echo "<p>".$item->woonplaats."</p>";
-    echo "<p>".$item->adres."</p>";
-    echo "<p>".$item->rekeningnummer."</p>";
-    echo "<p>".$item->gebruikersnaam."</p>";
-    echo "<p>".$item->password."</p>";
-    echo "<p>".$item->email."</p>";
+    echo "<p>"."Id: " .$item->id."</p>";
+    echo "<p>"."Naam: " .$item->naam."</p>";
+    echo "<p>"."Voornaam: " .$item->voornaam."</p>";
+    echo "<p>"."Geboortedatum: " .$item->geboortedatum."</p>";
+    echo "<p>"."Woonplaats: " .$item->woonplaats."</p>";
+    echo "<p>"."Adres: " .$item->adres."</p>";
+    echo "<p>"."Rekeningnummer: " .$item->rekeningnummer."</p>";
+    echo "<p>"."Gebruikersnaam: " .$item->gebruikersnaam."</p>";
+    echo "<p>"."Email: " .$item->email."</p>";
 }
 ?>
 </body>
