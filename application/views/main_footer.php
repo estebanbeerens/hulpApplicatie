@@ -27,7 +27,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-
+                        <?php echo $ontwerper; ?>
                     </li>
                 </ul>
 
@@ -42,7 +42,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-
+                        <?php echo $tester; ?>
                     </li>
                 </ul>
 
