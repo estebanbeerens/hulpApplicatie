@@ -69,9 +69,12 @@
 
 <?php } ?>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> evenement toevoegen afwerking
     <div>
         <?php
         $attributes = array('name' => 'evenementToevoegenFormulier');
@@ -125,7 +128,12 @@
             </tr>
         </table>
     </div>
+<div>
+    <br>
+    <br>
 
+<!--    De footer staat voor de knop waardoor je niet kan verzenden -->
+</div>
 
 </div>
 </body>
