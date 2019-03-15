@@ -30,6 +30,7 @@ class gebruiker_model extends CI_Model
             // controleren of het wachtwoord overeenkomt
             if (password_verify($passwoord, $gebruiker->passwoord)) {
                 return $gebruiker;
+
             } else {
                 return null;
             }

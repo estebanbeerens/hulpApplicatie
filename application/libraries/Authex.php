@@ -63,9 +63,10 @@
             $gebruiker = $CI->gebruiker_model->getGebruiker($gebruikersnaam, $passwoord);
 
             if ($gebruiker == null) {
-                return $gebruiker;
+                return false;
             } else {
-                return true;
+                $CI->session->set_userdata('gebruiker_id', $gebruiker->id);
+                return $gebruiker->soortPersoon;
             }
         }
 
