@@ -16,7 +16,7 @@
     echo "<p>"."Adres: " .$item->adres."</p>";
     echo "<p>"."Rekeningnummer: " .$item->rekeningnummer."</p>";
     echo "<p>"."Gebruikersnaam: " .$item->gebruikersnaam."</p>";
-    echo "<p>"."password: " .$item->passwoord."</p>";
+    echo "<p>"."passwoord: " .$item->passwoord."</p>";
     echo "<p>"."Email: " .$item->email."</p>";
 }
 ?>

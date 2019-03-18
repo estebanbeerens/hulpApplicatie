@@ -16,8 +16,17 @@ class Verzorger extends CI_Controller
     public function toonVerzorger()
     {
         $data['titel'] = 'Verzorger tonen';
+        $data['ontwerper'] = 'Liam Mentens';
+        $data['tester'] = 'Vul mij in';
 
-        $this->load->model('verzorger_model');
+        $this->load->model('Verzorger_model');
+        $data['verzorger'] = $this->Verzorger_model->getVerzorger();
+        $partials = array('hoofding' => 'main_header',
+            'menu' => 'main_menu',
+            'inhoud' => 'verzorgerBekijken',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
     }
 
 }

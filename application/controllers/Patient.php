@@ -18,11 +18,7 @@ class Patient extends CI_Controller
         $this->load->helper('form');
     }
 
-    public function index()
-    {
-
-    }
-    public function toonPatient()
+      public function toonPatient()
     {
         $data['titel'] = 'Patient tonen';
 
