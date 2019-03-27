@@ -25,8 +25,24 @@
             return $query->result();
         }
 
+        function getSpecificLicentie($id) {
+            $this->db->where('id', $id);
+            $query = $this->db->get('soortLicentie');
+            return $query->row();
+        }
+
         function insert($soortLicentie) {
             $this->db->insert('soortLicentie', $soortLicentie);
             return $this->db->insert_id();
+        }
+
+        function update($soortLicentie) {
+            $this->db->where('id', $soortLicentie->id);
+            $this->db->update('soortLicentie', $soortLicentie);
+        }
+
+        function delete($id) {
+            $this->db->where('id', $id);
+            $this->db->delete('soortLicentie');
         }
     }

@@ -18,6 +18,7 @@ class Licentie extends CI_Controller
         $data['titel'] = 'Licentie aankopen';
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
         $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('licentie_model');
         $data['licentie'] = $this->licentie_model->getLicentie();
@@ -34,6 +35,7 @@ class Licentie extends CI_Controller
         $data['titel'] = 'Licentie Toevoegen';
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
         $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'licentie/licentieToevoegen',
@@ -43,21 +45,7 @@ class Licentie extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
-    public function licentieBeheren() {
-        $data['titel'] = 'Licenties Beheren';
-        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
-        $data['tester'] = 'vul mij in';
-
-        $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'licentie/licentieBeheren',
-            'menu' => 'main_menu',
-            'voetnoot' => 'main_footer');
-
-        $this->template->load('main_master', $partials, $data);
-    }
-
-    public function insertLicentie() {
-
+    public function insertLicentie() { //Licentie in database steken
         $soortLicentie = new stdClass();
         $soortLicentie->naam = $this->input->post('naam');
         $soortLicentie->prijs = $this->input->post('prijs');
@@ -69,14 +57,82 @@ class Licentie extends CI_Controller
         redirect('Licentie/licentieToevoegenValidatie');
     }
 
-    public function licentieToevoegenValidatie()
-    {
+    public function licentieToevoegenValidatie() { //Goedkeuring tonen
         $data['titel'] = "Licentie toegevoegd";
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
         $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'licentie/licentieToevoegenOk',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function licentieBeheren() {
+        $data['titel'] = 'Licenties Beheren';
+        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $this->load->model('licentie_model');
+        $data['licentie'] = $this->licentie_model->getLicentie();
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'licentie/licentieBeheren',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function licentieBewerken($id) {
+        $data['titel'] = 'Licenties Beheren';
+        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $this->load->model('licentie_model');
+        $data['licentie'] = $this->licentie_model->getSpecificLicentie($id);
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'licentie/licentieBewerken',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function updateLicentie($id) {
+        $soortLicentie = new stdClass();
+        $soortLicentie->id = $id;
+        $soortLicentie->naam = $this->input->post('naam');
+        $soortLicentie->prijs = $this->input->post('prijs');
+        $soortLicentie->beschrijving = $this->input->post('beschrijving');
+
+        $this->load->model('licentie_model');
+        $this->licentie_model->update($soortLicentie);
+
+        redirect('Licentie/updateLicentieValidatie');
+    }
+
+    public function verwijderLicentie($id) {
+        $this->load->model('licentie_model');
+        $data['licentie'] = $this->licentie_model->delete($id);
+
+        redirect('/licentie/licentieBeheren');
+    }
+
+    public function updateLicentieValidatie() {
+        $data['titel'] = "Licentie toegevoegd";
+        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'licentie/licentieBewerkenOk',
             'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 

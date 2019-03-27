@@ -6,8 +6,8 @@
      * Tester: ?
      */
 
-    $licentieToevoegenFormulier = array('id' => 'licentieToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
-    echo form_open('Licentie/insertLicentie', $licentieToevoegenFormulier);
+    $licentieBewerkenFormulier = array('id' => 'licentieToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
+    echo form_open('Licentie/updateLicentie/' . $licentie->id, $licentieBewerkenFormulier, $licentie->id);
 ?>
 
 <div class="form-row">
@@ -19,6 +19,7 @@
                 'name' => 'naam',
                 'class' => 'form-control',
                 'placeholder' => 'Licentienaam',
+                'value' => $licentie->naam,
                 'required' => 'required');
             echo form_input($dataNaam) . "\n";
         ?>
@@ -35,6 +36,7 @@
                     'name' => 'prijs',
                     'type' => 'number',
                     'min' => 0,
+                    'value' => $licentie->prijs,
                     'class' => 'form-control',
                     'required' => 'required');
                 echo form_input($dataPrijs) . "\n";
@@ -49,6 +51,7 @@
             $dataBeschrijving = array('id' => 'beschrijving',
                 'name' => 'beschrijving',
                 'class' => 'form-control',
+                'value' => $licentie->beschrijving,
                 'placeholder' => 'Beschrijving',
                 'required' => 'required',
                 'rows' => 5);
@@ -58,8 +61,8 @@
     </div>
 
     <div class="form-group col-md-3">
-        <?php echo form_submit('knop', 'Toevoegen', "class='btn btn-primary'") ?>
+        <?php echo form_submit('knop', 'Wijzigen', "class='btn btn-primary'") ?>
     </div>
-    <div class='col-12 mt-4'> <?php echo anchor('licentie/licentieBeheren', 'Terug'); ?> </div>
     <?php echo form_close(); ?>
+    <div class='col-12 mt-4'> <?php echo anchor('licentie/licentieBeheren', 'Terug'); ?> </div>
 </div>

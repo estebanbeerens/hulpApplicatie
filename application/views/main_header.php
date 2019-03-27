@@ -65,7 +65,8 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownLicenties">
                         <?php echo anchor('licentie/licentieAankopen', 'Licentie aankopen'); ?>
-                        <?php echo anchor('licentie/licentieToevoegen', 'Licentie toevoegen'); ?>
+                        <?php //echo anchor('licentie/licentieToevoegen', 'Licentie toevoegen'); ?>
+                        <?php echo anchor('licentie/licentieBeheren', 'Licenties beheren'); ?>
                     </div>
                 </li>
 
