@@ -167,4 +167,8 @@ class Evenement extends CI_Controller
         redirect('evenement/evenementBeheren');
     }
 
+
+
+
+
 }
