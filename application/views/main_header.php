@@ -19,34 +19,27 @@
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Home'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""><?php echo anchor('evenement/evenementBeheren', 'Evenement beheren'); ?></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href=""><?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen'); ?></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><?php echo anchor('home/', 'Link'); ?></a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><?php echo anchor('licentie/licentieAankopen', 'Licentie aankopen'); ?></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><?php echo anchor('licentie/licentieToevoegen', 'Licentie toevoegen'); ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('verzorger/toonVerzorger', 'Verzorger bekijken'); ?></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Evenementen
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Link</a>
-                        <a class="dropdown-item" href="#">Link</a>
-                        <a class="dropdown-item" href="#">Link</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
+                        <a class="dropdown-item" href=""><?php echo anchor('evenement/evenementBeheren', 'Evenement beheren'); ?></a>
+                        <a class="dropdown-item" href=""><?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen'); ?></a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownLicenties" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Licenties
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownLicenties">
+                        <a class="dropdown-item" href="#"><?php echo anchor('licentie/licentieAankopen', 'Licentie aankopen'); ?></a>
+                        <a class="dropdown-item" href="#"><?php echo anchor('licentie/licentieToevoegen', 'Licentie toevoegen'); ?></a>
                     </div>
                 </li>
             </ul>
