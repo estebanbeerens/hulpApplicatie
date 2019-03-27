@@ -56,7 +56,6 @@ class evenement_model extends CI_Model
     function updaten($id, $naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd)
     {
 
-
         $evenement = new stdClass();
         $evenement->id = $id;
         $evenement->naam = $naam;

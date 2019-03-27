@@ -11,6 +11,7 @@ class Verzorger extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper('form');
     }
 
     public function toonVerzorger()
@@ -27,6 +28,40 @@ class Verzorger extends CI_Controller
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);
+    }
+
+    public function verzorgersBeheren(){
+        $data['titel'] = 'Verzorgers beheren';
+        $data['ontwerper'] = 'Liam&nbspMentens';
+        $data['tester'] = 'vul mij in';
+
+        $this->load->model('verzorger_model');
+        $data['verzorger'] = $this->verzorger_model->getVerzorger();
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'verzorgersBeheren',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function verzorgersUpdaten(){
+
+        $this->load->model('verzorger_model');
+
+        $naam = $this->input->post('naam');
+        $voornaam = $this->input->post('voornaam');
+        $geboortedatum = $this->input->post('geboortedatum');
+        $woonplaats = $this->input->post('woonplaats');
+        $adres = $this->input->post('adres');
+        $rekeningnummer = $this->input->post('rekeningnummer');
+        $gebruikersnaam = $this->input->post('gebruikersnaam');
+        $passwoord = $this->input->post('passwoord');
+        $email = $this->input->post('email');
+        $id = $this->input->post('id');
+
+        $this->verzorger_model->updaten($id, $naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email);
+        redirect('verzorger/verzorgersBeheren');
     }
 
 }

@@ -45,10 +45,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?>
                 </li>
+<<<<<<< HEAD
 
 
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('verzorger/toonVerzorger', 'Verzorger bekijken'); ?></a>
+=======
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Verzorgers
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
+                        <a class="nav-link" href="#"><?php echo anchor('verzorger/toonVerzorger', 'Verzorger bekijken'); ?></a>
+                        <a class="nav-link" href="#"><?php echo anchor('verzorger/verzorgersBeheren', 'Verzorgers beheren'); ?></a>
+                    </div>
+>>>>>>> Verzorgers beheren
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
