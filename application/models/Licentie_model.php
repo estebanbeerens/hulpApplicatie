@@ -9,7 +9,6 @@
     /**
      * @class Patient_model
      * @brief Model-klasse voor patienten
-     *
      * Model-klasse die alle methodes bevat om te
      */
 
@@ -26,13 +25,8 @@
             return $query->result();
         }
 
-        function insert($naam, $prijs, $beschrijving) {
-            $licentie = new stdClass();
-            $licentie->naam = $naam;
-            $licentie->prijs = $prijs;
-            $licentie->beschrijving = $beschrijving;
-
-            $this->db->insert('soortLicentie', $licentie);
+        function insert($soortLicentie) {
+            $this->db->insert('soortLicentie', $soortLicentie);
             return $this->db->insert_id();
         }
     }

@@ -7,7 +7,7 @@
      */
 
     $licentieToevoegenFormulier = array('id' => 'licentieToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
-    echo form_open('behandelValidatie', $licentieToevoegenFormulier);
+    echo form_open('Licentie/insertLicentie', $licentieToevoegenFormulier);
 ?>
 
 <div class="form-row">
@@ -25,18 +25,22 @@
         <div class="invalid-feedback">Geef een naam op.</div>
     </div>
     <div class="form-group col-md-2">
-        <?php
-            echo form_label('Prijs', 'prijs');
-
-            $dataPrijs = array('id' => 'prijs',
-                'name' => 'prijs',
-                'type' => 'number',
-                'class' => 'form-control',
-                'placeholder' => '€',
-                'required' => 'required');
-            echo form_input($dataPrijs) . "\n";
-        ?>
-        <div class="invalid-feedback">Geef een prijs op.</div>
+        <?php echo form_label('Prijs', 'prijs'); ?>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">€</span>
+            </div>
+            <?php
+                $dataPrijs = array('id' => 'prijs',
+                    'name' => 'prijs',
+                    'type' => 'number',
+                    'min' => 0,
+                    'class' => 'form-control',
+                    'required' => 'required');
+                echo form_input($dataPrijs) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een prijs op.</div>
+        </div>
     </div>
     <div class="form-group col-md-10">
         <?php
