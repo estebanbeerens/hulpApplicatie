@@ -19,7 +19,7 @@
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Home'); ?></a>
                 </li>
                 <li class="nav-item dropdown">
-<<<<<<< HEAD
+
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownPatient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Patiënt
                     </a>
@@ -38,7 +38,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?></a>
->>>>>>> 1a396f95ea7e048da54096f29a6a7eb4bff63b51
+
                 </li>
 
 
