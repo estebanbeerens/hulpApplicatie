@@ -20,17 +20,24 @@
                 </li>
                 <li class="nav-item dropdown">
 
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownPatient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <a class="nav-link dropdown-toggle" href="#" id="dropdownPatient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Patiënt
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownPatient">
                         <a class="dropdown-item" href="#"><?php echo anchor('patient/toonPatient', 'Patiënt bekijken'); ?></a>
                         <a class="dropdown-item" href="#"><?php echo anchor('patient/beheerPatient', 'Patiënt beheren'); ?></a>
                     </div>
-=======
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownPatienten" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Patienten
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownAgendaPatient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Agenda Patient
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownAgendaPatient">
+                        <a class="dropdown-item" href="#"><?php echo anchor('patient/toonAgendaPatient', 'Agenda Patiënt bekijken'); ?></a>
+                        <a class="dropdown-item" href="#"><?php echo anchor('patient/beheerAgendaPatient', 'Agenda Patiënt beheren'); ?></a>
+                    </div>
+
+
                     <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
                         <a class="nav-link dropdown-item" href=""><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?></a>
                         <a class="dropdown-item" href=""><?php echo anchor('patient/agendaPatientBekijken', 'Agenda patient bekijken'); ?></a>
