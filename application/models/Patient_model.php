@@ -21,8 +21,8 @@ class Patient_model extends CI_Model
     }
     function getPatient()
     {
-
-        $this->db->where('soortPersoonId', 5);
+        $this->db->order_by("naam", "asc");
+        $this->db->where('soortPersoonId', 4);
         $query = $this->db->get('persoon');
         return $query->result();
     }
