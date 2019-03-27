@@ -49,11 +49,19 @@ nav{
     background-color: #66c1f9;
 }
 /** Evenement beheren **/
-.eventbeheren table{
+.overzicht table{
     border-collapse: collapse;
 }
 
-.eventbeheren table tr td{
+.overzicht table tr td{
    padding: 5px 10px;
     border-bottom: 2px solid lightgrey;
+}
+
+.delete{
+    cursor: pointer;
+}
+
+.delete:hover{
+    color: red;
 }

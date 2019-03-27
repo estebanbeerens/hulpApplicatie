@@ -104,23 +104,8 @@ class Home extends CI_Controller
         $gebruikersnaam = $this->input->post('naam');
         $passwoord = $this->input->post('passwoord');
 
-        if ($soortPersoon = $this->authex->meldAan($gebruikersnaam, $passwoord)) {
-            switch ($soortPersoon) {
-                case 1:
-                    $this->patientBekijken();
-                    break;
-                case 2:
-                    $this->patientBekijken();
-                    break;
-                case 3:
-                    $this->patientBekijken();
-                    break;
-                case 4:
-                    redirect('/evenement/toonEvenement');
-                    break;
-                default:
-
-            }
+        if ($this->authex->meldAan($gebruikersnaam, $passwoord) == "") {
+            redirect('/evenement/toonEvenement');
         } else {
             redirect('home/toonFout');
         }

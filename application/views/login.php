@@ -21,9 +21,9 @@ echo form_open('home/controleerAanmelden', $attributes);
 
 <div class="form-group">
     <?php
-    echo form_label('Wachtwoord', 'wachtwoord');
-    $dataWachtwoord = array('id' => 'wachtwoord',
-            'name' => 'wachtwoord',
+    echo form_label('Wachtwoord', 'passwoord');
+    $dataWachtwoord = array('id' => 'passwoord',
+            'name' => 'passwoord',
             'class' => 'form-control',
             'placeholder' => 'Wachtwoord',
             'required' => 'required');

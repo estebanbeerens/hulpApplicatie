@@ -56,7 +56,6 @@ class evenement_model extends CI_Model
     function updaten($id, $naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd)
     {
 
-
         $evenement = new stdClass();
         $evenement->id = $id;
         $evenement->naam = $naam;
@@ -72,4 +71,10 @@ class evenement_model extends CI_Model
         $this->db->where('id', $id)->update('evenement', $evenement);
     }
 
+    function deleten($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->delete('evenement');
+
+    }
 }

@@ -55,7 +55,7 @@
             }
         }
 
-        function meldAan($gebruikersnaam, $passwoord, $soortPersoon)
+        function meldAan($gebruikersnaam, $passwoord)
         {
             // gebruiker aanmelden met opgegeven email en wachtwoord
             $CI =& get_instance();
@@ -67,7 +67,7 @@
             } else {
                 $CI->session->set_userdata('gebruiker_id', $gebruiker->id);
                 return $gebruiker->soortPersoon;
-            }
+        }
         }
 
         function meldAf()

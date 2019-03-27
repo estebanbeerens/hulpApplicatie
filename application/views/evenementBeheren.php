@@ -22,6 +22,7 @@
                 <td>Eindtijd</td>
                 <td>Locatie</td>
                 <td>Beschrijving</td>
+                <td></td>
             </tr>
             <?php foreach ($evenement as $item){ ?>
             <tr>
@@ -32,6 +33,7 @@
                 <td><?php echo $item->eindTijd; ?></td>
                 <td><?php echo $item->locatie; ?></td>
                 <td><?php echo $item->beschrijving; ?></td>
+                <td class="delete"><?php echo "<a href='evenementDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\"></i></a>"; ?></td>
             </tr>
             <?php } ?>
         </table>
