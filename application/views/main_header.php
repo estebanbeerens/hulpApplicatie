@@ -80,6 +80,13 @@
                     </div>
                 </li>
 
+
+
+                <li class="nav-item">
+                    <?php if ($gebruiker != null) { // niet aangemeld
+                        echo divAnchor('home/meldAf', 'Afmelden');} ?>
+                </li>
+
             </ul>
         </div>
     </nav>

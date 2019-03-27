@@ -28,6 +28,8 @@ class Evenement extends CI_Controller
 
         $this->load->model('evenement_model');
         $data['evenement'] =$this->evenement_model->getEvenement();
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
             'inhoud' => 'evenementBekijken',
@@ -74,6 +76,7 @@ class Evenement extends CI_Controller
 
         $this->load->model('evenement_model');
         $data['evenement'] =$this->evenement_model->getEvenement();
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'evenementBeheren',
             'menu' => 'main_menu',
