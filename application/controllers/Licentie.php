@@ -29,4 +29,17 @@ class Licentie extends CI_Controller
 
         $this->template->load('main_master', $partials, $data);
     }
+
+    public function licentieToevoegen() {
+        $data['titel'] = 'Licentie Toevoegen';
+        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
+        $data['tester'] = 'vul mij in';
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'licentieToevoegen',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
 }

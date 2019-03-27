@@ -34,6 +34,9 @@
                     <a class="nav-link" href="#"><?php echo anchor('licentie/licentieAankopen', 'Licentie aankopen'); ?></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#"><?php echo anchor('licentie/licentieToevoegen', 'Licentie toevoegen'); ?></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('verzorger/toonVerzorger', 'Verzorger bekijken'); ?></a>
                 </li>
                 <li class="nav-item dropdown">

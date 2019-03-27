@@ -1,6 +1,9 @@
-<h1><? echo $titel ?></h1>
+<h1><?php echo $titel ?></h1>
 <div class="row">
-<?
+<?php
+    /**
+     * User: Esteban
+     */
     foreach ($licentie as $item) {
         if ($item->prijs != 0) {
             $prijs = '€ ' . $item->prijs;
