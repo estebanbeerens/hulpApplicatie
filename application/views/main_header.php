@@ -19,6 +19,15 @@
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Home'); ?></a>
                 </li>
                 <li class="nav-item dropdown">
+<<<<<<< HEAD
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownPatient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Patiënt
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownPatient">
+                        <a class="dropdown-item" href="#"><?php echo anchor('patient/toonPatient', 'Patiënt bekijken'); ?></a>
+                        <a class="dropdown-item" href="#"><?php echo anchor('patient/beheerPatient', 'Patiënt beheren'); ?></a>
+                    </div>
+=======
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownPatienten" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Patienten
                     </a>
@@ -29,7 +38,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?></a>
+>>>>>>> 1a396f95ea7e048da54096f29a6a7eb4bff63b51
                 </li>
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('verzorger/toonVerzorger', 'Verzorger bekijken'); ?></a>
                 </li>
@@ -51,6 +63,7 @@
                         <a class="dropdown-item" href="#"><?php echo anchor('licentie/licentieToevoegen', 'Licentie toevoegen'); ?></a>
                     </div>
                 </li>
+
             </ul>
         </div>
     </nav>

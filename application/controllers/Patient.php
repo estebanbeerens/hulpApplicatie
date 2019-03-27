@@ -19,10 +19,28 @@ class Patient extends CI_Controller
     }
 
       public function toonPatient()
-    {
-        $data['titel'] = 'Patient tonen';
+{
+    $data['titel'] = 'Patient tonen';
 
-        $data['ontwerper'] = 'René Vanhoof';
+    $data['ontwerper'] = 'René Vanhoof';
+    $data['tester'] = 'Geen Idee';
+
+
+    $this->load->model('Patient_model');
+    $data['patient'] =$this->Patient_model->getPatient();
+    $partials = array('hoofding' => 'main_header',
+        'menu' => 'main_menu',
+        'inhoud' => 'patientBekijken',
+        'voetnoot' => 'main_footer');
+
+    $this->template->load('main_master', $partials, $data);
+}
+
+    public function beheerPatient()
+    {
+        $data['titel'] = 'Patient beheren';
+
+        $data['ontwerper'] = 'Seppe Peeters';
         $data['tester'] = 'Geen Idee';
 
 
