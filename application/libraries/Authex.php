@@ -55,7 +55,7 @@
             }
         }
 
-        function meldAan($gebruikersnaam, $passwoord)
+        function meldAan($gebruikersnaam, $passwoord, $soortPersoon)
         {
             // gebruiker aanmelden met opgegeven email en wachtwoord
             $CI =& get_instance();

@@ -19,8 +19,8 @@ class Home extends CI_Controller
         $data['ontwerper'] = '????';
         $data['tester'] = '???';
 
-        $data['ontwerper'] = 'Vul mij in';
-        $data['tester'] = 'vul mij in';
+        $data['ontwerper'] = 'Jeroen';
+        $data['tester'] = 'Esteban';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
@@ -77,6 +77,7 @@ class Home extends CI_Controller
         $data['titel'] = 'Aanmelden';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
+
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
             'inhoud' => 'home_aanmelden',
@@ -100,11 +101,26 @@ class Home extends CI_Controller
 
     public function controleerAanmelden()
     {
-        $gebruikersnaam = $this->input->post('gebruikersnaam');
+        $gebruikersnaam = $this->input->post('naam');
         $passwoord = $this->input->post('passwoord');
 
-        if ($this->authex->meldAan($gebruikersnaam, $passwoord)) {
-            redirect('evenement/toonevenement');
+        if ($soortPersoon = $this->authex->meldAan($gebruikersnaam, $passwoord)) {
+            switch ($soortPersoon) {
+                case 1:
+                    $this->patientBekijken();
+                    break;
+                case 2:
+                    $this->patientBekijken();
+                    break;
+                case 3:
+                    $this->patientBekijken();
+                    break;
+                case 4:
+                    redirect('/evenement/toonEvenement');
+                    break;
+                default:
+
+            }
         } else {
             redirect('home/toonFout');
         }

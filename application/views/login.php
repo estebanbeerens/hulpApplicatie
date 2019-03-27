@@ -1,26 +1,47 @@
 <h1>Inloggen</h1>
 <?php
-$attributes = array('name' => 'mijnFormulier');
+$attributes = array('name' => 'mijnFormulier','novalidate' => 'novalidate', 'class' => 'needs-validation');
 echo form_open('home/controleerAanmelden', $attributes);
+
 ?>
+
 <table>
     <tr>
-        <td><?php echo form_label('Gebruikersnaam:', 'gebruikersnaam'); ?></td>
-        <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30')); ?></td>
-    </tr>
-    <tr>
-        <td><?php echo form_label('Wachtwoord:', 'passwoord'); ?></td>
-        <td><?php
-            $data = array('name' => 'passwoord', 'id' => 'passwoord', 'size' => '30');
-            echo form_password($data);
+        <div class="form-group">
+            <?php
+            echo form_label('Naam', 'naam');
+
+            $dataNaam = array('id' => 'naam',
+                'name' => 'naam',
+                'class' => 'form-control',
+                'placeholder' => 'Gebruikersnaam',
+                'required' => 'required');
+            echo form_input($dataNaam) . "\n";
             ?>
-        </td>
+            <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
+        </div>
     </tr>
     <tr>
-        <td></td>
-        <td><?php echo form_submit('knop', 'Verzenden'); ?></td>
+        <div class="form-group">
+        <?php
+        echo form_label('Wachtwoord', 'wachtwoord');
+        $dataWachtwoord = array('id' => 'wachtwoord',
+            'name' => 'wachtwoord',
+            'class' => 'form-control',
+            'placeholder' => 'Wachtwoord',
+            'required' => 'required');
+        echo form_password($dataWachtwoord);
+        ?>
+        <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
+        </div>
+    </tr>
+    <tr>
+        <div class="form-group">
+            <?php echo form_submit('knop', 'Inloggen', "class='btn btn-primary'") ?>
+        </div>
     </tr>
 </table>
+
 
 <?php echo form_close(); ?>
 
