@@ -157,4 +157,14 @@ class Evenement extends CI_Controller
         redirect('evenement/evenementBeheren');
     }
 
+    public function evenementDeleten(){
+
+        $this->load->model('evenement_model');
+
+        $id=$this->input->get('id');
+        $this->evenement_model->deleten($id);
+
+        redirect('evenement/evenementBeheren');
+    }
+
 }

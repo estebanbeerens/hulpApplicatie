@@ -71,4 +71,10 @@ class evenement_model extends CI_Model
         $this->db->where('id', $id)->update('evenement', $evenement);
     }
 
+    function deleten($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->delete('evenement');
+
+    }
 }

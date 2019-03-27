@@ -57,3 +57,11 @@ nav{
    padding: 5px 10px;
     border-bottom: 2px solid lightgrey;
 }
+
+.delete{
+    cursor: pointer;
+}
+
+.delete:hover{
+    color: red;
+}
