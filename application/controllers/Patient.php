@@ -48,7 +48,7 @@ class Patient extends CI_Controller
         $data['patient'] =$this->Patient_model->getPatient();
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
-            'inhoud' => 'patientBekijken',
+            'inhoud' => 'patientBeheer',
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);
