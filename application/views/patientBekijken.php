@@ -8,16 +8,33 @@
     <title><?php echo $titel?></title>
 </head>
 <body>
-<?php foreach ($patient as $item){
-
-    echo "<h3>"."Naam: " .$item->naam. " ". $item->voornaam."</h3>";
-    echo "<p>"."Geboortedatum: " .$item->geboortedatum."</p>";
-    echo "<p>"."Woonplaats: " .$item->woonplaats."</p>";
-    echo "<p>"."Adres: " .$item->adres."</p>";
-    echo "<p>"."Rekeningnummer: " .$item->rekeningnummer."</p>";
-    echo "<p>"."Gebruikersnaam: " .$item->gebruikersnaam."</p>";
-    echo "<p>"."passwoord: " .$item->passwoord."</p>";
-    echo "<p>"."Email: " .$item->email."</p>";
-}
-?>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Naam</th>
+            <th>Voornaam</th>
+            <th>geboortedatum</th>
+            <th>woonplaats</th>
+            <th>adres</th>
+            <th>rekeningnummer</th>
+            <th>wachtwoord</th>
+            <th>email</th>
+        </tr>
+        <?php foreach ($patient as $item){ ?>
+            <tr>
+                <td><?php echo $item->id; ?></td>
+                <td><?php echo $item->naam; ?></td>
+                <td><?php echo $item->voornaam; ?></td>
+                <td><?php echo $item->geboortedatum; ?></td>
+                <td><?php echo $item->woonplaats; ?></td>
+                <td><?php echo $item->adres; ?></td>
+                <td><?php echo $item->rekeningnummer; ?></td>
+                <td><?php echo $item->gebruikersnaam; ?></td>
+                <td><?php echo $item->passwoord; ?></td>
+                <td><?php echo $item->email; ?></td>
+            </tr>
+        <?php } ?>
+    </table>
+</div>
 </body>
