@@ -2,33 +2,59 @@
 
 <?php
     /**
-     * User: Esteban
+     * Ontwerper: Esteban
+     * Tester: ?
      */
+
+    $licentieToevoegenFormulier = array('id' => 'licentieToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
+    echo form_open('behandelValidatie', $licentieToevoegenFormulier);
 ?>
 
-<form action="">
-    <div class="form-row">
-        <div class="form-group col-md-5">
-            <label for="licentieNaam">Naam</label>
-            <input class="form-control" id="licentieNaam" placeholder="Naam van de licentie">
-            <div class="invalid-feedback">
-                Geef een naam op.
-            </div>
-        </div>
-        <div class="form-group col-md-2">
-            <label for="licentiePrijs">Prijs</label>
-            <input type="number" class="form-control" id="licentiePrijs" placeholder="€">
-            <div class="invalid-feedback">
-                Geef een prijs op.
-            </div>
-        </div>
-        <div class="form-group col-md-10">
-            <label for="licentieBeschrijving">Beschrijving</label>
-            <textarea class="form-control" rows="5" id="licentieBeschrijving" placeholder="Beschrijving"></textarea>
-            <div class="invalid-feedback">
-                Geef een beschrijving op.
-            </div>
-        </div>
+<div class="form-row">
+    <div class="form-group col-md-5">
+        <?php
+            echo form_label('Licentienaam', 'naam');
+
+            $dataNaam = array('id' => 'naam',
+                'name' => 'naam',
+                'class' => 'form-control',
+                'placeholder' => 'Licentienaam',
+                'required' => 'required');
+            echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een naam op.</div>
     </div>
-    <button type="submit" class="btn btn-primary">Toevoegen</button
-</form>
+    <div class="form-group col-md-2">
+        <?php
+            echo form_label('Prijs', 'prijs');
+
+            $dataPrijs = array('id' => 'prijs',
+                'name' => 'prijs',
+                'type' => 'number',
+                'class' => 'form-control',
+                'placeholder' => '€',
+                'required' => 'required');
+            echo form_input($dataPrijs) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een prijs op.</div>
+    </div>
+    <div class="form-group col-md-10">
+        <?php
+            echo form_label('Beschrijving', 'beschrijving');
+
+            $dataBeschrijving = array('id' => 'beschrijving',
+                'name' => 'beschrijving',
+                'class' => 'form-control',
+                'placeholder' => 'Beschrijving',
+                'required' => 'required',
+                'rows' => 5);
+            echo form_textarea($dataBeschrijving) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een beschrijving op.</div>
+    </div>
+
+    <div class="form-group col-md-3">
+        <?php echo form_submit('knop', 'Toevoegen', "class='btn btn-primary'") ?>
+    </div>
+    <?php echo form_close(); ?>
+</div>
