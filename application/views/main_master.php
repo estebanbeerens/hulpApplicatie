@@ -14,7 +14,7 @@
 
     <?php echo haalJavascriptOp("jquery-3.3.1.js"); ?>
     <?php echo haalJavascriptOp("bootstrap.bundle.js"); ?>
-
+    <?php echo haalJavascriptOp("bs_validator.js") ?>
 
 </head>
 

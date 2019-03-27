@@ -25,4 +25,14 @@
             $query = $this->db->get('soortLicentie');
             return $query->result();
         }
+
+        function insert($naam, $prijs, $beschrijving) {
+            $licentie = new stdClass();
+            $licentie->naam = $naam;
+            $licentie->prijs = $prijs;
+            $licentie->beschrijving = $beschrijving;
+
+            $this->db->insert('soortLicentie', $licentie);
+            return $this->db->insert_id();
+        }
     }
