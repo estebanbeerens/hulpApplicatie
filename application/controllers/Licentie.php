@@ -43,6 +43,19 @@ class Licentie extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+    public function licentieBeheren() {
+        $data['titel'] = 'Licenties Beheren';
+        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
+        $data['tester'] = 'vul mij in';
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'licentie/licentieBeheren',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
     public function insertLicentie() {
 
         $soortLicentie = new stdClass();

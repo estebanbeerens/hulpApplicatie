@@ -19,8 +19,7 @@
                     <a class="nav-link" href="#"><?php echo anchor('home/', 'Home'); ?></a>
                 </li>
                 <li class="nav-item dropdown">
-
-                                       <a class="nav-link dropdown-toggle" href="#" id="dropdownPatient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownPatient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Patiënt
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownPatient">
@@ -30,22 +29,21 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownAgendaPatient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Agenda Patient
+                        Agenda Patiënt
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownAgendaPatient">
-                        <a class="dropdown-item" href="#"><?php echo anchor('patient/toonAgendaPatient', 'Agenda Patiënt bekijken'); ?></a>
-                        <a class="dropdown-item" href="#"><?php echo anchor('patient/beheerAgendaPatient', 'Agenda Patiënt beheren'); ?></a>
+                        <?php echo anchor('patient/toonAgendaPatient', 'Agenda Patiënt bekijken'); ?>
+                        <?php echo anchor('patient/beheerAgendaPatient', 'Agenda Patiënt beheren'); ?>
                     </div>
 
 
                     <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
-                        <a class="nav-link dropdown-item" href=""><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?></a>
-                        <a class="dropdown-item" href=""><?php echo anchor('patient/agendaPatientBekijken', 'Agenda patient bekijken'); ?></a>
+                        <?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?>
+                        <?php echo anchor('patient/agendaPatientBekijken', 'Agenda patient bekijken'); ?>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?></a>
-
+                    <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?>
                 </li>
 
 
@@ -57,8 +55,8 @@
                         Evenementen
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
-                        <a class="dropdown-item" href=""><?php echo anchor('evenement/evenementBeheren', 'Evenement beheren'); ?></a>
-                        <a class="dropdown-item" href=""><?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen'); ?></a>
+                        <?php echo anchor('evenement/evenementBeheren', 'Evenement beheren'); ?>
+                        <?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen'); ?>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -66,8 +64,8 @@
                         Licenties
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownLicenties">
-                        <a class="dropdown-item" href="#"><?php echo anchor('licentie/licentieAankopen', 'Licentie aankopen'); ?></a>
-                        <a class="dropdown-item" href="#"><?php echo anchor('licentie/licentieToevoegen', 'Licentie toevoegen'); ?></a>
+                        <?php echo anchor('licentie/licentieAankopen', 'Licentie aankopen'); ?>
+                        <?php echo anchor('licentie/licentieToevoegen', 'Licentie toevoegen'); ?>
                     </div>
                 </li>
 
