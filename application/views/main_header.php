@@ -25,6 +25,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownPatient">
                         <a class="dropdown-item" href="#"><?php echo anchor('patient/toonPatient', 'Patiënt bekijken'); ?></a>
                         <a class="dropdown-item" href="#"><?php echo anchor('patient/beheerPatient', 'Patiënt beheren'); ?></a>
+                        <a class="dropdown-item" href="#"><?php echo anchor('patient/patientViewLaden', 'Patiënt toevoegen'); ?></a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

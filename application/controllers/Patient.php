@@ -70,6 +70,43 @@ class Patient extends CI_Controller
 
         $this->template->load('main_master', $partials, $data);
     }
+    public function patientViewLaden()
+    {
+        $data['titel'] = 'Patient toevoegen';
+
+        $data['ontwerper'] = 'Seppe Peeters';
+        $data['tester'] = 'vul mij in';
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'patientToevoegenPage',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+    public function patientToevoegen()
+    {
+
+
+        $naam = $this->input->post('naam');
+        $id = $this->input->post('id');
+        $voornaam = $this->input->post('voornaam');
+        $geboortedatum = $this->input->post('geboortedatum');
+        $woonplaats = $this->input->post('woonplaats');
+        $adres = $this->input->post('adres');
+        $rekeningnummer = $this->input->post('rekeningnummer');
+        $gebruikersnaam = $this->input->post('gebruikersnaam');
+        $passwoord = $this->input->post('passwoord');
+        $email = $this->input->post('email');
+
+        $this->load->model('patient_model');
+        $this->patient_model->insert( $id,$naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email, 4);
+
+        redirect('patient/patientViewLaden');
+
+    }
+
+
     public function agendaPatientBekijken()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Agenda patient bekijken';

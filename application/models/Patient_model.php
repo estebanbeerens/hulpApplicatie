@@ -45,36 +45,38 @@ class Patient_model extends CI_Model
 
     function insert($id,$naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
-        $verzorger = new stdClass();
-        $verzorger->naam = $naam;
-        $verzorger->voornaam = $voornaam;
-        $verzorger->geboortedatum = $geboortedatum;
-        $verzorger->woonplaats = $woonplaats;
-        $verzorger->adres = $adres;
-        $verzorger->rekeningnummer = $rekeningnummer;
-        $verzorger->gebruikersnaam = $gebruikersnaam;
-        $verzorger->passwoord = $passwoord;
-        $verzorger->email = $email;
+        $patient = new stdClass();
+        $patient->id = 15;
+        $patient->naam = $naam;
+        $patient->voornaam = $voornaam;
+        $patient->geboortedatum = $geboortedatum;
+        $patient->woonplaats = $woonplaats;
+        $patient->adres = $adres;
+        $patient->rekeningnummer = $rekeningnummer;
+        $patient->gebruikersnaam = $gebruikersnaam;
+        $patient->passwoord = $passwoord;
+        $patient->email = $email;
+        $patient->soortPersoonId = 4;
 
-        $this->db->insert('persoon',$verzorger);
+        $this->db->insert('persoon',$patient);
         return $this->db->insert_id();
     }
 
     function updaten($id,$naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
-        $verzorger = new stdClass();
-        $verzorger->id = $id;
-        $verzorger->naam = $naam;
-        $verzorger->voornaam = $voornaam;
-        $verzorger->geboortedatum = $geboortedatum;
-        $verzorger->woonplaats = $woonplaats;
-        $verzorger->adres = $adres;
-        $verzorger->rekeningnummer = $rekeningnummer;
-        $verzorger->gebruikersnaam = $gebruikersnaam;
-        $verzorger->passwoord = $passwoord;
-        $verzorger->email = $email;
+        $patient = new stdClass();
+        $patient->id = $id;
+        $patient->naam = $naam;
+        $patient->voornaam = $voornaam;
+        $patient->geboortedatum = $geboortedatum;
+        $patient->woonplaats = $woonplaats;
+        $patient->adres = $adres;
+        $patient->rekeningnummer = $rekeningnummer;
+        $patient->gebruikersnaam = $gebruikersnaam;
+        $patient->passwoord = $passwoord;
+        $patient->email = $email;
 
         $this->db->where('id',$id);
-        $this->db->update('persoon',$verzorger);
+        $this->db->update('persoon',$patient);
     }
 }
