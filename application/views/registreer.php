@@ -22,12 +22,12 @@ echo form_open('home/registreerGebruiker', $attributes);
     </div>
     <div class="form-group col-md-4">
         <?php
-        echo form_label('familienaam', 'familienaam');
+        echo form_label('Familienaam', 'familienaam');
 
         $dataNaam = array('id' => 'familienaam',
             'name' => 'familienaam',
             'class' => 'form-control',
-            'placeholder' => 'familienaam',
+            'placeholder' => 'Familienaam',
             'required' => 'required');
         echo form_input($dataNaam) . "\n";
         ?>
@@ -35,12 +35,12 @@ echo form_open('home/registreerGebruiker', $attributes);
     </div>
     <div class="form-group col-md-4">
         <?php
-        echo form_label('wachtwoord', 'wachtwoord');
+        echo form_label('Wachtwoord', 'wachtwoord');
 
         $dataNaam = array('id' => 'wachtwoord',
             'name' => 'wachtwoord',
             'class' => 'form-control',
-            'placeholder' => 'wachtwoord',
+            'placeholder' => 'Wachtwoord',
             'required' => 'required');
         echo form_input($dataNaam) . "\n";
         ?>
@@ -48,12 +48,12 @@ echo form_open('home/registreerGebruiker', $attributes);
     </div>
     <div class="form-group col-md-4">
         <?php
-        echo form_label('email', 'email');
+        echo form_label('Email', 'email');
 
         $dataNaam = array('id' => 'email',
             'name' => 'email',
             'class' => 'form-control',
-            'placeholder' => 'email',
+            'placeholder' => 'Email',
             'required' => 'required');
         echo form_input($dataNaam) . "\n";
         ?>
