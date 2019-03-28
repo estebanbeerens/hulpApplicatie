@@ -66,7 +66,7 @@
                 return false;
             } else {
                 $CI->session->set_userdata('gebruiker_id', $gebruiker->id);
-                return $gebruiker->soortPersoon;
+                return true;
         }
         }
 
