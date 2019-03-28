@@ -21,13 +21,21 @@ class Home extends CI_Controller
         $data['tester'] = 'Esteban';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
-        $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'login',
-            'menu' => 'main_menu',
-            'voetnoot' => 'main_footer');
+        if($this->authex->isAangemeld()){
 
-        $this->template->load('main_master', $partials, $data);
+            redirect('patient/toonpatient');
+        } else {
+            $partials = array('hoofding' => 'main_header',
+                'inhoud' => 'login',
+                'menu' => 'main_menu',
+                'voetnoot' => 'main_footer');
+
+            $this->template->load('main_master', $partials, $data);
+        }
+
     }
+
+
 
     public function evenementBeheren()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
@@ -103,7 +111,7 @@ class Home extends CI_Controller
         $passwoord = $this->input->post('passwoord');
 
         if ($this->authex->meldAan($gebruikersnaam, $passwoord)) {
-            redirect('/evenement/toonEvenement');
+            redirect('/patient/toonpatient');
         } else {
             redirect('home/toonFout');
         }
