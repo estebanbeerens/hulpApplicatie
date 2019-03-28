@@ -26,6 +26,13 @@ class Patient_model extends CI_Model
         $query = $this->db->get('persoon');
         return $query->result();
     }
+    function getAgendaPatient()
+    {
+        $this->db->order_by("naam", "asc");
+        $this->db->where('soortPersoonId', 4);
+        $query = $this->db->get('persoon');
+        return $query->result();
+    }
 
     function getPatientById($id)
     {
