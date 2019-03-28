@@ -32,7 +32,7 @@
                         Agenda Patiënt
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownAgendaPatient">
-                        <?php echo anchor('patient/toonAgendaPatient', 'Agenda Patiënt bekijken'); ?>
+                        <?php echo anchor('patient/agendaPatientBekijken', 'Agenda Patiënt bekijken'); ?>
                         <?php echo anchor('patient/beheerAgendaPatient', 'Agenda Patiënt beheren'); ?>
                     </div>
 
