@@ -43,7 +43,7 @@ class Patient_model extends CI_Model
         return $query->row();
     }
 
-    function insert($id,$naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
+    function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
         $patient = new stdClass();
 
@@ -54,7 +54,7 @@ class Patient_model extends CI_Model
         $patient->adres = $adres;
         $patient->rekeningnummer = $rekeningnummer;
         $patient->gebruikersnaam = $gebruikersnaam;
-        $patient->passwoord = $passwoord;
+        $patient->passwoord = password_hash($passwoord, PASSWORD_DEFAULT);
         $patient->email = $email;
         $patient->soortPersoonId = 4;
 
@@ -62,7 +62,7 @@ class Patient_model extends CI_Model
         return $this->db->insert_id();
     }
 
-    function updaten($id,$naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
+    function updaten($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
         $patient = new stdClass();
         $patient->id = $id;

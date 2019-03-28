@@ -16,7 +16,7 @@
     ?>
     <table>
         <th>Patiënt toevoegen</th>
-      
+
         <tr>
             <td><?php echo form_label('Naam:', 'naam'); ?></td>
             <td><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'size' => '30', 'value' => '')); ?></td>
