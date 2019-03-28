@@ -23,6 +23,7 @@
             <th>woonplaats</th>
             <th>adres</th>
             <th>rekeningnummer</th>
+            <th>gebruikersnaam</th>
             <th>wachtwoord</th>
             <th>email</th>
             <th></th>

@@ -43,6 +43,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownPatient">
                                         <a class="dropdown-item" href="#">' . anchor('patient/toonPatient', 'Patiënt bekijken') . '</a>
                                         <a class="dropdown-item" href="#">' . anchor('patient/beheerPatient', 'Patiënt beheren') . '</a>
+                                         <a class="dropdown-item" href="#">' . anchor('patient/patientViewLaden', 'Patiënt toevoegen') . '</a>
                                     </div>
                                    </li>';
 

@@ -194,10 +194,7 @@ class Home extends CI_Controller
                 $this->session->set_userdata('boodschap', 'E-mail bestaat reeds. Probeer opnieuw.');
                 $this->session->set_userdata('link', array('url' => '/home/registreer', 'tekst' => 'Terug'));
             }
-  //      } else {
-        //    $this->session->set_userdata('titel', 'Fout');
-         //   $this->session->set_userdata('boodschap', 'Gelieve alle tekstvakken (naam, e-mail én wachtwoord) correct in te vullen.');
-          //  $this->session->set_userdata('link', array('url' => '/home/registreer', 'tekst' => 'Terug'));
+
         }
         redirect('/home/toonMelding');
     }
