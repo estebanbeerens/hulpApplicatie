@@ -44,7 +44,7 @@ class Patient extends CI_Controller
 
 
         $this->load->model('Patient_model');
-        $data['patient'] =$this->Patient_model->getAgendaPatient();
+        $data['agenda'] =$this->Patient_model->getAgendaPatient();
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
             'inhoud' => 'agendaBekijken',
@@ -114,8 +114,10 @@ class Patient extends CI_Controller
         $data['ontwerper'] = 'René Vanhoof';
         $data['tester'] = 'vul mij in';
 
+        $this->load->model('Patient_model');
+        $data['agenda'] =$this->Patient_model->getAgendaPatient();
         $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'agendaPatientBekijken',
+            'inhoud' => 'agendaBekijken',
             'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 

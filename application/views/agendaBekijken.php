@@ -12,12 +12,16 @@
         <table class="table">
             <tr>
                 <th>Id</th>
+                <th>PersoonId</th>
+                <th>EvenementId</th>
                 <th>Naam</th>
             </tr>
-            <?php foreach ($patient as $item){ ?>
+            <?php foreach ($agenda as $item){ ?>
             <tr>
                 <td><?php echo $item->id; ?></td>
-                <td><?php echo $item->naam; ?></td>
+                <td><?php echo $item->persoonId; ?></td>
+                <td><?php echo $item->evenementId; ?></td>
+                <td><?php echo $item->naam;?></td>
             </tr>
             <?php } ?>
         </table>

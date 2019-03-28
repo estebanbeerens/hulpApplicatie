@@ -27,8 +27,8 @@ class Patient_model extends CI_Model
         return $query->result();
     }
     function getAgendaPersoon($persoonId){
-        $this->db->where('persoonId', $persoonId);
-        $query = $this->db->get('persoonEvenement');
+        $this->db->where('Id', $persoonId);
+        $query = $this->db->get('persoon');
         return $query->result();
     }
     function getAgendaPatient()
@@ -39,7 +39,16 @@ class Patient_model extends CI_Model
         //return $query->result();
 
 
-        $query = $this->db->get('persoon');
+        $query = $this->db->get('persoonEvenement');
+        $agendas = $query->result();
+        $this->load->model('Patient_model');
+
+        foreach ($agendas as $agenda)
+        {
+            $agenda->agenda = $this->Patient_model->getAgendaPersoon($agenda->persoonId);
+
+        }
+        return $agendas;
     }
 
     function getPatientById($id)
