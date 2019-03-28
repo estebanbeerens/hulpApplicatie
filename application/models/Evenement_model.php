@@ -53,26 +53,16 @@ class evenement_model extends CI_Model
 
     }
 
-    function updaten($id, $naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd)
+    function updaten($evenement)
     {
 
         /**
          * Het updaten van een evenement in het database
          */
 
-        $evenement = new stdClass();
-        $evenement->id = $id;
-        $evenement->naam = $naam;
-        $evenement->meldingTijd = $meldingTijd;
-        $evenement->beschrijving = $beschrijving;
-        $evenement->locatie = $locatie;
-        $evenement->verplicht = $verplicht;
-        $evenement->isHerhaling = $isHerhaling;
-        $evenement->datum = $datum;
-        $evenement->startTijd = $startTijd;
-        $evenement->eindTijd = $eindTijd;
 
-        $this->db->where('id', $id)->update('evenement', $evenement);
+        $this->db->where('id', $evenement->id);
+        $this->db->update('evenement', $evenement);
     }
 
     function deleten($id)
@@ -85,6 +75,13 @@ class evenement_model extends CI_Model
         $this->db->where('id',$id);
         $this->db->delete('evenement');
 
+    }
+
+
+    function getSpecificEvenement($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('evenement');
+        return $query->row();
     }
 
 }
