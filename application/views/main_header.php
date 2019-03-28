@@ -18,8 +18,7 @@
 
                 <?php
 
-                if ($gebruiker == null) { // niet aangemeld
-                    echo divAnchor('home/meldAan', 'Aanmelden');
+                if ($gebruiker == null) { // niet aangemeldecho divAnchor('home/meldAan', 'Aanmelden');
                 } else { // wel aangemeld
                     echo divAnchor('home/meldAf', 'Afmelden');
                     switch ($gebruiker->soortPersoonId) {
@@ -42,7 +41,7 @@
                                             Patiënt
                                         </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownPatient">
-                                        <a class="dropdown-item" href="#">' . anchor('patient/beheerPatient', 'Patiënt beheren') . '</a>
+                                        <a class="dropdown-item" href="#">' . anchor('patient/toonPatient', 'Patiënt bekijken') . '</a>
                                         <a class="dropdown-item" href="#">' . anchor('patient/beheerPatient', 'Patiënt beheren') . '</a>
                                     </div>
                                    </li>';
@@ -88,14 +87,13 @@
                                             Agenda Patiënt
                                         </a>
                                      <div class="dropdown-menu" aria-labelledby="dropdownAgendaPatient">' .
-                                anchor('patient/agendaPatientBekijken', 'Agenda Patiënt bekijken') .
-                                anchor('patient/beheerAgendaPatient', 'Agenda Patiënt beheren') .
-                                '</div>
-                                     <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">' .
-                                anchor('patient/toonPatient', 'Patient bekijken') .
-                                anchor('patient/agendaPatientBekijken', 'Agenda patient bekijken') .
-                                '</div>
+                                        anchor('patient/agendaPatientBekijken', 'Agenda Patiënt bekijken') .
+                                        anchor('patient/beheerAgendaPatient', 'Agenda Patiënt beheren') .
+                                    '</div>
                                   </li>';
+                            echo '<li class="nav-item">
+                                        <a class="nav-link" href="#">' . anchor('patient/toonPatient', 'Patient bekijken') . '</a>
+                                </li>';
 
                             echo '<li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
