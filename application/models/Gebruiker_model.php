@@ -39,18 +39,7 @@ class gebruiker_model extends CI_Model
         }
     }
 
-    function controleerEmailVrij($email)
-    {
-        // is email al dan niet aanwezig
-        $this->db->where('email', $email);
-        $query = $this->db->get('persoon');
 
-        if ($query->num_rows() == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     function insert($naam, $email, $wachtwoord, $gebruikersnaam, $adres, $rekeningnummer, $voornaam, $woonplaats, $geboortedatum)
     {

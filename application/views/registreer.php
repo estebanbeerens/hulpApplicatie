@@ -9,16 +9,110 @@ echo form_open('home/registreerGebruiker', $attributes);
 <div class="row">
     <div class="form-group col-md-4">
         <?php
-            echo form_label('Voornaam', 'voornaam');
+        echo form_label('Voornaam', 'voornaam');
 
-            $dataNaam = array('id' => 'voornaam',
-                'name' => 'voornaam',
-                'class' => 'form-control',
-                'placeholder' => 'Voornaam',
-                'required' => 'required');
-            echo form_input($dataNaam) . "\n";
+        $dataNaam = array('id' => 'voornaam',
+            'name' => 'voornaam',
+            'class' => 'form-control',
+            'placeholder' => 'Voornaam',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
         ?>
         <div class="invalid-feedback">Geef een Voornaam op.</div>
+    </div>
+    <div class="form-group col-md-4">
+        <?php
+        echo form_label('familienaam', 'familienaam');
+
+        $dataNaam = array('id' => 'familienaam',
+            'name' => 'familienaam',
+            'class' => 'form-control',
+            'placeholder' => 'familienaam',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een familienaam op.</div>
+    </div>
+    <div class="form-group col-md-4">
+        <?php
+        echo form_label('wachtwoord', 'wachtwoord');
+
+        $dataNaam = array('id' => 'wachtwoord',
+            'name' => 'wachtwoord',
+            'class' => 'form-control',
+            'placeholder' => 'wachtwoord',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een wachtwoord op.</div>
+    </div>
+    <div class="form-group col-md-4">
+        <?php
+        echo form_label('email', 'email');
+
+        $dataNaam = array('id' => 'email',
+            'name' => 'email',
+            'class' => 'form-control',
+            'placeholder' => 'email',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een email op.</div>
+    </div>
+
+    <div class="form-group col-md-4">
+        <?php
+        echo form_label('woonplaats', 'woonplaats');
+
+        $dataNaam = array('id' => 'woonplaats',
+            'name' => 'woonplaats',
+            'class' => 'form-control',
+            'placeholder' => 'woonplaats',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een woonplaats op.</div>
+    </div>
+
+    <div class="form-group col-md-4">
+        <?php
+        echo form_label('adres', 'adres');
+
+        $dataNaam = array('id' => 'adres',
+            'name' => 'adres',
+            'class' => 'form-control',
+            'placeholder' => 'adres',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een adres op.</div>
+    </div>
+
+    <div class="form-group col-md-4">
+        <?php
+        echo form_label('Geb-datum', 'Geb-datum');
+
+        $dataNaam = array('id' => 'Geb-datum',
+            'name' => 'Geb-datum',
+            'class' => 'form-control',
+            'placeholder' => '1998-09-01',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een Geb-datum op.</div>
+    </div>
+    <div class="form-group col-md-4">
+        <?php
+        echo form_label('gebruikersnaam', 'gebruikersnaam');
+
+        $dataNaam = array('id' => 'gebruikersnaam',
+            'name' => 'gebruikersnaam',
+            'class' => 'form-control',
+            'placeholder' => 'gebruikersnaam',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
     </div>
 </div>
 
@@ -82,6 +176,7 @@ echo form_open('home/registreerGebruiker', $attributes);
 <!--</table>-->
 
 <div class="form-group">
+
     <?php echo form_submit('knop', 'Registreren', "class='btn btn-primary'") ?>
 </div>
 <?php echo form_close(); ?>
