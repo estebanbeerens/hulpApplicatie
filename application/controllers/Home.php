@@ -22,16 +22,18 @@ class Home extends CI_Controller
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         if($this->authex->isAangemeld()){
-
-            redirect('patient/toonpatient');
+            $this->controleerRol();
         } else {
+
             $partials = array('hoofding' => 'main_header',
                 'inhoud' => 'login',
                 'menu' => 'main_menu',
                 'voetnoot' => 'main_footer');
 
             $this->template->load('main_master', $partials, $data);
+
         }
+
 
     }
 
@@ -111,9 +113,31 @@ class Home extends CI_Controller
         $passwoord = $this->input->post('passwoord');
 
         if ($this->authex->meldAan($gebruikersnaam, $passwoord)) {
-            redirect('/patient/toonpatient');
+
+            redirect($this->controleerRol());
         } else {
             redirect('home/toonFout');
+        }
+    }
+
+    public function controleerRol(){
+        $gebruiker = $this->authex->getGebruikerInfo();
+        switch ($gebruiker->soortPersoonId) {
+            case 1:
+                redirect('licentie/licentieAankopen');
+                    break;
+            case 2:
+                redirect('patient/toonpatient');
+                    break;
+            case 3:
+                redirect('patient/toonpatient');
+                break;
+
+            case 4:
+                redirect('evenement/toonEvenement');
+                break;
+            default:
+
         }
     }
 
