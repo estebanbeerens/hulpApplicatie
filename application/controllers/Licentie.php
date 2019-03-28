@@ -13,22 +13,6 @@ class Licentie extends CI_Controller
         $this->load->helper('form');
     }
 
-    public function licentieAankopen() {
-        $data['titel'] = 'Licentie aankopen';
-        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
-        $data['tester'] = 'vul mij in';
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
-
-        $this->load->model('licentie_model');
-        $data['licentie'] = $this->licentie_model->getLicentie();
-
-        $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'licentie/licentieAankopen',
-            'menu' => 'main_menu',
-            'voetnoot' => 'main_footer');
-
-        $this->template->load('main_master', $partials, $data);
-    }
 
     public function licentieAankopenBevestig($id) {
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
@@ -174,6 +158,19 @@ class Licentie extends CI_Controller
 
     //Aangekochte licenties
     public function persoonlijkeAangekochteLicentieBeheren() {
+        $data['titel'] = 'Aangekochte licenties beheren';
+        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
+        $this->load->model('licentie_model');
+        $data['licentie'] = $this->licentie_model->getLicentie();
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'licentie/licentieAankopen',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
     }
 }

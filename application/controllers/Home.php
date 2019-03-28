@@ -58,8 +58,8 @@ class Home extends CI_Controller
     {
         $data['titel'] = 'Registreer';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $data['ontwerper'] = 'Seppe Peeters';
-        $data['tester'] = 'vul in';
+        $data['ontwerper'] = 'Seppe&nbsp;Peeters';
+        $data['tester'] = 'Esteban&nbsp;Beerens';
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'registreer',
@@ -135,8 +135,9 @@ class Home extends CI_Controller
         }
     }
 
-    public function registreerGebruiker()
-    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
+    public function registreerGebruiker() {
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
         $naam = $this->input->post('naam');
         $email = $this->input->post('email');
         $wachtwoord = $this->input->post('wachtwoord');
@@ -184,8 +185,8 @@ class Home extends CI_Controller
         $data['boodschap'] = $this->session->userdata('boodschap');
         $data['link'] = $this->session->userdata('link');
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $data['ontwerper'] = 'Seppe Peeters';
-        $data['tester'] = 'vul in';
+        $data['ontwerper'] = 'Seppe&nbsp;Peeters';
+        $data['tester'] = 'Esteban&nbsp;Beerens';
         $partials = array('hoofding'=>'main_header',
             'menu'=>'main_menu',
             'inhoud'=>'gebruiker_melding',
