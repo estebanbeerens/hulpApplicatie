@@ -50,7 +50,7 @@
             $geboortedatum = array('id' => 'geboortedatum',
                 'name' => 'geboortedatum',
                 'class' => 'form-control',
-                'placeholder' => 'geboortedatum',
+                'placeholder' => '1998-09-01',
                 'required' => 'required');
             echo form_input($geboortedatum) . "\n";
             ?>
