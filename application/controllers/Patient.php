@@ -71,7 +71,7 @@ class Patient extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
     public function patientViewLaden()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Patient toevoegen';
 
         $data['ontwerper'] = 'Seppe Peeters';
@@ -86,7 +86,7 @@ class Patient extends CI_Controller
     }
     public function patientToevoegen()
     {
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $naam = $this->input->post('naam');
         $id = $this->input->post('id');
