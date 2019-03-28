@@ -64,4 +64,40 @@ class Verzorger extends CI_Controller
         redirect('verzorger/verzorgersBeheren');
     }
 
+    public function verzorgerViewLaden()
+    {
+        $data['titel'] = 'Verzorger toevoegen';
+
+        $data['ontwerper'] = 'Liam Mentens';
+        $data['tester'] = 'vul mij in';
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'verzorgerToevoegen',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function verzorgerToevoegen()
+    {
+
+
+        $naam = $this->input->post('naam');
+        $voornaam = $this->input->post('voornaam');
+        $geboortedatum = $this->input->post('geboortedatum');
+        $woonplaats = $this->input->post('woonplaats');
+        $adres = $this->input->post('adres');
+        $rekeningnummer = $this->input->post('rekeningnummer');
+        $gebruikersnaam = $this->input->post('gebruikersnaam');
+        $passwoord = $this->input->post('passwoord');
+        $email = $this->input->post('email');
+
+        $this->load->model('verzorger_model');
+        $this->verzorger_model->insert($naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email);
+
+        redirect('verzorger/verzorgerViewLaden');
+
+    }
+
 }

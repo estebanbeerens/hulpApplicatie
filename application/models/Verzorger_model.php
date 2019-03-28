@@ -20,8 +20,9 @@ class Verzorger_model extends CI_Model
         return $query->result();
 
     }
-    function insert($id,$naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
+    function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
+
         $verzorger = new stdClass();
         $verzorger->naam = $naam;
         $verzorger->voornaam = $voornaam;
@@ -32,6 +33,7 @@ class Verzorger_model extends CI_Model
         $verzorger->gebruikersnaam = $gebruikersnaam;
         $verzorger->passwoord = $passwoord;
         $verzorger->email = $email;
+        $verzorger->soortPersoonId = 3;
 
         $this->db->insert('persoon',$verzorger);
         return $this->db->insert_id();

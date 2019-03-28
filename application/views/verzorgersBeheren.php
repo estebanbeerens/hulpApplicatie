@@ -20,6 +20,7 @@
                 <th>woonplaats</th>
                 <th>adres</th>
                 <th>rekeningnummer</th>
+                <th>gebruikersnaam</th>
                 <th>wachtwoord</th>
                 <th>email</th>
             </tr>
@@ -39,20 +40,6 @@
             <?php } ?>
         </table>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- Popup beheren-->
     <!-- Button trigger modal -->
