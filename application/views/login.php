@@ -2,8 +2,8 @@
 <?php
 $attributes = array('name' => 'mijnFormulier','novalidate' => 'novalidate', 'class' => 'needs-validation');
 echo form_open('home/controleerAanmelden', $attributes);
-
 ?>
+
 <div class="row">
     <div class="form-group col-md-7">
         <?php
@@ -36,8 +36,6 @@ echo form_open('home/controleerAanmelden', $attributes);
 <div class="form-group">
     <?php echo form_submit('knop', 'Inloggen', "class='btn btn-primary'") ?>
 </div>
-
-
 <?php echo form_close(); ?>
 
 <p>Geen account?  <?php echo anchor('home/registreer', 'Registreer'); ?></p>
