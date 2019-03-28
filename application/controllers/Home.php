@@ -16,8 +16,6 @@ class Home extends CI_Controller
     public function index()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Inloggen';
-        $data['ontwerper'] = '????';
-        $data['tester'] = '???';
 
         $data['ontwerper'] = 'Jeroen';
         $data['tester'] = 'Esteban';
@@ -104,7 +102,7 @@ class Home extends CI_Controller
         $gebruikersnaam = $this->input->post('naam');
         $passwoord = $this->input->post('passwoord');
 
-        if ($this->authex->meldAan($gebruikersnaam, $passwoord) == "") {
+        if ($this->authex->meldAan($gebruikersnaam, $passwoord)) {
             redirect('/evenement/toonEvenement');
         } else {
             redirect('home/toonFout');
