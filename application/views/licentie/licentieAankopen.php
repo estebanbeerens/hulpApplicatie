@@ -16,8 +16,9 @@
               <div class="card-body">
                 <h5 class="card-title"> ' . $item->naam . ' </h5>
                 <h6 class="card-subtitle mb-2 text-muted">' . $prijs . '</h6>
-                <p class="card-text">'. $item->beschrijving . '</p>
-                <a href="#" class="card-link">Aankopen</a>
+                <p class="card-text">'. $item->beschrijving . '</p>';
+                echo anchor('licentie/licentieAankopenBevestig/' . $item->id, 'Kopen');
+                echo '
               </div>
           </div>';
     }
