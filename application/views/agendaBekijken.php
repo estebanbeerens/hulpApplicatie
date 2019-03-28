@@ -8,7 +8,6 @@
     <title><?php echo $titel?></title>
 </head>
 <body>
-<div>
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -22,6 +21,5 @@
             </tr>
             <?php } ?>
         </table>
-</div>
 </body>
 </html>

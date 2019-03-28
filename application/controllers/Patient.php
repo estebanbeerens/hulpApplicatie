@@ -38,7 +38,7 @@ class Patient extends CI_Controller
     public function toonAgendaPatient()
     {
         $data['titel'] = 'Agenda patient tonen';
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['ontwerper'] = 'René Vanhoof';
         $data['tester'] = 'Geen Idee';
 
