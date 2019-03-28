@@ -23,6 +23,11 @@
     input[type=submit]:hover{
         background-color: #005efe;
     }
+
+    .anchorBewerken{
+        color: White;
+        text-decoration: none;
+    }
 </style>
 
 <body>
@@ -45,9 +50,9 @@
             <tr>
                 <td><?php echo $item->id; ?></td>
                 <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="<?php echo $item->id; ?>" onclick="showDetails(this);">
-                        <?php echo $item->naam; ?>
-                    </button>
+
+                        <?php echo anchor('evenement/evenementBewerken/' . $item->id, $item->naam, 'class="anchorBewerken btn btn-primary"'); ?>
+
                 </td>
                 <td><?php echo $item->datum; ?></td>
                 <td><?php echo $item->startTijd; ?></td>

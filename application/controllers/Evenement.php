@@ -1,9 +1,8 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * Created by PhpStorm.
- * User: LiamM
- * Date: 27-2-2019
- * Time: 18:43
+ * @property Template $template
+ * @property Authex $authex
+ * @property Evenement_model $evenement_model
  */
 
 class Evenement extends CI_Controller
@@ -78,7 +77,7 @@ class Evenement extends CI_Controller
         $data['evenement'] =$this->evenement_model->getEvenement();
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'evenementBeheren',
+            'inhoud' => 'evenementBeheren/evenementBeheren',
             'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 
@@ -102,24 +101,59 @@ class Evenement extends CI_Controller
     }
 
 
-    public function evenementUpdaten(){
+    public function evenementBewerken($id) {
+        $data['titel'] = 'Evenement Bewerken';
+        $data['ontwerper'] = 'Tomas&nbsp;Marlein';
+        $data['tester'] = 'vul mij in';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
         $this->load->model('evenement_model');
 
-        $naam = $this->input->post('naam');
-        $meldingTijd = $this->input->post('meldingtijd');
-        $beschrijving = $this->input->post('beschrijving');
-        $locatie = $this->input->post('locatie');
-        $verplicht = $this->input->post('verplicht');
-        $isHerhaling = $this->input->post('herhaling');
-        $datum = $this->input->post('datum');
-        $startTijd = $this->input->post('starttijd');
-        $eindTijd = $this->input->post('eindtijd');
-        $id = $this->input->post('id');
-
-        $this->evenement_model->updaten($id, $naam, $meldingTijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd);
+        $data['evenement'] = $this->evenement_model->getSpecificEvenement($id);
 
 
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'evenementBeheren/evenementBewerken',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function evenementUpdaten($id){
+
+
+
+        $herhalingpost = $this->input->post('herhaling');
+        $verplichtpost = $this->input->post('verplicht');
+
+        if(isset($herhalingpost)){
+            $herhaling = 1;
+        }else{
+            $herhaling = 0;
+        }
+
+        if(isset($verplichtpost)){
+            $verplicht = 1;
+        }else{
+            $verplicht = 0;
+        }
+
+        $evenement = new stdClass();
+        $evenement->id = $id;
+        $evenement->naam = $this->input->post('naam');
+        $evenement->meldingTijd = $this->input->post('meldingTijd');
+        $evenement->beschrijving = $this->input->post('beschrijving');
+        $evenement->locatie = $this->input->post('locatie');
+        $evenement->verplicht = $verplicht;
+        $evenement->isHerhaling = $herhaling;
+        $evenement->datum = $this->input->post('datum');
+        $evenement->startTijd = $this->input->post('starttijd');
+        $evenement->eindTijd = $this->input->post('eindtijd');
+
+
+        $this->load->model('evenement_model');
+        $this->evenement_model->updaten($evenement);
 
         redirect('evenement/evenementBeheren');
     }
@@ -132,7 +166,7 @@ class Evenement extends CI_Controller
         $data['tester'] = 'vul mij in';
 
         $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'evenementToevoegen',
+            'inhoud' => 'evenementBeheren/evenementToevoegen',
             'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 
