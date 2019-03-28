@@ -159,7 +159,7 @@ class Home extends CI_Controller
 
         if (!$this->email->send()) {
             $this->session->set_userdata('titel', 'Fout');
-            $this->session->set_userdata('boodschap', 'Onverwachte fout bij versturen mail. Contacteer de administrator.');
+            $this->session->set_userdata('boodschap', 'Onverwachte fout bij versturen mail. Contacteer de administrator. (Kan gewoon inloggen, foutmelding dat de mail niet verstuurd werd.');
             $this->session->set_userdata('link', null);
             return false;
         } else {
@@ -175,6 +175,7 @@ class Home extends CI_Controller
         $wachtwoord = $this->input->post('wachtwoord');
         $gebruikersnaam = $this->input->post('gebruikersnaam');
         $woonplaats = $this->input->post('woonplaats');
+
         $geboortedatum = $this->input->post('geboortedatum');
         $voornaam = $this->input->post('voornaam');
         $adres = $this->input->post('adres');
@@ -194,7 +195,10 @@ class Home extends CI_Controller
                 $this->session->set_userdata('boodschap', 'E-mail bestaat reeds. Probeer opnieuw.');
                 $this->session->set_userdata('link', array('url' => '/home/registreer', 'tekst' => 'Terug'));
             }
-
+    } else {
+          $this->session->set_userdata('titel', 'Fout');
+            $this->session->set_userdata('boodschap', 'Gelieve alle tekstvakken (naam, e-mail én wachtwoord) correct in te vullen.');
+           $this->session->set_userdata('link', array('url' => '/home/registreer', 'tekst' => 'Terug'));
         }
         redirect('/home/toonMelding');
     }

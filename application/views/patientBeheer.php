@@ -24,7 +24,7 @@
             <th>adres</th>
 
             <th>gebruikersnaam</th>
-            
+
             <th>email</th>
             <th></th>
         </tr>
