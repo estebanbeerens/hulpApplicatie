@@ -15,6 +15,7 @@
 <div class="table-responsive">
     <table class="table">
         <tr>
+            <th>Beheer</th>
             <th>Id</th>
             <th>Naam</th>
             <th>Voornaam</th>
@@ -24,9 +25,13 @@
             <th>rekeningnummer</th>
             <th>wachtwoord</th>
             <th>email</th>
+            <th></th>
         </tr>
         <?php foreach ($patient as $item){ ?>
             <tr>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="<?php echo $item->id; ?>" onclick="showDetails(this);">
+                        <?php echo "Beheer" ?>
+                    </button></td>
                 <td><?php echo $item->id; ?></td>
                 <td><?php echo $item->naam; ?></td>
                 <td><?php echo $item->voornaam; ?></td>
@@ -37,6 +42,7 @@
                 <td><?php echo $item->gebruikersnaam; ?></td>
                 <td><?php echo $item->passwoord; ?></td>
                 <td><?php echo $item->email; ?></td>
+                <td class="delete"><?php echo "<a href='patientVerwijderen?id=".$item->id."'><i class=\"fas fa-trash-alt\"></i></a>"; ?></td>
             </tr>
         <?php } ?>
     </table>
@@ -66,7 +72,7 @@
                 echo form_open('patient/patientupdaten', $attributes);
                 ?>
                 <table>
-                    <th>Verzorgers updaten</th>
+                    <th>Patiënt updaten</th>
                     <tr>
                         <td><?php echo form_label('Id:', 'id'); ?></td>
                         <td><?php echo form_input(array('name' => 'id', 'id' => 'id', 'size' => '30', 'value' => '')); ?></td>
