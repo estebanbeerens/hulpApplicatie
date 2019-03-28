@@ -23,7 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/team29/';
+
+if (defined('PRODUCTION_BASE_URL')) {
+    $config['base_url'] = PRODUCTION_BASE_URL;
+}
 
 /*
 |--------------------------------------------------------------------------

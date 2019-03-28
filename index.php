@@ -64,7 +64,12 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+if (preg_match("/(^127\.)|(^192\.168\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^::1$)|(^\[::1\]$)|(^[fF][cCdD])|(^localhost$)|(.+\.local$)/", $_SERVER['HTTP_HOST'])) {
+    define('ENVIRONMENT', 'development');
+} else {
+    define('ENVIRONMENT', 'production');
+    define('PRODUCTION_BASE_URL', 'http://vanhoof.sinners.be/team29/');
+}
 
 /*
  *---------------------------------------------------------------
