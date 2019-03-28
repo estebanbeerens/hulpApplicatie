@@ -186,7 +186,7 @@ class Home extends CI_Controller
             $id = $this->authex->registreer($naam, $email, $wachtwoord, $gebruikersnaam, $woonplaats, $voornaam, $adres, $rekeningnummer, $geboortedatum);
             if ($id != 0) {
                 $this->session->set_userdata('titel', 'Registreren');
-                $this->session->set_userdata('boodschap', 'Gebruiker werd aangemaakt! Er werd een e-mail verstuurd met een activatielink. Nadat u deze link hebt aangeklikt, kan u zich aanmelden.');
+                $this->session->set_userdata('boodschap', 'Gebruiker werd aangemaakt! Er werd een e-mail verstuurd met een activatielink. Nadat u deze link hebt aangeklikt, kan u zich aanmelden. Mail word niet echt gestuurd, fout in. u kan gewoon aanmelden.');
                 $this->session->set_userdata('link', null);
                 $boodschap = "U bent geregistreerd. Klik op onderstaande link om uw registratie te activeren.\n<a href='" . site_url('/home/activeer/' . $id) . "'>" . site_url('/gebruiker/activeer/' . $id) . "</a>";
                 $this->stuurMail($email, $boodschap, 'Mantelzorg: Activatielink');

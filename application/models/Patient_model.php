@@ -26,29 +26,12 @@ class Patient_model extends CI_Model
         $query = $this->db->get('persoon');
         return $query->result();
     }
-    function getAgendaPersoon($persoonId){
-        $this->db->where('Id', $persoonId);
-        $query = $this->db->get('persoon');
-        return $query->result();
-    }
     function getAgendaPatient()
     {
-        //$this->db->order_by("naam", "asc");
-        //$this->db->where('soortPersoonId', 4);
-        //$query = $this->db->get('persoon');
-        //return $query->result();
-
-
-        $query = $this->db->get('persoonEvenement');
-        $agendas = $query->result();
-        $this->load->model('Patient_model');
-
-        foreach ($agendas as $agenda)
-        {
-            $agenda->agenda = $this->Patient_model->getAgendaPersoon($agenda->persoonId);
-
-        }
-        return $agendas;
+        $this->db->order_by("naam", "asc");
+        $this->db->where('soortPersoonId', 4);
+        $query = $this->db->get('persoon');
+        return $query->result();
     }
 
     function getPatientById($id)
@@ -60,7 +43,7 @@ class Patient_model extends CI_Model
         return $query->row();
     }
 
-    function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$gebruikersnaam,$passwoord,$email)
+    function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
         $patient = new stdClass();
 
@@ -69,7 +52,7 @@ class Patient_model extends CI_Model
         $patient->geboortedatum = $geboortedatum;
         $patient->woonplaats = $woonplaats;
         $patient->adres = $adres;
-
+        $patient->rekeningnummer = $rekeningnummer;
         $patient->gebruikersnaam = $gebruikersnaam;
         $patient->passwoord = password_hash($passwoord, PASSWORD_DEFAULT);
         $patient->email = $email;
