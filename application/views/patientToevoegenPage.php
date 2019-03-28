@@ -13,9 +13,9 @@
     <?php
     $attributes = array('name' => 'patientToevoegenFormulier');
     echo form_open('patient/patientToevoegen', $attributes);
+    echo $titel;
     ?>
-    <table>
-        <th>Patiënt toevoegen</th>
+
 
         <div class="form-group col-md-7">
             <?php
@@ -82,19 +82,7 @@
             ?>
             <div class="invalid-feedback">Geef een adres op.</div>
         </div>
-        <div class="form-group col-md-7">
-            <?php
-            echo form_label('rekeningnummer', 'rekeningnummer');
 
-            $rekeningnummer = array('id' => 'rekeningnummer',
-                'name' => 'rekeningnummer',
-                'class' => 'form-control',
-                'placeholder' => 'rekeningnummer',
-                'required' => 'required');
-            echo form_input($rekeningnummer) . "\n";
-            ?>
-            <div class="invalid-feedback">Geef een rekeningnummer op.</div>
-        </div>
 
         <div class="form-group col-md-7">
             <?php
@@ -135,12 +123,13 @@
             ?>
             <div class="invalid-feedback">Geef een email op.</div>
         </div>
+    <?php echo form_submit('knop', 'Verzenden', "class='btn btn-primary'") ?>
 
 
 
         <tr>
             <td></td>
-            <td><?php echo form_submit('knop', 'Verzenden'); ?></td>
+
         </tr>
     </table>
 
