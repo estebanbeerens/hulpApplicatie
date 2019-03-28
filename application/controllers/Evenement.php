@@ -41,7 +41,7 @@ class Evenement extends CI_Controller
     Public function agendaBekijken($id)
     {
         $data['titel'] = 'Agenda bekijken';
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('persoonevenement_model');
         $this->load->model('evenement_model');
 
@@ -69,7 +69,7 @@ class Evenement extends CI_Controller
         /**
          * Weergeven van de pagina Evenement Beheren op het scherm
          */
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Evenement Beheren';
         $data['ontwerper'] = 'Tomas&nbsp;Marlein';
         $data['tester'] = 'vul mij in';
@@ -90,7 +90,7 @@ class Evenement extends CI_Controller
         /**
          * Weergeven van de foutpagina
          */
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'test';
 
         $partials = array('hoofding' => 'main_header',
@@ -103,7 +103,7 @@ class Evenement extends CI_Controller
 
 
     public function evenementUpdaten(){
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('evenement_model');
 
         $naam = $this->input->post('naam');
@@ -125,7 +125,7 @@ class Evenement extends CI_Controller
     }
 
     public function evenementToevoegen()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Evenement Toevoegen';
 
         $data['ontwerper'] = 'Liam Mentens';
@@ -140,7 +140,7 @@ class Evenement extends CI_Controller
     }
 
     public function evenementToevoegenGoed()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $naam = $this->input->post('naam');
         $meldingTijd = $this->input->post('meldingtijd');
         $beschrijving = $this->input->post('beschrijving');
@@ -158,7 +158,7 @@ class Evenement extends CI_Controller
     }
 
     public function evenementDeleten(){
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('evenement_model');
 
         $id=$this->input->get('id');

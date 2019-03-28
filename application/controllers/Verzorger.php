@@ -19,7 +19,7 @@ class Verzorger extends CI_Controller
         $data['titel'] = 'Verzorger tonen';
         $data['ontwerper'] = 'Liam Mentens';
         $data['tester'] = 'Vul mij in';
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('Verzorger_model');
         $data['verzorger'] = $this->Verzorger_model->getVerzorger();
         $partials = array('hoofding' => 'main_header',
@@ -34,7 +34,7 @@ class Verzorger extends CI_Controller
         $data['titel'] = 'Verzorgers beheren';
         $data['ontwerper'] = 'Liam&nbspMentens';
         $data['tester'] = 'vul mij in';
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('verzorger_model');
         $data['verzorger'] = $this->verzorger_model->getVerzorger();
 
@@ -48,7 +48,7 @@ class Verzorger extends CI_Controller
     public function verzorgersUpdaten(){
 
         $this->load->model('verzorger_model');
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $naam = $this->input->post('naam');
         $voornaam = $this->input->post('voornaam');
         $geboortedatum = $this->input->post('geboortedatum');

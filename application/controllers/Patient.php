@@ -21,7 +21,7 @@ class Patient extends CI_Controller
       public function toonPatient()
 {
     $data['titel'] = 'Patient tonen';
-
+    $data['gebruiker'] = $this->authex->getGebruikerInfo();
     $data['ontwerper'] = 'René Vanhoof';
     $data['tester'] = 'Geen Idee';
 
@@ -37,7 +37,7 @@ class Patient extends CI_Controller
 }
 
     public function beheerPatient()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Patient beheren';
 
         $data['ontwerper'] = 'Seppe Peeters';
@@ -54,7 +54,7 @@ class Patient extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
     public function agendaPatientBekijken()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Agenda patient bekijken';
 
         $data['ontwerper'] = 'René Vanhoof';

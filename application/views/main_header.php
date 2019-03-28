@@ -42,9 +42,7 @@
                         <?php echo anchor('patient/agendaPatientBekijken', 'Agenda patient bekijken'); ?>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?>
-                </li>
+
 
 
 

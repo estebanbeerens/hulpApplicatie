@@ -14,7 +14,7 @@ class Home extends CI_Controller
     }
 
     public function index()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Inloggen';
         $data['ontwerper'] = '????';
         $data['tester'] = '???';
@@ -32,7 +32,7 @@ class Home extends CI_Controller
     }
 
     public function evenementBeheren()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Evenement Beheren';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
@@ -44,7 +44,7 @@ class Home extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
     public function patientBekijken()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Patient Bekijken';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
@@ -100,7 +100,7 @@ class Home extends CI_Controller
     }
 
     public function controleerAanmelden()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $gebruikersnaam = $this->input->post('naam');
         $passwoord = $this->input->post('passwoord');
 
@@ -112,14 +112,14 @@ class Home extends CI_Controller
     }
 
     public function meldAf()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->authex->meldAf();
         redirect('home/index');
     }
 
 
     private function stuurMail($geadresseerde, $boodschap, $titel)
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->library('email');
 
         $this->email->from('info@tvshop.be', 'TV Shop');
@@ -138,7 +138,7 @@ class Home extends CI_Controller
     }
 
     public function registreerGebruiker()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $naam = $this->input->post('naam');
         $email = $this->input->post('email');
         $wachtwoord = $this->input->post('wachtwoord');
@@ -172,7 +172,7 @@ class Home extends CI_Controller
     }
 
     public function activeer($id)
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->authex->activeer($id);
         $this->session->set_userdata('titel', 'Activeren');
         $this->session->set_userdata('boodschap', 'Account werd geactiveerd. U kan nu aanmelden.');
@@ -181,7 +181,7 @@ class Home extends CI_Controller
     }
 
     public function toonMelding()
-    {
+    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = $this->session->userdata('titel');
         $data['boodschap'] = $this->session->userdata('boodschap');
         $data['link'] = $this->session->userdata('link');
