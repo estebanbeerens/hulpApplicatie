@@ -9,13 +9,19 @@
 </head>
 <body>
 <div>
-    <?php
-    foreach ($evenementen as $item){
-        echo $item->naam . "<br>";
-    }
-
-
-    ?>
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+            </tr>
+            <?php foreach ($patient as $item){ ?>
+            <tr>
+                <td><?php echo $item->id; ?></td>
+                <td><?php echo $item->naam; ?></td>
+            </tr>
+            <?php } ?>
+        </table>
 </div>
 </body>
 </html>

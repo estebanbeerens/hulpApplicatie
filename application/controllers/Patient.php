@@ -44,10 +44,10 @@ class Patient extends CI_Controller
 
 
         $this->load->model('Patient_model');
-        $data['patient'] =$this->Patient_model->getPatient();
+        $data['patient'] =$this->Patient_model->getAgendaPatient();
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
-            'inhoud' => 'patientBekijken',
+            'inhoud' => 'agendaBekijken',
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);
