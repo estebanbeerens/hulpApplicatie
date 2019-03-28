@@ -70,6 +70,7 @@ class Verzorger extends CI_Controller
 
         $data['ontwerper'] = 'Liam Mentens';
         $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'verzorgerToevoegen',

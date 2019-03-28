@@ -13,8 +13,7 @@ class Licentie extends CI_Controller
         $this->load->helper('form');
     }
 
-    public function licentieAankopen()
-    {
+    public function licentieAankopen() {
         $data['titel'] = 'Licentie aankopen';
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
         $data['tester'] = 'vul mij in';
@@ -25,6 +24,39 @@ class Licentie extends CI_Controller
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'licentie/licentieAankopen',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function licentieAankopenBevestig($id) {
+        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $this->load->model('licentie_model');
+        $data['licentie'] = $this->licentie_model->getSpecificLicentie($id);
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'licentie/licentieAankopenBevestig',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+
+    public function licentieAankopenOk($id) {
+        $data['titel'] = 'Licentie aangekocht';
+        $data['ontwerper'] = 'Esteban&nbsp;Beerens';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $this->load->model('licentie_model');
+        $data['licentie'] = $this->licentie_model->getSpecificLicentie($id);
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'licentie/licentieAankopenOk',
             'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 
@@ -137,5 +169,11 @@ class Licentie extends CI_Controller
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);
+    }
+
+
+    //Aangekochte licenties
+    public function persoonlijkeAangekochteLicentieBeheren() {
+
     }
 }

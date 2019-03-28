@@ -43,20 +43,16 @@
                         <?php echo anchor('patient/agendaPatientBekijken', 'Agenda patient bekijken'); ?>
                     </div>
                 </li>
-<<<<<<< HEAD
 
 
 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><?php echo anchor('verzorger/toonVerzorger', 'Verzorger bekijken'); ?></a>
 
-=======
+
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo anchor('patient/toonPatient', 'Patient bekijken'); ?>
                 </li>
 
->>>>>>> Verzorgerse toevoegen
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Verzorgers
@@ -65,10 +61,7 @@
                         <a class="nav-link" href="#"><?php echo anchor('verzorger/verzorgersBeheren', 'Verzorgers beheren'); ?></a>
                         <a class="nav-link" href="#"><?php echo anchor('verzorger/verzorgerViewLaden', 'Verzorgers toevoegen'); ?></a>
                     </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> Verzorgerse toevoegen
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

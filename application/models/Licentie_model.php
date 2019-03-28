@@ -19,15 +19,25 @@
             parent::__construct();
         }
 
-        function getLicentie()
-        {
+        function getLicentie() {
             $query = $this->db->get('soortLicentie');
+            return $query->result();
+        }
+
+        function getAangekochteLicentie() {
+            $query = $this->db->get('aangekochteLicentie');
             return $query->result();
         }
 
         function getSpecificLicentie($id) {
             $this->db->where('id', $id);
             $query = $this->db->get('soortLicentie');
+            return $query->row();
+        }
+
+        function getSpecificAangekochteLicentie($id) {
+            $this->db->where('id', $id);
+            $query = $this->db->get('aangekochteLicentie');
             return $query->row();
         }
 
