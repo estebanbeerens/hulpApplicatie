@@ -89,7 +89,7 @@ class Patient extends CI_Controller
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $naam = $this->input->post('naam');
-        $id = $this->input->post('id');
+
         $voornaam = $this->input->post('voornaam');
         $geboortedatum = $this->input->post('geboortedatum');
         $woonplaats = $this->input->post('woonplaats');
@@ -100,7 +100,7 @@ class Patient extends CI_Controller
         $email = $this->input->post('email');
 
         $this->load->model('patient_model');
-        $this->patient_model->insert( $id,$naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email, 4);
+        $this->patient_model->insert( $naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email, 4);
 
         redirect('patient/patientViewLaden');
 

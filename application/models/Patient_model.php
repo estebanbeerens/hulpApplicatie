@@ -46,7 +46,7 @@ class Patient_model extends CI_Model
     function insert($id,$naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
         $patient = new stdClass();
-        $patient->id = 15;
+
         $patient->naam = $naam;
         $patient->voornaam = $voornaam;
         $patient->geboortedatum = $geboortedatum;
