@@ -102,7 +102,7 @@ class Patient extends CI_Controller
         $this->load->model('patient_model');
         $this->patient_model->insert( $naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email, 4);
 
-        redirect('patient/patientViewLaden');
+        redirect('patient/toonPatient');
 
     }
 

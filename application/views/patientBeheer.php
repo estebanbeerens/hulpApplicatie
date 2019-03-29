@@ -22,8 +22,9 @@
             <th>geboortedatum</th>
             <th>woonplaats</th>
             <th>adres</th>
-            <th>rekeningnummer</th>
-            <th>wachtwoord</th>
+
+            <th>gebruikersnaam</th>
+
             <th>email</th>
             <th></th>
         </tr>
@@ -38,9 +39,9 @@
                 <td><?php echo $item->geboortedatum; ?></td>
                 <td><?php echo $item->woonplaats; ?></td>
                 <td><?php echo $item->adres; ?></td>
-                <td><?php echo $item->rekeningnummer; ?></td>
+
                 <td><?php echo $item->gebruikersnaam; ?></td>
-                <td><?php echo $item->passwoord; ?></td>
+
                 <td><?php echo $item->email; ?></td>
                 <td class="delete"><?php echo "<a href='patientVerwijderen?id=".$item->id."'><i class=\"fas fa-trash-alt\"></i></a>"; ?></td>
             </tr>

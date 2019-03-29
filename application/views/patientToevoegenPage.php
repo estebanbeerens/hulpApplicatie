@@ -13,53 +13,135 @@
     <?php
     $attributes = array('name' => 'patientToevoegenFormulier');
     echo form_open('patient/patientToevoegen', $attributes);
+    echo $titel;
     ?>
-    <table>
-        <th>Patiënt toevoegen</th>
+
+
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('Naam', 'naam');
+
+            $naam = array('id' => 'naam',
+                'name' => 'naam',
+                'class' => 'form-control',
+                'placeholder' => 'naam',
+                'required' => 'required');
+            echo form_input($naam) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
+        </div>
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('voornaam', 'voornaam');
+
+            $voornaam = array('id' => 'voornaam',
+                'name' => 'voornaam',
+                'class' => 'form-control',
+                'placeholder' => 'voornaam',
+                'required' => 'required');
+            echo form_input($voornaam) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een voornaam op.</div>
+        </div>
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('geboortedatum', 'geboortedatum');
+
+            $geboortedatum = array('id' => 'geboortedatum',
+                'name' => 'geboortedatum',
+                'class' => 'form-control',
+                'placeholder' => '1998-09-01',
+                'required' => 'required');
+            echo form_input($geboortedatum) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een geboortedatum op.</div>
+        </div>
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('woonplaats', 'woonplaats');
+
+            $woonplaats = array('id' => 'woonplaats',
+                'name' => 'woonplaats',
+                'class' => 'form-control',
+                'placeholder' => 'woonplaats',
+                'required' => 'required');
+            echo form_input($woonplaats) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een geboortedatum op.</div>
+        </div>
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('adres', 'adres');
+
+            $adres = array('id' => 'adres',
+                'name' => 'adres',
+                'class' => 'form-control',
+                'placeholder' => 'adres',
+                'required' => 'required');
+            echo form_input($adres) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een adres op.</div>
+        </div>
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('rekeningnummer', 'rekeningnummer');
+
+            $rekeningnummer = array('id' => 'rekeningnummer',
+                'name' => 'rekeningnummer',
+                'class' => 'form-control',
+                'placeholder' => 'rekeningnummer',
+                'required' => 'required');
+            echo form_input($rekeningnummer) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een rekeningnummer op.</div>
+        </div>
+
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('gebruikersnaam', 'gebruikersnaam');
+
+            $gebruikersnaam = array('id' => 'gebruikersnaam',
+                'name' => 'gebruikersnaam',
+                'class' => 'form-control',
+                'placeholder' => 'gebruikersnaam',
+                'required' => 'required');
+            echo form_input($gebruikersnaam) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
+        </div>
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('passwoord', 'passwoord');
+
+            $passwoord = array('id' => 'passwoord',
+                'name' => 'passwoord',
+                'class' => 'form-control',
+                'placeholder' => 'passwoord',
+                'required' => 'required');
+            echo form_input($passwoord) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een passwoord op.</div>
+        </div>
+        <div class="form-group col-md-7">
+            <?php
+            echo form_label('email', 'email');
+
+            $email = array('id' => 'email',
+                'name' => 'email',
+                'class' => 'form-control',
+                'placeholder' => 'email',
+                'required' => 'required');
+            echo form_input($email) . "\n";
+            ?>
+            <div class="invalid-feedback">Geef een email op.</div>
+        </div>
+    <?php echo form_submit('knop', 'Verzenden', "class='btn btn-primary'") ?>
+
+
 
         <tr>
-            <td><?php echo form_label('Naam:', 'naam'); ?></td>
-            <td><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('Voornaam:', 'voornaam'); ?></td>
-            <td><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('geboortedatum:', 'geboortedatum'); ?></td>
-            <td><?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('woonplaats:', 'woonplaats'); ?></td>
-            <td><?php echo form_input(array('name' => 'woonplaats', 'id' => 'woonplaats', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('adres:', 'adres'); ?></td>
-            <td><?php echo form_input(array('name' => 'adres', 'id' => 'adres', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('rekeningnummer', 'rekeningnummer'); ?></td>
-            <td><?php echo form_input(array('name' => 'rekeningnummer', 'id' => 'rekeningnummer', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('gebruikersnaam:', 'gebruikersnaam'); ?></td>
-            <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('passwoord', 'passwoord'); ?></td>
-            <td><?php echo form_input(array('name' => 'passwoord', 'id' => 'passwoord', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('email:', 'email'); ?></td>
-            <td><?php echo form_input(array('name' => 'email', 'id' => 'email', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('email:', 'email'); ?></td>
-            <td><?php echo form_input(array('name' => 'email', 'id' => 'email', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
             <td></td>
-            <td><?php echo form_submit('knop', 'Verzenden'); ?></td>
+
         </tr>
     </table>
 
