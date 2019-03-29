@@ -33,11 +33,7 @@ class Home extends CI_Controller
             $this->template->load('main_master', $partials, $data);
 
         }
-
-
     }
-
-
 
     public function evenementBeheren()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
@@ -51,6 +47,7 @@ class Home extends CI_Controller
 
         $this->template->load('main_master', $partials, $data);
     }
+
     public function patientBekijken()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Patient Bekijken';
@@ -124,7 +121,7 @@ class Home extends CI_Controller
         $gebruiker = $this->authex->getGebruikerInfo();
         switch ($gebruiker->soortPersoonId) {
             case 1:
-                redirect('licentie/licentieAankopen');
+                redirect('licentie/licentieBeheren');
                     break;
             case 2:
                 redirect('patient/toonpatient');
