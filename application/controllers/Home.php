@@ -16,9 +16,8 @@ class Home extends CI_Controller
     public function index()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Inloggen';
-
-        $data['ontwerper'] = 'Jeroen';
-        $data['tester'] = 'Esteban';
+        $data['ontwerper'] = 'Jeroen&nbsp;Jansen';
+        $data['tester'] = 'Esteban&nbsp;Beerens';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         if($this->authex->isAangemeld()){
@@ -61,39 +60,11 @@ class Home extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
-    public function registreer()
-    {
-        $data['titel'] = 'Registreer';
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $data['ontwerper'] = 'Seppe&nbsp;Peeters';
-        $data['tester'] = 'Esteban&nbsp;Beerens';
-
-        $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'registreer',
-            'menu' => 'main_menu',
-            'voetnoot' => 'main_footer');
-
-        $this->template->load('main_master', $partials, $data);
-    }
-
-
-    public function meldAan()
-    {
-        $data['titel'] = 'Aanmelden';
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
-
-
-        $partials = array('hoofding' => 'main_header',
-            'menu' => 'main_menu',
-            'inhoud' => 'home_aanmelden',
-            'voetnoot' => 'main_footer');
-
-        $this->template->load('main_master', $partials, $data);
-    }
-
     public function toonFout()
     {
         $data['titel'] = 'Fout';
+        $data['ontwerper'] = 'Jeroen&nbsp;Jansen';
+        $data['tester'] = 'Esteban&nbsp;Beerens';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
@@ -162,42 +133,6 @@ class Home extends CI_Controller
         } else {
             return true;
         }
-    }
-
-    public function registreerGebruiker() {
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
-
-        $naam = $this->input->post('naam');
-        $email = $this->input->post('email');
-        $wachtwoord = $this->input->post('wachtwoord');
-        $gebruikersnaam = $this->input->post('gebruikersnaam');
-        $woonplaats = $this->input->post('woonplaats');
-
-        $geboortedatum = $this->input->post('geboortedatum');
-        $voornaam = $this->input->post('voornaam');
-        $adres = $this->input->post('adres');
-        $rekeningnummer = $this->input->post('rekeningnummer');
-
-
-        if (strlen($naam) >= 2 && strpos($email, '@') != null && strlen($wachtwoord) >= 3) {
-            $id = $this->authex->registreer($naam, $email, $wachtwoord, $gebruikersnaam, $woonplaats, $voornaam, $adres, $rekeningnummer, $geboortedatum);
-            if ($id != 0) {
-                $this->session->set_userdata('titel', 'Registreren');
-                $this->session->set_userdata('boodschap', 'Gebruiker werd aangemaakt! Er werd een e-mail verstuurd met een activatielink. Nadat u deze link hebt aangeklikt, kan u zich aanmelden. Mail word niet echt gestuurd, fout in. u kan gewoon aanmelden.');
-                $this->session->set_userdata('link', null);
-                $boodschap = "U bent geregistreerd. Klik op onderstaande link om uw registratie te activeren.\n<a href='" . site_url('/home/activeer/' . $id) . "'>" . site_url('/gebruiker/activeer/' . $id) . "</a>";
-                $this->stuurMail($email, $boodschap, 'Mantelzorg: Activatielink');
-            } else {
-                $this->session->set_userdata('titel', 'Fout');
-                $this->session->set_userdata('boodschap', 'E-mail bestaat reeds. Probeer opnieuw.');
-                $this->session->set_userdata('link', array('url' => '/home/registreer', 'tekst' => 'Terug'));
-            }
-    } else {
-          $this->session->set_userdata('titel', 'Fout');
-            $this->session->set_userdata('boodschap', 'Gelieve alle tekstvakken (naam, e-mail én wachtwoord) correct in te vullen.');
-           $this->session->set_userdata('link', array('url' => '/home/registreer', 'tekst' => 'Terug'));
-        }
-        redirect('/home/toonMelding');
     }
 
     public function activeer($id)

@@ -38,4 +38,4 @@ echo form_open('home/controleerAanmelden', $attributes);
 </div>
 <?php echo form_close(); ?>
 
-<p>Geen account?  <?php echo anchor('home/registreer', 'Registreer'); ?></p>
+<p>Geen account?  <?php echo anchor('gebruiker/registreer', 'Registreer'); ?></p>
