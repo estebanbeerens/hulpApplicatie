@@ -63,14 +63,8 @@
                                 '</div>
                                   </li>';
 
-                            echo '<li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Evenementen
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">' .
-                                anchor('evenement/evenementBeheren', 'Evenement beheren') . anchor('evenement/evenementToevoegen', 'Evenement toevoegen') .
-                                '</div>
-                                    </li>';
+                            echo '<li class="nav-item">' . anchor('evenement/evenementBeheren', 'Evenementen') . ' </li>';
+
 
                             echo ' <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -97,14 +91,7 @@
                                         <a class="nav-link" href="#">' . anchor('patient/toonPatient', 'Patient bekijken') . '</a>
                                 </li>';
 
-                            echo '<li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdownEvenementen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Evenementen
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">' .
-                                anchor('evenement/evenementBeheren', 'Evenement beheren') . anchor('evenement/evenementToevoegen', 'Evenement toevoegen') .
-                                '</div>
-                                    </li>';
+                            echo '<li class="nav-item">' . anchor('evenement/evenementBeheren', 'Evenementen') . ' </li>';
                             break;
                         case 4:
 
