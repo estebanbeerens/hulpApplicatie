@@ -57,5 +57,12 @@ class Verzorger_model extends CI_Model
         $this->db->update('persoon',$verzorger);
     }
 
+    function deleten($id)
+    {
+
+        $this->db->where('id',$id);
+        $this->db->delete('persoon');
+    }
+
 
 }

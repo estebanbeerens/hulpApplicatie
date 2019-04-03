@@ -77,7 +77,7 @@
                                                 Verzorgers
                                             </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
-                                            <a class="nav-link" href="#">' . anchor('verzorger/toonVerzorger', 'Verzorger bekijken') . '</a>
+                                            <a class="nav-link" href="#">' . anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen') . '</a>
                                             <a class="nav-link" href="#">' . anchor('verzorger/verzorgersBeheren', 'Verzorgers beheren') . '</a>
                                          </div>
 
