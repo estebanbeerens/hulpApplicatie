@@ -42,9 +42,9 @@
                                             Patiënt
                                         </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownPatient">
-                                       ' . anchor('patient/toonPatient', 'Patiënt bekijken') . '</a>
-                                      ' . anchor('patient/beheerPatient', 'Patiënt beheren') . '</a>
-                                       ' . anchor('patient/patientViewLaden', 'Patiënt toevoegen') . '</a>
+                                       ' . anchor('patient/toonPatient', 'Patiënt bekijken') . '
+                                      ' . anchor('patient/beheerPatient', 'Patiënt beheren') . '
+                                       ' . anchor('patient/patientViewLaden', 'Patiënt toevoegen') . '
                                     </div>
                                    </li>';
 
@@ -71,8 +71,8 @@
                                                 Verzorgers
                                             </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
-                                            <a class="nav-link" href="#">' . anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen') . '</a>
-                                            <a class="nav-link" href="#">' . anchor('verzorger/verzorgersBeheren', 'Verzorgers beheren') . '</a>
+                                           ' . anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen') . '
+                                            ' . anchor('verzorger/verzorgersBeheren', 'Verzorgers beheren') . '
                                          </div>
 
                                  </li>';
@@ -88,7 +88,7 @@
                                     '</div>
                                   </li>';
                             echo '<li class="nav-item">
-                                        <a class="nav-link" href="#">' . anchor('patient/toonPatient', 'Patient bekijken') . '</a>
+                                       ' . anchor('patient/toonPatient', 'Patient bekijken') . '
                                 </li>';
 
                             echo '<li class="nav-item">' . anchor('evenement/evenementBeheren', 'Evenementen') . ' </li>';
