@@ -55,6 +55,13 @@ class Patient_model extends CI_Model
         $this->db->insert('persoon',$patient);
         return $this->db->insert_id();
     }
+    function getSpecificPatient($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('persoon');
+        return $query->row();
+    }
+
+
 
     function deleten($id)
     {
@@ -67,7 +74,17 @@ class Patient_model extends CI_Model
         $this->db->delete('persoon');
 
     }
+    function update($patient)
+    {
 
+        /**
+         * Het updaten van een evenement in het database
+         */
+
+
+        $this->db->where('id', $patient->id);
+        $this->db->update('persoon', $patient);
+    }
     function updaten($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
         $patient = new stdClass();
