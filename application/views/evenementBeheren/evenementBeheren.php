@@ -44,6 +44,8 @@
             </tr>
             <?php } ?>
         </table>
+        <?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen',  'class="anchorBewerken btn btn-primary eventToevoegen"'); ?>
+
     </div>
 
 </div>

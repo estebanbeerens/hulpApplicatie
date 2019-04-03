@@ -26,7 +26,11 @@ class Patient_model extends CI_Model
         $query = $this->db->get('persoon');
         return $query->result();
     }
-
+    function getAgenda($persoonId){
+        $this->db->where('persoonId', $persoonId);
+        $query = $this->db->get('persoonEvenement');
+        return $query->result();
+    }
 
     function getPatientById($id)
     {
