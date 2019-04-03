@@ -30,9 +30,11 @@
         </tr>
         <?php foreach ($patient as $item){ ?>
             <tr>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="<?php echo $item->id; ?>" onclick="showDetails(this);">
-                        <?php echo "Beheer" ?>
-                    </button></td>
+                <td>
+
+                    <?php echo anchor('patient/patientBewerken/' . $item->id, $item->naam, 'class="anchorBewerken btn btn-primary"'); ?>
+
+                </td>
                 <td><?php echo $item->id; ?></td>
                 <td><?php echo $item->naam; ?></td>
                 <td><?php echo $item->voornaam; ?></td>

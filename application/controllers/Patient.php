@@ -99,6 +99,50 @@ class Patient extends CI_Controller
         redirect('patient/beheerPatient');
     }
 
+    public function patientUpdaten($id){
+
+
+
+
+
+        $patient = new stdClass();
+        $patient->id = $id;
+        $patient->naam = $this->input->post('naam');
+        $patient->voornaam = $this->input->post('voornaam');
+        $patient->geboortedatum = $this->input->post('geboortedatum');
+        $patient->woonplaats = $this->input->post('woonplaats');
+
+        $patient->adres = $this->input->post('adres');
+        $patient->gebruikersnaam = $this->input->post('gebruikersnaam');
+        $patient->email = $this->input->post('email');
+
+
+        $this->load->model('patient_model');
+        $this->patient_model->update($patient);
+
+        redirect('patient/beheerPatient');
+    }
+
+
+
+    public function patientbewerken($id) {
+        $data['titel'] = 'Patient Bewerken';
+        $data['ontwerper'] = 'Seppe Peeters';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $this->load->model('patient_model');
+
+        $data['patient'] = $this->patient_model->getSpecificPatient($id);
+
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'patientBewerken',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
 
 
     public function agendaPatientBekijken()
