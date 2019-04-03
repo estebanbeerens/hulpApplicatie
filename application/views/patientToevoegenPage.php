@@ -11,7 +11,7 @@
 <div>
 
     <?php
-    $attributes = array('name' => 'patientToevoegenFormulier');
+    $attributes = array('name' => 'patientToevoegenFormulier' ,'novalidate' => 'novalidate', 'class' => 'needs-validation');
     echo form_open('patient/patientToevoegen', $attributes);
     echo $titel;
     ?>
@@ -28,7 +28,7 @@
                 'required' => 'required');
             echo form_input($naam) . "\n";
             ?>
-            <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
+            <div class="invalid-feedback">Geef een naam op.</div>
         </div>
         <div class="form-group col-md-7">
             <?php
