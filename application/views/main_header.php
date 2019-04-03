@@ -54,8 +54,8 @@
                                             Agenda Patiënt
                                         </a>
                                      <div class="dropdown-menu" aria-labelledby="dropdownAgendaPatient">' .
-                                anchor('agenda/toonAgendaPatient', 'Agenda Patiënt bekijken') .
-                                anchor('agenda/beheerAgendaPatient', 'Agenda Patiënt beheren') .
+                                anchor('persoonEvenement/toonPersoonEvenementPatient', 'Agenda Patiënt bekijken') .
+                                anchor('persoonEvenement/beheerPersoonEvenementPatient', 'Agenda Patiënt beheren') .
                                 '</div>
                                      <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">' .
                                 anchor('patient/toonPatient', 'Patient bekijken') .
