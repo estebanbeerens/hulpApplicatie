@@ -36,6 +36,7 @@
                     <td><?php echo $item->gebruikersnaam; ?></td>
                     <td><?php echo $item->passwoord; ?></td>
                     <td><?php echo $item->email; ?></td>
+                    <td class="delete"><?php echo "<a href='verzorgerDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\"></i></a>"; ?></td>
                 </tr>
             <?php } ?>
         </table>

@@ -61,7 +61,7 @@ class Verzorger extends CI_Controller
         $id = $this->input->post('id');
 
         $this->verzorger_model->updaten($id, $naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email);
-        redirect('verzorger/verzorgersBeheren');
+        redirect('verzorger/verzorgerViewLaden');
     }
 
     public function verzorgerViewLaden()
@@ -97,8 +97,19 @@ class Verzorger extends CI_Controller
         $this->load->model('verzorger_model');
         $this->verzorger_model->insert($naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email);
 
-        redirect('verzorger/verzorgerViewLaden');
+        redirect('verzorger/verzorgersBeheren');
 
+    }
+
+    public function verzorgerDeleten()
+    {
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+        $this->load->model('verzorger_model');
+
+        $id=$this->input->get('id');
+        $this->verzorger_model->deleten($id);
+
+        redirect('verzorger/verzorgersBeheren');
     }
 
 }

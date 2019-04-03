@@ -23,6 +23,7 @@
                     echo divAnchor('home/meldAf', 'Afmelden');
                     switch ($gebruiker->soortPersoonId) {
                         case 1: // gewone geregistreerde gebruiker
+                            echo '<li class="nav-item">' . anchor('licentie/licentieAankopen', 'Licentie aankopen') . '</li>';
                             echo '<li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="dropdownLicenties" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Licenties
@@ -53,8 +54,8 @@
                                             Agenda Patiënt
                                         </a>
                                      <div class="dropdown-menu" aria-labelledby="dropdownAgendaPatient">' .
-                                anchor('patient/toonAgendaPatient', 'Agenda Patiënt bekijken') .
-                                anchor('patient/beheerAgendaPatient', 'Agenda Patiënt beheren') .
+                                anchor('agenda/toonAgendaPatient', 'Agenda Patiënt bekijken') .
+                                anchor('agenda/beheerAgendaPatient', 'Agenda Patiënt beheren') .
                                 '</div>
                                      <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">' .
                                 anchor('patient/toonPatient', 'Patient bekijken') .
@@ -76,7 +77,7 @@
                                                 Verzorgers
                                             </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
-                                            <a class="nav-link" href="#">' . anchor('verzorger/toonVerzorger', 'Verzorger bekijken') . '</a>
+                                            <a class="nav-link" href="#">' . anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen') . '</a>
                                             <a class="nav-link" href="#">' . anchor('verzorger/verzorgersBeheren', 'Verzorgers beheren') . '</a>
                                          </div>
 
