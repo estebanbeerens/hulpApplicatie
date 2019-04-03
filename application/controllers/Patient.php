@@ -35,23 +35,7 @@ class Patient extends CI_Controller
 
     $this->template->load('main_master', $partials, $data);
 }
-    public function toonAgendaPatient()
-    {
-        $data['titel'] = 'Agenda patient tonen';
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $data['ontwerper'] = 'René Vanhoof';
-        $data['tester'] = 'Geen Idee';
 
-
-        $this->load->model('Patient_model');
-        $data['agenda'] =$this->Patient_model->getAgendaPatient();
-        $partials = array('hoofding' => 'main_header',
-            'menu' => 'main_menu',
-            'inhoud' => 'agendaBekijken',
-            'voetnoot' => 'main_footer');
-
-        $this->template->load('main_master', $partials, $data);
-    }
 
     public function beheerPatient()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
