@@ -1,9 +1,9 @@
 <h1><?php echo $titel ?></h1>
-<p>In deze pagina kan je je registreren voor onze Mantelzorg applicatie</p>
+<p>In deze pagina kan u zich registreren voor onze Mantelzorg applicatie.</p>
 
 <?php
-$attributes = array('name' => 'mijnFormulier','novalidate' => 'novalidate', 'class' => 'needs-validation');
-echo form_open('home/registreerGebruiker', $attributes);
+    $attributes = array('name' => 'registratieFormulier','novalidate' => 'novalidate', 'class' => 'needs-validation');
+    echo form_open('Gebruiker/registreerGebruiker', $attributes);
 ?>
 
 <div class="row">
@@ -22,12 +22,12 @@ echo form_open('home/registreerGebruiker', $attributes);
     </div>
     <div class="form-group col-md-4">
         <?php
-            echo form_label('Familienaam', 'familienaam');
+            echo form_label('Naam', 'naam');
 
-            $familienaam = array('id' => 'familienaam',
-                'name' => 'familienaam',
+            $familienaam = array('id' => 'naam',
+                'name' => 'naam',
                 'class' => 'form-control',
-                'placeholder' => 'Familienaam',
+                'placeholder' => 'Naam',
                 'required' => 'required');
             echo form_input($familienaam) . "\n";
         ?>
@@ -121,10 +121,10 @@ echo form_open('home/registreerGebruiker', $attributes);
     </div>
     <div class="form-group col-md-3">
         <?php
-            echo form_label('Wachtwoord', 'wachtwoord');
+            echo form_label('Wachtwoord', 'passwoord');
 
-            $wachtwoord = array('id' => 'wachtwoord',
-                'name' => 'wachtwoord',
+            $wachtwoord = array('id' => 'passwoord',
+                'name' => 'passwoord',
                 'class' => 'form-control',
                 'type' => 'password',
                 'placeholder' => 'Wachtwoord',
