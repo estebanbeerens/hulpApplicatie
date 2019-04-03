@@ -49,19 +49,41 @@ nav{
     background-color: #66c1f9;
 }
 /** Evenement beheren **/
-.overzicht table{
+.eventbeheren table{
     border-collapse: collapse;
 }
 
-.overzicht table tr td{
-   padding: 5px 10px;
+.eventbeheren table tr td{
+    padding: 5px 10px;
     border-bottom: 2px solid lightgrey;
 }
 
-.delete{
+.delete a{
     cursor: pointer;
 }
 
-.delete:hover{
+.delete a:hover{
     color: red;
+}
+
+.eventbeheren input[type=submit]{
+    background-color: #007BFF;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.eventbeheren input[type=submit]:hover{
+    background-color: #005efe;
+}
+
+.anchorBewerken{
+    color: White;
+    text-decoration: none;
+}
+
+.eventToevoegen{
+    margin-top: 1%;
 }
