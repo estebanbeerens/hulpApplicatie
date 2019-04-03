@@ -102,6 +102,13 @@ class Evenement extends CI_Controller
 
 
     public function evenementBewerken($id) {
+
+
+        /**
+         * ophalen van een specifieke evenement
+         */
+
+
         $data['titel'] = 'Evenement Bewerken';
         $data['ontwerper'] = 'Tomas&nbsp;Marlein';
         $data['tester'] = 'vul mij in';
@@ -122,7 +129,9 @@ class Evenement extends CI_Controller
 
     public function evenementUpdaten($id){
 
-
+        /**
+         * Bewerken van een specifiek evenement
+         */
 
         $herhalingpost = $this->input->post('herhaling');
         $verplichtpost = $this->input->post('verplicht');
@@ -158,8 +167,15 @@ class Evenement extends CI_Controller
         redirect('evenement/evenementBeheren');
     }
 
-    public function evenementToevoegen()
-    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
+    public function evenementToevoegen(){
+
+
+        /**
+         * ophalen pagina evenement toevoegen
+         */
+
+
+    $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Evenement Toevoegen';
 
         $data['ontwerper'] = 'Liam Mentens';
@@ -174,13 +190,36 @@ class Evenement extends CI_Controller
     }
 
     public function evenementToevoegenGoed()
-    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
+    {
+
+        /**
+         * Evenement toevoegen in database
+         */
+
+
+        $herhalingpost = $this->input->post('herhaling');
+        $verplichtpost = $this->input->post('verplicht');
+
+        if(isset($herhalingpost)){
+            $herhaling = 1;
+        }else{
+            $herhaling = 0;
+        }
+
+        if(isset($verplichtpost)){
+            $verplicht = 1;
+        }else{
+            $verplicht = 0;
+        }
+
+
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $naam = $this->input->post('naam');
         $meldingTijd = $this->input->post('meldingtijd');
         $beschrijving = $this->input->post('beschrijving');
         $locatie = $this->input->post('locatie');
-        $verplicht = $this->input->post('verplicht');
-        $isHerhaling = $this->input->post('isHerhaling');
+        $verplicht = $verplicht;
+        $isHerhaling = $herhaling;
         $datum = $this->input->post('datum');
         $startTijd = $this->input->post('starttijd');
         $eindTijd = $this->input->post('eindtijd');
@@ -192,6 +231,12 @@ class Evenement extends CI_Controller
     }
 
     public function evenementDeleten(){
+
+        /**
+         * Evenement deleten uit database
+         */
+
+
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('evenement_model');
 
