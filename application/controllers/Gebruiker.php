@@ -11,6 +11,7 @@
         {
             parent::__construct();
             $this->load->helper('form');
+            $this->load->helper('notation');
         }
 
         public function registreer()
@@ -49,8 +50,10 @@
             $gebruiker->naam = $this->input->post('naam');
             $gebruiker->geboortedatum = $this->input->post('geboortedatum');
             $gebruiker->email = $this->input->post('email');
+            $gebruiker->woonplaats = $this->input->post('woonplaats');
+            $gebruiker->adres = $this->input->post('adres');
             $gebruiker->gebruikersnaam = $this->input->post('gebruikersnaam');
-            $gebruiker->passwoord = $this->input->post('passwoord');
+            $gebruiker->passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
 
             $this->load->model('gebruiker_model');
             $this->gebruiker_model->insert($gebruiker);

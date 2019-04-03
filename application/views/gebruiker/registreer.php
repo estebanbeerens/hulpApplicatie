@@ -36,14 +36,11 @@
     <div class="form-group col-md-3">
         <?php
             echo form_label('Geboortedatum', 'geboortedatum');
-            $date = strtotime('Y-m-d -1 year');
 
             $geboortedatum = array('id' => 'Geb-datum',
-                'name' => 'Geb-datum',
+                'name' => 'geboortedatum',
                 'class' => 'form-control',
                 'type' => 'date',
-                'required pattern' => "[0-9]{4}-[0-9]{2}-[0-9]{2}",
-                'min' => '',
                 'required' => 'required');
             echo form_input($geboortedatum) . "\n";
         ?>
@@ -122,28 +119,19 @@
     <div class="form-group col-md-3">
         <?php
             echo form_label('Wachtwoord', 'passwoord');
+            echo haalJavascriptOp('password_strength.js');
 
             $wachtwoord = array('id' => 'passwoord',
                 'name' => 'passwoord',
                 'class' => 'form-control',
                 'type' => 'password',
                 'placeholder' => 'Wachtwoord',
+                'onkeyup' => 'validatePassword(this.value);',
                 'required' => 'required');
             echo form_input($wachtwoord) . "\n";
         ?>
         <div class="invalid-feedback">Geef een wachtwoord op.</div>
-    </div>
-    <div class="form-group col-md-3">
-        <?php
-            echo form_label('Wachtwoord bevestigen', 'wachtwoordBev');
-
-            $wachtwoord = array('id' => 'wachtwoordBev',
-                'name' => 'wachtwoordBev',
-                'class' => 'form-control',
-                'type' => 'password',
-                'placeholder' => 'Wachtwoord');
-            echo form_input($wachtwoord) . "\n";
-        ?>
+        <span id="msg"></span>
     </div>
 </div>
 <div class="form-group">
