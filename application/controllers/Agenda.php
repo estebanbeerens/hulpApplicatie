@@ -24,8 +24,8 @@ class Agenda extends CI_Controller
         $data['tester'] = 'Geen Idee';
 
 
-        $this->load->model('Patient_model');
-        $data['agenda'] =$this->Patient_model->getAgendaPatient();
+        $this->load->model('Agenda_model');
+        $data['agendas'] =$this->Agenda_model->getAgendaPatient();
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
             'inhoud' => 'agendaBekijken',

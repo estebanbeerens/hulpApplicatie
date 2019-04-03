@@ -16,12 +16,12 @@
                 <th>EvenementId</th>
                 <th>Naam</th>
             </tr>
-            <?php foreach ($agenda as $item){ ?>
+            <?php foreach ($agendas as $agenda){ ?>
             <tr>
-                <td><?php echo $item->id; ?></td>
-                <td><?php echo $item->persoonId; ?></td>
-                <td><?php echo $item->evenementId; ?></td>
-                <td><?php echo $item->naam;?></td>
+                <td><?php echo $agenda->agendas->id; ?></td>
+                <td><?php echo $agenda->agendas->persoonId; ?></td>
+                <td><?php echo $agenda->agendas->evenementId; ?></td>
+                <td><?php echo $agenda->naam;?></td>
             </tr>
             <?php } ?>
         </table>

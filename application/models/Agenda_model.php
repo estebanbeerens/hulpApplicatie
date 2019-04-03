@@ -8,12 +8,12 @@
 
 
 /**
- * @class Patient_model
+ * @class Agenda_model
  * @brief Model-klasse voor patienten
  *
  * Model-klasse die alle methodes bevat om te
  */
-class Agenda_model
+class Agenda_model extends CI_Model
 {
     function getAgendaPatient()
     {
@@ -22,21 +22,27 @@ class Agenda_model
         //$query = $this->db->get('persoon');
         //return $query->result();
 
-
-        $query = $this->db->get('persoonEvenement');
+        $query = $this->db->get('persoon');
         $agendas = $query->result();
         $this->load->model('Patient_model');
 
-        foreach ($agendas as $agenda)
-        {
-            $agenda->agenda = $this->Patient_model->getPatient($agenda->id);
-
+        foreach($agendas as $agenda){
+            $agenda->agendas = $this->Patient_model>getAgenda($agenda->persoonId);
         }
         return $agendas;
+        //$query = $this->db->get('persoonEvenement');
+        //$agendas = $query->result();
 
-        $this->db->order_by("naam", "asc");
-        $this->db->where('soortPersoonId', 4);
-        $query = $this->db->get('persoon');
-        return $query->result();
+        //$this->load->model('Patient_model');
+
+        //foreach ($agendas as $agenda)
+        //{
+            //$agenda->personen = $this->Patient_model->getPatient($agenda->id);
+
+        //}
+        //return $agendas;
     }
+
+
+
 }
