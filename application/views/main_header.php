@@ -23,6 +23,7 @@
                     echo divAnchor('home/meldAf', 'Afmelden');
                     switch ($gebruiker->soortPersoonId) {
                         case 1: // gewone geregistreerde gebruiker
+                            echo '<li class="nav-item">' . anchor('licentie/licentieAankopen', 'Licentie aankopen') . '</li>';
                             echo '<li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="dropdownLicenties" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Licenties
