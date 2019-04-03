@@ -79,6 +79,18 @@ class Patient_model extends CI_Model
         return $this->db->insert_id();
     }
 
+    function deleten($id)
+    {
+
+        /**
+         * Het verwijderen van een evenement uit de database
+         */
+
+        $this->db->where('id',$id);
+        $this->db->delete('persoon');
+
+    }
+
     function updaten($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
         $patient = new stdClass();

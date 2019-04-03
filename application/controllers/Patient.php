@@ -105,6 +105,16 @@ class Patient extends CI_Controller
         redirect('patient/toonPatient');
 
     }
+    public function patientVerwijderen(){
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+        $this->load->model('patient_model');
+
+        $id=$this->input->get('id');
+        $this->patient_model->deleten($id);
+
+        redirect('patient/beheerPatient');
+    }
+
 
 
     public function agendaPatientBekijken()
