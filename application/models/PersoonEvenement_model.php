@@ -6,7 +6,7 @@
  * Time: 14:26
  */
 
-class persoonevenement_model extends CI_Model
+class PersoonEvenement_model extends CI_Model
 {
     function __construct()
     {
@@ -26,4 +26,5 @@ class persoonevenement_model extends CI_Model
         $query = $this->db->get('persoonEvenement');
         return $query->result();
     }
+
 }
