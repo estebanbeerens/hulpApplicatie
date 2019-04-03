@@ -7,7 +7,7 @@
  */
 /**
  * @property Template $template
- * @property Agenda_model $agenda_model
+ * @property PersoonEvenement_model $agenda_model
  */
 class Agenda extends CI_Controller
 {
@@ -24,8 +24,8 @@ class Agenda extends CI_Controller
         $data['tester'] = 'Geen Idee';
 
 
-        $this->load->model('Agenda_model');
-        $data['agendas'] =$this->Agenda_model->getAgendaPatient();
+        $this->load->model('Patient_model');
+        $data['personen'] =$this->Patient_model->getPatientenPatientEvenement();
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
             'inhoud' => 'agendaBekijken',

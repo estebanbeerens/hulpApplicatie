@@ -6,7 +6,7 @@
  * Time: 14:26
  */
 
-class persoonevenement_model extends CI_Model
+class PersoonEvenement_model extends CI_Model
 {
     function __construct()
     {
@@ -23,7 +23,8 @@ class persoonevenement_model extends CI_Model
     function getWherePersoonId($persoonId)
     {
         $this->db->where('persoonId', $persoonId);
-        $query = $this->db->get('persoonEvenement');
+        $query = $this->db->get('PersoonEvenement');
         return $query->result();
     }
+
 }
