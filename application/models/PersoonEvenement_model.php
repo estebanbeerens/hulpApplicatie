@@ -23,7 +23,7 @@ class PersoonEvenement_model extends CI_Model
     function getWherePersoonId($persoonId)
     {
         $this->db->where('persoonId', $persoonId);
-        $query = $this->db->get('PersoonEvenement');
+        $query = $this->db->get('persoonEvenement');
         return $query->result();
     }
 
