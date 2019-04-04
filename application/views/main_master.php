@@ -30,7 +30,7 @@
             <!-- Page content -->
             <main class="page-content">
                 <div class="container">
-                    <h1 class="mb-2"><?php echo $titel ?></h1>
+                    <h1 class="mb-2"><?php if (isset($titel)) { echo $titel; }?></h1>
                     <div id="inhoud">
                         <?php echo $inhoud; ?>
                     </div>

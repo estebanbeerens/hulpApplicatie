@@ -4,7 +4,7 @@
 <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
         <div class="sidebar-brand">
-            <a href="#"><?php toonAfbeelding('logo.png') ?></a>
+            <?php echo anchor('home', 'Hulpapplicatie') ?>
             <div id="close-sidebar">
                 <i class="fas fa-times"></i>
             </div>
@@ -15,30 +15,33 @@
                      alt="User picture">
             </div>
             <div class="user-info">
-              <span class="user-name">Jhon
-                <strong>Smith</strong>
+              <span class="user-name"><?php echo $gebruiker->naam ?>
+                <span class="font-weight-bold"><?php echo $gebruiker->voornaam ?></span>
               </span>
-                <span class="user-role">Administrator</span>
+                <span class="user-role"><?php echo $gebruiker->gebruikersnaam ?></span>
                 <span class="user-status">
-                <i class="fa fa-circle"></i>
-                <span>Online</span>
-              </span>
+                    <?php
+                        switch($gebruiker->soortPersoonId) {
+                            case 1:
+                                echo 'Eigenaar';
+                                break;
+                            case 2:
+                                echo 'Verantwoordelijke';
+                                break;
+                            case 3:
+                                echo 'Verzorger';
+                                break;
+                            case 4:
+                                echo 'Patiënt';
+                                break;
+                            default:
+                                echo 'Functie niet toegewezen';
+                                break;
+                        }
+                    ?>
+                </span>
             </div>
         </div>
-        <!-- sidebar-header  -->
-        <div class="sidebar-search">
-            <div>
-                <div class="input-group">
-                    <input type="text" class="form-control search-menu" placeholder="Search...">
-                    <div class="input-group-append">
-                  <span class="input-group-text">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- sidebar-search  -->
         <div class="sidebar-menu">
             <ul>
                 <li class="header-menu">
@@ -48,14 +51,11 @@
                     <a href="#">
                         <i class="fa fa-tachometer-alt"></i>
                         <span>Dashboard</span>
-                        <span class="badge badge-pill badge-warning">New</span>
                     </a>
                     <div class="sidebar-submenu">
                         <ul>
                             <li>
-                                <a href="#">Dashboard 1
-                                    <span class="badge badge-pill badge-success">Pro</span>
-                                </a>
+                                <a href="#">Dashboard 1</a>
                             </li>
                             <li>
                                 <a href="#">Dashboard 2</a>
@@ -70,7 +70,6 @@
                     <a href="#">
                         <i class="fa fa-shopping-cart"></i>
                         <span>E-commerce</span>
-                        <span class="badge badge-pill badge-danger">3</span>
                     </a>
                     <div class="sidebar-submenu">
                         <ul>
@@ -153,15 +152,13 @@
                 </li>
             </ul>
         </div>
-        <!-- sidebar-menu  -->
     </div>
-    <!-- sidebar-content  -->
     <div class="sidebar-footer">
         <a href="#">
             <i class="fa fa-cog"></i>
         </a>
         <a href="#">
-            <i class="fa fa-power-off"></i>
+            <i class="fas fa-sign-out-alt"></i>
         </a>
     </div>
 </nav>

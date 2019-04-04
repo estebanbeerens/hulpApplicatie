@@ -3,6 +3,7 @@
 /**
  * @property Template $template
  * @property Authex $authex
+ * @property Gebruiker_model $gebruiker_model
  */
 class Home extends CI_Controller
 {
@@ -13,8 +14,8 @@ class Home extends CI_Controller
         $this->load->helper('form');
     }
 
-    public function index()
-    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
+    public function index() {
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Inloggen';
         $data['ontwerper'] = 'Jeroen&nbsp;Jansen';
         $data['tester'] = 'Esteban&nbsp;Beerens';
@@ -30,7 +31,6 @@ class Home extends CI_Controller
                 'voetnoot' => 'main_footer');
 
             $this->template->load('main_master', $partials, $data);
-
         }
     }
 

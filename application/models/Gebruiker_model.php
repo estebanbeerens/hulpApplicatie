@@ -5,7 +5,6 @@
  */
 class gebruiker_model extends CI_Model
 {
-
     function __construct()
     {
         parent::__construct();
@@ -67,7 +66,7 @@ class gebruiker_model extends CI_Model
         $this->db->update('persoon', $gebruiker);
     }
 
-    function getPersoon($id){
+    function getPersoon($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('persoon');
         return $query->result();
