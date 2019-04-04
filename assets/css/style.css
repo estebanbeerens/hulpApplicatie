@@ -32,20 +32,6 @@ nav{
     /*min-height: 80vh;*/
 }
 
-
-
-/** footer **/
-#voetnoot {
-    box-shadow: 10px 10px 10px 10px #4e555b;
-    position: absolute;
-    left: 25%;
-    width: 50%;
-    background-color: #31353D;
-    color: #fff;
-    height: 180px;
-    /*line-height: 100px;*/
-}
-
 /** Evenement beheren **/
 .eventbeheren table{
     border-collapse: collapse;

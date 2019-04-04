@@ -1,0 +1,20 @@
+/** footer **/
+#voetnoot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #31353D;
+    color: #EBF2FF;
+    height: 180px;
+    /*line-height: 100px;*/
+}
+
+.footer-copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #464a52;
+    background-color: #3A3F48;
+    box-shadow: 0px -1px 5px #282c33;
+}

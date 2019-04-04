@@ -1,4 +1,3 @@
-<h1><?php echo $titel ?></h1>
 <?php
 $attributes = array('name' => 'mijnFormulier','novalidate' => 'novalidate', 'class' => 'needs-validation');
 echo form_open('home/controleerAanmelden', $attributes);
