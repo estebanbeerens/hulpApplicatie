@@ -70,16 +70,16 @@
                                             <a class="nav-link dropdown-toggle" href="#" id="dropdownVerzorger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 Verzorgers
                                             </a>
-<<<<<<< HEAD
+
                                         <div class="dropdown-menu" aria-labelledby="dropdownEvenementen">
                                            ' . anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen') . '
                                             ' . anchor('verzorger/verzorgersBeheren', 'Verzorgers beheren') . '
-=======
+
                                         <div class="dropdown-menu" aria-labelledby="dropdownVerzorger">'.
                                             anchor('verzorger/verzorgersBeheren', 'Verzorger beheren').
                                             anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen').'
 
->>>>>>> Verzorgers bewerken
+
                                          </div>
 
                                  </li>';
