@@ -88,7 +88,7 @@ class Verzorger extends CI_Controller
 
     public function verzorgerToevoegen()
     {
-
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $naam = $this->input->post('naam');
         $voornaam = $this->input->post('voornaam');

@@ -21,6 +21,8 @@ class PersoonEvenement extends CI_Controller
 
         $this->load->model('Patient_model');
         $data['personen'] =$this->Patient_model->getPatientenPatientEvenement();
+        $this->load->model('Evenement_model');
+        $data['evenementen'] = $this->Evenement_model->getEvenementenPersoonEvenement();
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
             'inhoud' => 'agendaBekijken',
