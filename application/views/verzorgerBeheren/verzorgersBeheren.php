@@ -1,14 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $titel?></title>
-
-</head>
-
 <style>
 
     input[type=submit]{
@@ -30,7 +19,6 @@
     }
 </style>
 
-<body>
 <div>
     <div class="table-responsive">
         <table class="table">
@@ -69,9 +57,4 @@
     </div>
 
     <?php echo anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen',  'class="anchorBewerken2 btn btn-primary eventToevoegen"'); ?>
-
-
-
 </div>
-</body>
-</html>

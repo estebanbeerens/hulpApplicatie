@@ -1,4 +1,3 @@
-<h1><?php echo $titel ?></h1>
 <p>In deze pagina kan u zich registreren voor onze Mantelzorg applicatie.</p>
 
 <?php

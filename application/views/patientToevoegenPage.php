@@ -1,4 +1,3 @@
-
 <div>
     <?php
     $attributes = array('name' => 'patientToevoegenFormulier' ,'novalidate' => 'novalidate', 'class' => 'needs-validation');

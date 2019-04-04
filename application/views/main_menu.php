@@ -10,37 +10,40 @@
             </div>
         </div>
         <div class="sidebar-header">
-            <div class="user-pic">
-                <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-                     alt="User picture">
-            </div>
-            <div class="user-info">
-              <span class="user-name"><?php echo $gebruiker->naam ?>
-                <span class="font-weight-bold"><?php echo $gebruiker->voornaam ?></span>
-              </span>
-                <span class="user-role"><?php echo $gebruiker->gebruikersnaam ?></span>
-                <span class="user-status">
-                    <?php
-                        switch($gebruiker->soortPersoonId) {
-                            case 1:
-                                echo 'Eigenaar';
-                                break;
-                            case 2:
-                                echo 'Verantwoordelijke';
-                                break;
-                            case 3:
-                                echo 'Verzorger';
-                                break;
-                            case 4:
-                                echo 'Patiënt';
-                                break;
-                            default:
-                                echo 'Functie niet toegewezen';
-                                break;
-                        }
-                    ?>
-                </span>
-            </div>
+            <?php
+                if (isset($gebruiker)) {
+                    switch($gebruiker->soortPersoonId) {
+                        case 1:
+                            $functie = 'Eigenaar';
+                            break;
+                        case 2:
+                            $functie = 'Verantwoordelijke';
+                            break;
+                        case 3:
+                            $functie = 'Verzorger';
+                            break;
+                        case 4:
+                            $functie = 'Patiënt';
+                            break;
+                        default:
+                            $functie = 'Functie niet toegewezen';
+                            break;
+                    }
+                echo '
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                         alt="Profielfoto">
+                </div>
+                <div class="user-info">
+                  <span class="user-name">' . $gebruiker->naam . '
+                    <span class="font-weight-bold">' . $gebruiker->voornaam . '</span>
+                  </span>
+                    <span class="user-role">' . $gebruiker->gebruikersnaam . '</span>
+                    <span class="user-status">' . $functie . '</span>
+                </div>';
+            } else {
+                    echo anchor('home', 'Log in om verder te gaan', 'class="font-weight-bold"');
+                }?>
         </div>
         <div class="sidebar-menu">
             <ul>
