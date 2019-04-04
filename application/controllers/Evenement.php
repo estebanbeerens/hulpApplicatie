@@ -25,16 +25,22 @@ class Evenement extends CI_Controller
         $data['ontwerper'] = 'Liam Mentens';
         $data['tester'] = 'vul mij in';
 
-        $this->load->model('evenement_model');
-        $data['evenement'] =$this->evenement_model->getEvenement();
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
-
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
             'inhoud' => 'evenementBekijken',
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);
+    }
+
+    public function ajax_haalEventOp()
+    {
+
+        $this->load->model('evenement_model');
+        $data['evenement'] =$this->evenement_model->getEvenement();
+
+        $this->load->view("laadEvenement", $data);
     }
 
     Public function agendaBekijken($id)

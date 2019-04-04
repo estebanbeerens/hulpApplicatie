@@ -83,6 +83,7 @@ class Home extends CI_Controller
         if ($this->authex->meldAan($gebruikersnaam, $passwoord)) {
 
             redirect($this->controleerRol());
+
         } else {
             redirect('home/toonFout');
         }
@@ -114,6 +115,7 @@ class Home extends CI_Controller
         $this->authex->meldAf();
         redirect('home/index');
     }
+
 
 
     private function stuurMail($geadresseerde, $boodschap, $titel)

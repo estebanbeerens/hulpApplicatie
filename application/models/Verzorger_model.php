@@ -4,15 +4,28 @@
  * User: LiamM
  * Date: 18-3-2019
  * Time: 15:59
+ *
+ * @class Verzorger_model
+ * @brief Model-klasse voor verzorgers
+ *
+ * Model-klasse die alle methodes bevat om te interageren met de
+ * database-tabel persoon
  */
 
 class Verzorger_model extends CI_Model
 {
     public function __construct()
     {
+        /**
+         * Constructor
+         */
         parent::__construct();
     }
 
+    /**
+     * Haalt de de personen met de soortPersoonId 3 (= verzorger) uit de tabel persoon
+     *
+     */
     function getVerzorger()
     {
         $this->db->where('soortPersoonId', 3);
@@ -20,6 +33,10 @@ class Verzorger_model extends CI_Model
         return $query->result();
 
     }
+
+    /**
+     * Maakt een nieuwe verzorger in de database-tabel persoon  met soortPersoonId = 3z
+     */
     function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
 
@@ -39,12 +56,19 @@ class Verzorger_model extends CI_Model
         return $this->db->insert_id();
     }
 
+    /**
+     * Update de gegevens van de verzorger uit de tabel persoon
+     * @param $verzorger De verzorger die geüpdatet gaat worden
+     */
     function updaten($verzorger)
     {
         $this->db->where('id', $verzorger->id);
         $this->db->update('persoon', $verzorger);
     }
-
+    /**
+     * Verwijdert de verzorger uit de tabel persoon
+     * @param $id De id van de verzorger die verwijderd gaat worden
+     */
     function deleten($id)
     {
 
@@ -52,6 +76,10 @@ class Verzorger_model extends CI_Model
         $this->db->delete('persoon');
     }
 
+    /**
+     * @param $id
+     * @return Het opgevraagde record
+     */
     function getSpecificVerzorger($id)
     {
         $this->db->where('id', $id);
