@@ -116,13 +116,7 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        ' . anchor('#', 'Evenement beheren') . '
-                                    </li>
-                                    <li>
-                                        ' . anchor('#', 'Evenement bewerken') . '
-                                    </li>
-                                    <li>
-                                        ' . anchor('#', 'Evenement toevoegen') . '
+                                        ' . anchor('evenement/evenementBeheren', 'Evenementen beheren') . '
                                     </li>
                                 </ul>
                             </div>
