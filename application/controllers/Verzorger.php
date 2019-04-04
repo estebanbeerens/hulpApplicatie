@@ -4,6 +4,11 @@
  * User: LiamM
  * Date: 14-3-2019
  * Time: 13:52
+ *
+ * @class Verzorger
+ * @brief Controller-klasse voor verzorger
+ *
+ * Controller-klasse met alle methodes die gebruikt worden in verzorger
  */
 
 
@@ -15,6 +20,12 @@ class Verzorger extends CI_Controller
         $this->load->helper('form');
     }
 
+    /**
+     * Haalt de verzorger-record op via Verzorger_model en toont het resulterende object
+     * in de view verzorgersBeheren.php
+     *
+     * @see verzorgersBeheren.php
+     */
     public function toonVerzorger()
     {
         $data['titel'] = 'Verzorger tonen';
@@ -31,6 +42,12 @@ class Verzorger extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+    /**
+     * Haalt de verzorger-record op via Verzorger_model en toont het resulterende object
+     * in de view verzorgersBeheren.php
+     *
+     * @see verzorgersBeheren.php
+     */
     public function verzorgersBeheren(){
         $data['titel'] = 'Verzorgers beheren';
         $data['ontwerper'] = 'Liam&nbspMentens';
@@ -45,6 +62,12 @@ class Verzorger extends CI_Controller
             'voetnoot' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
+
+    /**
+     * Update de gegevens van de verzorger met de geselecteerde id
+     * @param $id De id van de verzorger die geüpdate gaat worden
+     *
+     */
 
     public function verzorgersUpdaten($id){
 
@@ -71,6 +94,13 @@ class Verzorger extends CI_Controller
         redirect('verzorger/verzorgersBeheren');
     }
 
+    /**
+     * Haalt de verzorger-record op via Verzorger-model en toont het resulterende object
+     * in de view verzorgerToevoegen.php
+     *
+     * @see verzorgerToevoegen.php
+     */
+
     public function verzorgerViewLaden()
     {
         $data['titel'] = 'Verzorger toevoegen';
@@ -86,6 +116,11 @@ class Verzorger extends CI_Controller
 
         $this->template->load('main_master', $partials, $data);
     }
+
+    /**
+     * Maakt een nieuwe verzorger-record aan via Verzorger_model en toont het resulterende object
+     * in de view verzorgersBeheren.php
+     */
 
     public function verzorgerToevoegen()
     {
@@ -107,6 +142,9 @@ class Verzorger extends CI_Controller
         redirect('verzorger/verzorgersBeheren');
 
     }
+    /**
+     * Verwijdert een verzorger uit de database-tabel persoon
+     */
 
     public function verzorgerDeleten()
     {
@@ -118,6 +156,12 @@ class Verzorger extends CI_Controller
 
         redirect('verzorger/verzorgersBeheren');
     }
+
+    /**
+     * Haalt de geselecteerde verzorger op via Verzorger_model om te bewerken en toont het
+     * resulterende object in de view verzorgersBeheren.php
+     * @param $id De id om een specifieke verzorger te selecteren
+     */
 
     public function verzorgerBewerken($id)
     {

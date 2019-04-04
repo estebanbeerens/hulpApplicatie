@@ -35,7 +35,7 @@ class Verzorger_model extends CI_Model
     }
 
     /**
-     * Maakt een nieuwe verzorger in de database-tabel persoon  met soortPersoonId = 3z
+     * Maakt een nieuwe verzorger in de database-tabel persoon  met soortPersoonId = 3
      */
     function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
     {
@@ -77,7 +77,7 @@ class Verzorger_model extends CI_Model
     }
 
     /**
-     * @param $id
+     * @param $id De id om een specifieke verzorger te bewerken
      * @return Het opgevraagde record
      */
     function getSpecificVerzorger($id)
