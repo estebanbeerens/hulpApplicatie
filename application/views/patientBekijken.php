@@ -6,6 +6,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $titel?></title>
+    <script>
+        $(document).ready(function(){
+            $('.afmeldKnop').click(function(){
+
+                var patientId = $(this).val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "meldPatientAf",
+                    data: {id: patientId}
+
+                })
+            });
+
+        });
+    </script>
 </head>
 <body>
 <div class="table-responsive">
@@ -13,6 +29,7 @@
         <tr>
             <th>Id</th>
             <th>Naam</th>
+            <th>afmelden</th>
             <th>Voornaam</th>
             <th>geboortedatum</th>
             <th>woonplaats</th>
@@ -26,6 +43,15 @@
             <tr>
                 <td><?php echo $item->id; ?></td>
                 <td><?php echo $item->naam; ?></td>
+                <td>
+                <?php if($item->isAangemeld == 1){ ?>
+
+                    <button class="afmeldKnop" value="<?php echo $item->id; ?>">
+                        Afmelden
+                    </button>
+
+                <?php } ?>
+                </td>
                 <td><?php echo $item->voornaam; ?></td>
                 <td><?php echo $item->geboortedatum; ?></td>
                 <td><?php echo $item->woonplaats; ?></td>
@@ -37,5 +63,7 @@
             </tr>
         <?php } ?>
     </table>
+
+    <a class="test"></a>
 </div>
 </body>

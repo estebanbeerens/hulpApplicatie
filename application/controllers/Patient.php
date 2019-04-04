@@ -8,6 +8,7 @@
     /**
      * @property Template $template
      * @property Patient_model $patient_model
+     * @property Authex $authex
      */
 
 class Patient extends CI_Controller
@@ -35,6 +36,30 @@ class Patient extends CI_Controller
 
     $this->template->load('main_master', $partials, $data);
 }
+
+    public function controleerPatientAangemeld(){
+
+        $id = $this->input->get('id');
+        if($this->authex->isPatientAangemeld($id)){
+            return 1;
+        } else {
+            return 0;
+        }
+
+
+    }
+
+    public function meldPatientAf()
+    {
+
+        $id = $this->input->post('id');
+
+        $patient = new stdClass();
+        $patient->isAangemeld = 0;
+
+        $this->load->model('patient_model');
+        $this->patient_model->patientAfmelden($id, $patient);
+    }
 
 
     public function beheerPatient()
