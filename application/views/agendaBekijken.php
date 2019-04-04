@@ -18,10 +18,14 @@
             </tr>
             <?php foreach ($personen as $persoon){ ?>
             <tr>
-                <td><?php echo $persoon->persoonEvenement->id; ?></td>
-                <td><?php echo $persoon->persoonEvenement->persoonId; ?></td>
-                <td><?php echo $persoon->persoonEvenement->evenementId; ?></td>
-                <td><?php echo $persoon->naam;?></td>
+                <td><?php echo $persoon->naam;?><?php echo " " ?><?php echo $persoon->voornaam;?></td>
+                <?php foreach ($persoon->persoonEvenementen as $persoonEvenement){?>
+                <td><?php echo $persoonEvenement->id; ?></td>
+                <td><?php echo $persoonEvenement->persoonId; ?></td>
+                <td><?php echo $persoonEvenement->evenementId; ?></td>
+                <?php } ?>
+
+
             </tr>
             <?php } ?>
         </table>

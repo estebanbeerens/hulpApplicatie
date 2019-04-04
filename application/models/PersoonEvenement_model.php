@@ -1,9 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: LiamM
- * Date: 6-3-2019
- * Time: 14:26
+ * User: Eigenaar
+ * Date: 7/03/2019
+ * Time: 12:51
+ */
+
+
+/**
+ * @class PersoonEvenement_model
+ * @brief Model-klasse voor PersoonEvenement
+ *
+ * Model-klasse die alle methodes bevat om te
  */
 
 class PersoonEvenement_model extends CI_Model

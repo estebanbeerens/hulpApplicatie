@@ -28,6 +28,7 @@ class Patient_model extends CI_Model
     }
     function getPatientenPatientEvenement(){
         $this->db->where('soortPersoonId', 4);
+        $this->db->order_by('naam', 'asc');
         $query = $this->db->get('persoon');
         $personen = $query->result();
         $this->load->model('PersoonEvenement_model');
