@@ -1,7 +1,4 @@
-<h1><?php echo $titel ?></h1>
-
 <?php
-
 $patientToevoegenFormulier = array('id' => 'patientToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
 echo form_open('patient/patientUpdaten/' . $patient->id, $patientToevoegenFormulier, $patient->id);
 ?>

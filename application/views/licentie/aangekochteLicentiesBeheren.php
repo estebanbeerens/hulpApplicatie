@@ -4,4 +4,4 @@
      */
 ?>
 
-<h1><?php echo $titel ?></h1>
+<p>Aangekochte licenties beheren</p>

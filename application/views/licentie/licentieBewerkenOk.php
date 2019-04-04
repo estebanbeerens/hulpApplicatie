@@ -3,7 +3,6 @@
      * Ontwerper: Esteban
      */
 ?>
-<h1><?php echo $titel ?></h1>
 <div class="col-12 mt-3">
     <p>De bestaande licentie is gewijzigd.</p>
 </div>
