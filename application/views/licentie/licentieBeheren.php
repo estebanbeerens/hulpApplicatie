@@ -4,7 +4,6 @@
      */
 ?>
 
-<h1><?php echo $titel ?></h1>
 <div class="row">
 <?php
     /**

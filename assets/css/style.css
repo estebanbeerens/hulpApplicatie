@@ -36,18 +36,16 @@ nav{
 
 /** footer **/
 #voetnoot {
+    box-shadow: 10px 10px 10px 10px #4e555b;
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: lightskyblue;
+    left: 25%;
+    width: 50%;
+    background-color: #31353D;
+    color: #fff;
     height: 180px;
     /*line-height: 100px;*/
-
 }
 
-.footer-copyright {
-    background-color: #66c1f9;
-}
 /** Evenement beheren **/
 .eventbeheren table{
     border-collapse: collapse;
