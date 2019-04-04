@@ -73,7 +73,7 @@
                     case 2:
                         echo '<li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-tachometer-alt"></i>
+                                <i class="fas fa-procedures"></i>
                                 <span>Patiënt</span>
                             </a>
                             <div class="sidebar-submenu">
@@ -93,16 +93,16 @@
                         
                         <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-tachometer-alt"></i>
+                                <i class="far fa-calendar-alt"></i>
                                 <span>Agenda patiënt</span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        ' . anchor('patient/toonPatient', 'Patient bekijken') . '
+                                        ' . anchor('#', 'Agenda patient bekijken') . '
                                     </li>
                                     <li>
-                                        ' . anchor('patient/agendaPatientBekijken', 'Agenda patient bekijken') . '
+                                        ' . anchor('#', 'Agenda patient beheren') . '
                                     </li>
                                 </ul>
                             </div>
@@ -110,16 +110,39 @@
                         
                         <li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-tachometer-alt"></i>
+                                <i class="fas fa-calendar-day"></i>
                                 <span>Evenementen</span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        ' . anchor('persoonEvenement/toonPersoonEvenementPatient', 'Agenda patiënt bekijken') . '
+                                        ' . anchor('#', 'Evenement beheren') . '
                                     </li>
                                     <li>
-                                        ' . anchor('persoonEvenement/beheerPersoonEvenementPatient', 'Agenda patiënt beheren') . '
+                                        ' . anchor('#', 'Evenement bewerken') . '
+                                    </li>
+                                    <li>
+                                        ' . anchor('#', 'Evenement toevoegen') . '
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fas fa-user-nurse"></i>
+                                <span>Verzorgers</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        ' . anchor('#', 'Verzorger beheren') . '
+                                    </li>
+                                    <li>
+                                        ' . anchor('#', 'Verzorger bewerken') . '
+                                    </li>
+                                    <li>
+                                        ' . anchor('#', 'Verzorger toevoegen') . '
                                     </li>
                                 </ul>
                             </div>
@@ -128,44 +151,26 @@
                     case 3:
                         echo '<li class="sidebar-dropdown">
                             <a href="#">
-                                <i class="fa fa-tachometer-alt"></i>
-                                <span>Dashboard</span>
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Agenda patiënt</span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">Dashboard 1</a>
+                                        ' . anchor('patient/agendaPatientBekijken', 'Agenda patiënt bekijken') . '
                                     </li>
                                     <li>
-                                        <a href="#">Dashboard 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Dashboard 3</a>
+                                        ' . anchor('patient/beheerAgendaPatient', 'Agenda patiënt beheren') . '
                                     </li>
                                 </ul>
                             </div>
+                        </li>
+                        <li class="sidebar-menu">
+                            ' . anchor('patient/toonPatient', '<i class="fas fa-procedures"></i><span>Patient bekijken</span>') . '
                         </li>';
                         break;
                     case 4:
-                        echo '<li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-tachometer-alt"></i>
-                                <span>Dashboard</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Dashboard 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Dashboard 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Dashboard 3</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>';
+
                         break;
                     default:
                         echo '<p>Functie niet toegewezen</p>';
