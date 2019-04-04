@@ -51,7 +51,7 @@
                     <td><?php echo $item->id; ?></td>
                     <td>
 
-                        <?php echo anchor('verzorger/verzorgerBewerken/' . $item->id, $item->naam, 'class="anchorBewerken btn btn-primary"'); ?>
+                        <?php echo anchor('verzorger/verzorgerBewerken/' . $item->id, $item->naam, 'class="anchorBewerken1 btn btn-primary"'); ?>
 
                     </td>
                     <td><?php echo $item->voornaam; ?></td>
@@ -68,30 +68,9 @@
         </table>
     </div>
 
-<!-- Popup beheren-->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Beheren
-    </button>
+    <?php echo anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen',  'class="anchorBewerken2 btn btn-primary eventToevoegen"'); ?>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Updaten</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 </body>

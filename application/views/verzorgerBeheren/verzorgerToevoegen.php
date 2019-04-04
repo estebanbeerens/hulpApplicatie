@@ -1,68 +1,139 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $titel ?></title>
-</head>
-<body>
-<div>
 
-    <?php
-    $attributes = array('name' => 'verzorgerToevoegenFormulier');
-    echo form_open('verzorger/verzorgerToevoegen', $attributes);
-    ?>
-    <table>
-        <th>Verzorger toevoegen</th>
-        <tr>
-            <td><?php echo form_label('Id:', 'id'); ?></td>
-            <td><?php echo form_input(array('name' => 'id', 'id' => 'id', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('Naam:', 'naam'); ?></td>
-            <td><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('Voornaam:', 'voornaam'); ?></td>
-            <td><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('geboortedatum:', 'geboortedatum'); ?></td>
-            <td><?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('woonplaats:', 'woonplaats'); ?></td>
-            <td><?php echo form_input(array('name' => 'woonplaats', 'id' => 'woonplaats', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('adres:', 'adres'); ?></td>
-            <td><?php echo form_input(array('name' => 'adres', 'id' => 'adres', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('rekeningnummer', 'rekeningnummer'); ?></td>
-            <td><?php echo form_input(array('name' => 'rekeningnummer', 'id' => 'rekeningnummer', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('gebruikersnaam:', 'gebruikersnaam'); ?></td>
-            <td><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('passwoord', 'passwoord'); ?></td>
-            <td><?php echo form_input(array('name' => 'passwoord', 'id' => 'passwoord', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td><?php echo form_label('email:', 'email'); ?></td>
-            <td><?php echo form_input(array('name' => 'email', 'id' => 'email', 'size' => '30', 'value' => '')); ?></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><?php echo form_submit('knop', 'Verzenden'); ?></td>
-        </tr>
-    </table>
+<?php
+/**
+ * Ontwerper: Liam
+ * Tester: ?
+ */
 
+$verzorgerToevoegenFormulier = array('id' => 'verzorgerToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
+echo form_open('verzorger/verzorgerToevoegen/' , $verzorgerToevoegenFormulier);
+?>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <?php
+        echo form_label('Verzorgernaam', 'naam');
+
+        $dataNaam = array('id' => 'naam',
+            'name' => 'naam',
+            'class' => 'form-control',
+            'placeholder' => 'Verzorgernaam',
+            'required' => 'required');
+        echo form_input($dataNaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een verzorger op.</div>
+    </div>
+    <div class="form-group col-md-6">
+        <?php
+        echo form_label('Voornaam', 'voornaam');
+
+        $dataVoornaam = array('id' => 'voornaam',
+            'name' => 'voornaam',
+            'class' => 'form-control',
+            'placeholder' => 'Voornaam',
+            'required' => 'required');
+        echo form_input($dataVoornaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een voornaam op.</div>
+    </div>
+    <div class="form-group col-md-12">
+        <?php
+        echo form_label('Geboortedatum', 'geboortedatum');
+
+        $dataGeboortedatum = array('id' => 'geboortedatum',
+            'type' => 'date',
+            'name' => 'geboortedatum',
+            'class' => 'form-control',
+            'placeholder' => 'Geboortedatum',
+            'required' => 'required');
+        echo form_input($dataGeboortedatum) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een geboortedatum op.</div>
+    </div>
+    <div class="form-group col-md-6">
+        <?php
+        echo form_label('Adres', 'adres');
+
+        $dataAdres = array('id' => 'adres',
+            'name' => 'adres',
+            'class' => 'form-control',
+            'placeholder' => 'Adres',
+            'required' => 'required');
+        echo form_input($dataAdres) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een adres op.</div>
+    </div>
+    <div class="form-group col-md-6">
+        <?php
+        echo form_label('Woonplaats', 'woonplaats');
+
+        $dataWoonplaats = array('id' => 'woonplaats',
+            'name' => 'woonplaats',
+            'class' => 'form-control',
+            'placeholder' => 'Woonplaats',
+            'required' => 'required');
+        echo form_input($dataWoonplaats) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een woonplaats op.</div>
+    </div>
+
+
+    <div class="form-group col-md-6">
+        <?php
+        echo form_label('Gebruikersnaam', 'gebruikersnaam');
+
+        $dataGebruikersnaam = array('id' => 'gebruikesrnaam',
+            'name' => 'gebruikersnaam',
+            'class' => 'form-control',
+            'placeholder' => 'Gebruikersnaam',
+            'required' => 'required');
+        echo form_input($dataGebruikersnaam) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
+    </div>
+    <div class="form-group col-md-6">
+        <?php
+        echo form_label('Passwoord', 'passwoord');
+
+        $dataPasswoord = array('id' => 'passwoord',
+            'name' => 'passwoord',
+            'class' => 'form-control',
+            'placeholder' => 'Passwoord',
+            'required' => 'required');
+        echo form_input($dataPasswoord) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een passwoord op.</div>
+    </div>
+    <div class="form-group col-md-6">
+        <?php
+        echo form_label('Email', 'email');
+
+        $dataEmail = array('id' => 'email',
+            'name' => 'email',
+            'class' => 'form-control',
+            'placeholder' => 'Email',
+            'required' => 'required');
+        echo form_input($dataEmail) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een email op.</div>
+    </div>
+    <div class="form-group col-md-6">
+        <?php
+        echo form_label('Rekeningnummer', 'rekeningnummer');
+
+        $dataRekeningnummer = array('id' => 'rekeningnummer',
+            'name' => 'rekeningnummer',
+            'class' => 'form-control',
+            'placeholder' => 'Rekeningnummer',
+            'required' => 'required');
+        echo form_input($dataRekeningnummer) . "\n";
+        ?>
+        <div class="invalid-feedback">Geef een rekeningnummer op.</div>
+    </div>
+
+    <div class="form-group col-md-3">
+        <?php echo form_submit('knop', 'Toevoegen', "class='btn btn-primary'") ?>
+    </div>
+    <?php echo form_close(); ?>
+    <div class='col-12 mt-4'> <?php echo anchor('verzorger/verzorgersBeheren', 'Terug'); ?> </div>
 </div>
-
-</body>
-</html>
