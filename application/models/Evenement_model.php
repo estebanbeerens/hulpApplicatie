@@ -83,5 +83,27 @@ class evenement_model extends CI_Model
         $query = $this->db->get('evenement');
         return $query->row();
     }
+    function getPatientenPatientEvenement(){
+        $this->db->where('soortPersoonId', 4);
+        $this->db->order_by('naam', 'asc');
+        $query = $this->db->get('persoon');
+        $personen = $query->result();
+        $this->load->model('PersoonEvenement_model');
+
+        foreach($personen as $persoon){
+            $persoon->persoonEvenement = $this->PersoonEvenement_model->getWherePersoonId($persoon->id);
+        }
+        return $personen;
+    }
+    function getEvenementenPersoonEvenement(){
+        $query = $this->db->get('evenement');
+        $evenementen = $query->result();
+        $this->load->model('PersoonEvenement_model');
+
+        foreach($evenementen as $evenement){
+            $evenement->persoonEvenement = $this->PersoonEvenement_model->getWhereEvenementId($evenement->id);
+        }
+        return $evenementen;
+    }
 
 }
