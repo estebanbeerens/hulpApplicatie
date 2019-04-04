@@ -32,7 +32,7 @@
                 <td><?php echo $item->id; ?></td>
                 <td>
 
-                        <?php echo anchor('evenement/evenementBewerken/' . $item->id, $item->naam, 'class="anchorBewerken btn btn-primary"'); ?>
+                        <?php echo anchor('evenement/evenementBewerken/' . $item->id, $item->naam, 'class="anchorBewerken1 btn btn-primary"'); ?>
 
                 </td>
                 <td><?php echo $item->datum; ?></td>
@@ -44,7 +44,7 @@
             </tr>
             <?php } ?>
         </table>
-        <?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen',  'class="anchorBewerken btn btn-primary eventToevoegen"'); ?>
+        <?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen',  'class="anchorBewerken2 btn btn-primary eventToevoegen"'); ?>
 
     </div>
 

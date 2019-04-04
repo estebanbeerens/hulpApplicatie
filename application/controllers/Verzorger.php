@@ -33,7 +33,7 @@ class Verzorger extends CI_Controller
     public function verzorgersBeheren(){
         $data['titel'] = 'Verzorgers beheren';
         $data['ontwerper'] = 'Liam&nbspMentens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Tomas&nbspMarlein';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('verzorger_model');
         $data['verzorger'] = $this->verzorger_model->getVerzorger();
