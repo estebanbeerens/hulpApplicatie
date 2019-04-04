@@ -39,22 +39,10 @@ class Verzorger_model extends CI_Model
         return $this->db->insert_id();
     }
 
-    function updaten($id,$naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
+    function updaten($verzorger)
     {
-        $verzorger = new stdClass();
-        $verzorger->id = $id;
-        $verzorger->naam = $naam;
-        $verzorger->voornaam = $voornaam;
-        $verzorger->geboortedatum = $geboortedatum;
-        $verzorger->woonplaats = $woonplaats;
-        $verzorger->adres = $adres;
-        $verzorger->rekeningnummer = $rekeningnummer;
-        $verzorger->gebruikersnaam = $gebruikersnaam;
-        $verzorger->passwoord = $passwoord;
-        $verzorger->email = $email;
-
-        $this->db->where('id',$id);
-        $this->db->update('persoon',$verzorger);
+        $this->db->where('id', $verzorger->id);
+        $this->db->update('persoon', $verzorger);
     }
 
     function deleten($id)
@@ -62,6 +50,13 @@ class Verzorger_model extends CI_Model
 
         $this->db->where('id',$id);
         $this->db->delete('persoon');
+    }
+
+    function getSpecificVerzorger($id)
+    {
+        $this->db->where('id', $id);
+        $query = $this->db->get('persoon');
+        return $query->row();
     }
 
 

@@ -77,7 +77,13 @@ nav{
     background-color: #005efe;
 }
 
-.anchorBewerken{
+.anchorBewerken1{
+    color: White;
+    text-decoration: none;
+    width: 100%;
+}
+
+.anchorBewerken2{
     color: White;
     text-decoration: none;
 }
