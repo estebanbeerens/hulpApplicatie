@@ -15,7 +15,7 @@
 <div id="eventbeheren">
 
 
-    <div class="eventbeheren">
+    <div class="eventbeheren table-responsive">
         <table>
             <tr>
                 <td>id</td>
