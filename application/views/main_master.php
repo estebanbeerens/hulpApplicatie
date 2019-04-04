@@ -30,6 +30,9 @@
             <!-- Page content -->
             <main class="page-content">
                 <div class="container">
+                    <div id="header">
+                        <?php echo $hoofding; ?>
+                    </div>
                     <h1 class="mb-2"><?php if (isset($titel)) { echo $titel; }?></h1>
                     <div id="inhoud">
                         <?php echo $inhoud; ?>

@@ -17,7 +17,6 @@
         <ul class="navbar-nav">
 
                 <?php
-
                 if ($gebruiker == null) { // niet aangemeldecho divAnchor('home/meldAan', 'Aanmelden');
                 } else { // wel aangemeld
                     echo divAnchor('home/meldAf', 'Afmelden');
