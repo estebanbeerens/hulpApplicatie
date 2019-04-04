@@ -42,6 +42,18 @@
             }
         }
 
+        function isPatientAangemeld($id)
+    {
+        // gebruiker is aangemeld als sessievariabele gebruiker_id bestaat
+        $CI =& get_instance();
+
+        if ($CI->session->has_userdata($id)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
         function getGebruikerInfo()
         {
             // geef gebruiker-object als gebruiker aangemeld is
@@ -62,13 +74,16 @@
 
             $gebruiker = $CI->gebruiker_model->getGebruiker($gebruikersnaam, $passwoord);
 
+
+
             if ($gebruiker == null) {
                 return false;
             } else {
                 $CI->session->set_userdata('gebruiker_id', $gebruiker->id);
                 return true;
+                }
         }
-        }
+
 
         function meldAf()
         {
