@@ -32,7 +32,7 @@ class PersoonEvenement extends CI_Controller
     }
     public function beheerPersoonEvenementPatient()
     {
-        $data['titel'] = 'Agenda patient tonen';
+        $data['titel'] = 'Agenda patient bekijken';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['ontwerper'] = 'René Vanhoof';
         $data['tester'] = 'Geen Idee';

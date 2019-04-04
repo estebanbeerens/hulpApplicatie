@@ -32,9 +32,12 @@ class Patient_model extends CI_Model
         $query = $this->db->get('persoon');
         $personen = $query->result();
         $this->load->model('PersoonEvenement_model');
-
+        $this->load->model('Evenement_model');
         foreach($personen as $persoon){
-            $persoon->persoonEvenement = $this->PersoonEvenement_model->getWherePersoonId($persoon->id);
+            $persoon->persoonEvenementen = $this->PersoonEvenement_model->getWherePersoonId($persoon->id);
+            foreach($persoon->persoonEvenementen as $evenement){
+                $evenement->evenement= $this->Evenement_model->getEvenementPersoon($evenement->evenementId);
+            }
         }
         return $personen;
     }
