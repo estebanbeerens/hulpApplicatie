@@ -1,29 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $titel?></title>
-    <script>
-        $(document).ready(function(){
-            $('.afmeldKnop').click(function(){
+<script>
+    $(document).ready(function(){
+        $('.afmeldKnop').click(function(){
 
-                var patientId = $(this).val();
+            var patientId = $(this).val();
 
-                $.ajax({
-                    type: "POST",
-                    url: "meldPatientAf",
-                    data: {id: patientId}
+            $.ajax({
+                type: "POST",
+                url: "meldPatientAf",
+                data: {id: patientId}
 
-                })
-            });
-
+            })
         });
-    </script>
-</head>
-<body>
+
+    });
+</script>
 <div class="table-responsive">
     <table class="table">
         <tr>
@@ -66,4 +56,3 @@
 
     <a class="test"></a>
 </div>
-</body>
