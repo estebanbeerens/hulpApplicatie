@@ -15,7 +15,7 @@ echo form_open('home/controleerAanmelden', $attributes);
                     'required' => 'required');
         echo form_input($dataNaam) . "\n";
         ?>
-        <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
+        <div class="invalid-feedback">Geef je gebruikersnaam op.</div>
     </div>
 
     <div class="form-group col-md-7">
@@ -28,7 +28,7 @@ echo form_open('home/controleerAanmelden', $attributes);
                 'required' => 'required');
         echo form_password($dataWachtwoord);
         ?>
-        <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
+        <div class="invalid-feedback">Geef je wachtwoord op.</div>
     </div>
 </div>
 
