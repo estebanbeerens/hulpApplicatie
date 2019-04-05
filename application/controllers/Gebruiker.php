@@ -51,6 +51,7 @@
             $gebruiker->geboortedatum = $this->input->post('geboortedatum');
             $gebruiker->email = $this->input->post('email');
             $gebruiker->woonplaats = $this->input->post('woonplaats');
+            $gebruiker->postcode = $this->input->post('postcode');
             $gebruiker->adres = $this->input->post('adres');
             $gebruiker->gebruikersnaam = $this->input->post('gebruikersnaam');
             $gebruiker->passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
