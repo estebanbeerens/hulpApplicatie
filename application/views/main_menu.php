@@ -47,9 +47,6 @@
         </div>
         <div class="sidebar-menu">
             <ul>
-<!--                <li class="header-menu">-->
-<!--                    <span>General</span>-->
-<!--                </li>-->
             <?php if (isset($gebruiker)) {
                 switch($gebruiker->soortPersoonId) {
                     case 1:
@@ -71,7 +68,10 @@
                         </li>';
                         break;
                     case 2:
-                        echo '<li class="sidebar-dropdown">
+                        echo '<li class="header-menu">
+                                <span>Patiënten</span>
+                            </li>
+                            <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="fas fa-procedures"></i>
                                 <span>Patiënt</span>
@@ -99,15 +99,18 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        ' . anchor('#', 'Agenda patient bekijken') . '
+                                        ' . anchor('persoonEvenement/toonPersoonEvenementPatient', 'Agenda patient bekijken') . '
                                     </li>
                                     <li>
-                                        ' . anchor('#', 'Agenda patient beheren') . '
+                                        ' . anchor('persoonEvenement/beheerPersoonEvenementPatient', 'Agenda patient beheren') . '
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         
+                        <li class="header-menu">
+                            <span>Evenementen</span>
+                        </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="fas fa-calendar-day"></i>
@@ -122,6 +125,9 @@
                             </div>
                         </li>
                         
+                        <li class="header-menu">
+                            <span>Verzorgers</span>
+                        </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="fas fa-user-nurse"></i>
@@ -130,13 +136,10 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        ' . anchor('#', 'Verzorger beheren') . '
+                                        ' . anchor('verzorger/verzorgersBeheren', 'Verzorger beheren') . '
                                     </li>
                                     <li>
-                                        ' . anchor('#', 'Verzorger bewerken') . '
-                                    </li>
-                                    <li>
-                                        ' . anchor('#', 'Verzorger toevoegen') . '
+                                        ' . anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen') . '
                                     </li>
                                 </ul>
                             </div>
