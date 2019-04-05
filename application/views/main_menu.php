@@ -35,8 +35,8 @@
                          alt="Profielfoto">
                 </div>
                 <div class="user-info">
-                  <span class="user-name">' . $gebruiker->naam . '
-                    <span class="font-weight-bold">' . $gebruiker->voornaam . '</span>
+                  <span class="user-name">' . $gebruiker->voornaam . '
+                    <span class="font-weight-bold">' . $gebruiker->naam . '</span>
                   </span>
                     <span class="user-role">' . $gebruiker->gebruikersnaam . '</span>
                     <span class="user-status">' . $functie . '</span>

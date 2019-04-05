@@ -43,9 +43,9 @@
                     <div id="inhoud">
                         <?php echo $inhoud; ?>
                     </div>
-                    <div id="voetnoot">
-                        <?php echo $voetnoot; ?>
-                    </div>
+                </div>
+                <div id="voetnoot">
+                    <?php echo $voetnoot; ?>
                 </div>
             </main>
         </div>
