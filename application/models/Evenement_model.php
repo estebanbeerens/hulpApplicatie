@@ -105,5 +105,12 @@ class evenement_model extends CI_Model
         }
         return $evenementen;
     }
+    function getEvenementPersoon($evenementId){
+        $this->db->where('id', $evenementId);
+        $query = $this->db->get('evenement');
+
+        return $query->row();
+
+    }
 
 }
