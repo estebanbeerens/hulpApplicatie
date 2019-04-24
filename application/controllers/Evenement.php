@@ -20,6 +20,10 @@ class Evenement extends CI_Controller
 
     public function toonEvenement()
     {
+        /**
+         * roept de pagina evenement bekijken op
+         */
+
         $data['titel'] = 'Evenement tonen';
 
         $data['ontwerper'] = 'Liam Mentens';
@@ -45,6 +49,11 @@ class Evenement extends CI_Controller
 
     Public function agendaBekijken($id)
     {
+        /**
+         * Gaat de pagina agenda bekijken oproepen
+         * @param $id gaat de agenda van een bepaald persoon ophalen met zijn id.
+         */
+
         $data['titel'] = 'Agenda bekijken';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('persoonevenement_model');
@@ -112,6 +121,7 @@ class Evenement extends CI_Controller
 
         /**
          * ophalen van een specifieke evenement
+         * @param $id gaat ervoor zorgen dat we het opgegeven evenement gaat ophalen met zijn specifiek id.
          */
 
 
@@ -137,6 +147,7 @@ class Evenement extends CI_Controller
 
         /**
          * Bewerken van een specifiek evenement
+         * @param $id gaat ervoor zorgen dat het evenement met een specifiek id geupdate gaat worden.
          */
 
         $herhalingpost = $this->input->post('herhaling');
