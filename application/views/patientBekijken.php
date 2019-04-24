@@ -17,21 +17,17 @@
 <div class="table-responsive">
     <table class="table">
         <tr>
-            <th>Id</th>
             <th>Naam</th>
             <th>afmelden</th>
             <th>Voornaam</th>
             <th>geboortedatum</th>
             <th>woonplaats</th>
             <th>adres</th>
-            <th>rekeningnummer</th>
             <th>gebruikersnaam</th>
-            <th>wachtwoord</th>
             <th>email</th>
         </tr>
         <?php foreach ($patient as $item){ ?>
             <tr>
-                <td><?php echo $item->id; ?></td>
                 <td><?php echo $item->naam; ?></td>
                 <td>
                 <?php if($item->isAangemeld == 1){ ?>
@@ -46,9 +42,7 @@
                 <td><?php echo $item->geboortedatum; ?></td>
                 <td><?php echo $item->woonplaats; ?></td>
                 <td><?php echo $item->adres; ?></td>
-                <td><?php echo $item->rekeningnummer; ?></td>
                 <td><?php echo $item->gebruikersnaam; ?></td>
-                <td><?php echo $item->passwoord; ?></td>
                 <td><?php echo $item->email; ?></td>
             </tr>
         <?php } ?>
