@@ -39,9 +39,6 @@ class gebruiker_model extends CI_Model
     }
 
     function setAangemeld($id, $patient){
-
-
-
         $this->db->where('id', $id);
         $this->db->update('persoon', $patient);
     }
