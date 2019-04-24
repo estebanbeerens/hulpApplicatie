@@ -81,7 +81,7 @@ class Verzorger extends CI_Controller
         $verzorger->woonplaats = $this->input->post('woonplaats');
         $verzorger->adres = $this->input->post('adres');
         $verzorger->gebruikersnaam =$this->input->post('gebruikersnaam');
-        $verzorger->passwoord = $this->input->post('passwoord');
+        $verzorger->passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
         $verzorger->email = $this->input->post('email');
 
 
@@ -132,7 +132,7 @@ class Verzorger extends CI_Controller
         $adres = $this->input->post('adres');
 
         $gebruikersnaam = $this->input->post('gebruikersnaam');
-        $passwoord = $this->input->post('passwoord');
+        $passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
         $email = $this->input->post('email');
 
         $this->load->model('verzorger_model');
