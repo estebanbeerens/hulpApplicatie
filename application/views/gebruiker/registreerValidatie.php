@@ -1,10 +1,13 @@
 <?php
     /**
-     * Created by PhpStorm.
-     * User: Esteban
-     * Date: 3/04/2019
-     * Time: 14:26
+     * Ontwerper: Esteban
      */
-    ?>
+    /**
+     * @file registreerValidatie.php
+     *
+     * View die een bevestigingsscherm toont na een voltooide registratie.
+     */
+?>
+
 
 <p>U kan zich nu <?php echo anchor('home', 'inloggen') ?>.</p>

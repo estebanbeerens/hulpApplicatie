@@ -1,3 +1,12 @@
+<?php
+    /**
+     * @file main_footer.php
+     *
+     * Een view die de main_footer.php toont. Deze wordt via controllers ingeladen op alle pagina's.
+     * - Gebruikt Bootstrap
+     */
+?>
+
 <!-- Footer -->
 <footer class="page-footer font-small pt-4 bottom">
     <div class="container-fluid text-center text-md-left container">

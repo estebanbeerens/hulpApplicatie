@@ -29,22 +29,35 @@ class Evenement extends CI_Controller
         $data['ontwerper'] = 'Liam Mentens';
         $data['tester'] = 'Seppe Peeters';
 
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $partials = array('hoofding' => 'main_header',
-            'menu' => 'main_menu',
-            'inhoud' => 'evenementBekijken',
-            'voetnoot' => 'main_footer');
+        $gebruiker = $this->authex->getGebruikerInfo();
+        $data['gebruiker'] = $gebruiker;
 
-        $this->template->load('main_master', $partials, $data);
+        if($gebruiker->isAangemeld == 1){
+            $partials = array('hoofding' => 'main_header',
+                'menu' => 'main_menu',
+                'inhoud' => 'evenementBekijken',
+                'voetnoot' => 'main_footer');
+
+            $this->template->load('main_master', $partials, $data);
+        }else{
+            redirect('home/meldAf');
+        }
+
     }
 
     public function ajax_haalEventOp()
     {
-
+        $gebruiker = $this->authex->getGebruikerInfo();
         $this->load->model('evenement_model');
         $data['evenement'] =$this->evenement_model->getEvenement();
 
         $this->load->view("laadEvenement", $data);
+    }
+
+    public function ajax_isAangemeld(){
+        $gebruiker = $this->authex->getGebruikerInfo();
+
+        return $gebruiker->isAangemeld;
     }
 
     Public function agendaBekijken($id)

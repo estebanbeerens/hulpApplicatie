@@ -1,3 +1,12 @@
+<?php
+    /**
+     * @file registreer.php
+     *
+     * View waarin men met een form een nieuw account kan registreren.
+     * - Gebruikt Bootstrap form en controle
+     */
+?>
+
 <p>In deze pagina kan u zich registreren voor onze Mantelzorg applicatie.</p>
 
 <?php

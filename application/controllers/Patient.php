@@ -26,7 +26,9 @@ class Patient extends CI_Controller
      * in de view patientbekijken.php
      */
     $data['titel'] = 'Patient tonen';
-    $data['gebruiker'] = $this->authex->getGebruikerInfo();
+    $gebruiker = $this->authex->getGebruikerInfo();
+    $data['gebruiker'] = $gebruiker;
+
     $data['ontwerper'] = 'René Vanhoof';
     $data['tester'] = 'Geen Idee';
 
@@ -34,11 +36,13 @@ class Patient extends CI_Controller
     $this->load->model('Patient_model');
     $data['patient'] =$this->Patient_model->getPatient();
     $partials = array('hoofding' => 'main_header',
-        'menu' => 'main_menu',
-        'inhoud' => 'patientBekijken',
-        'voetnoot' => 'main_footer');
+            'menu' => 'main_menu',
+            'inhoud' => 'patientBekijken',
+            'voetnoot' => 'main_footer');
 
     $this->template->load('main_master', $partials, $data);
+
+
 }
 
     public function controleerPatientAangemeld(){

@@ -3,6 +3,12 @@
      * Ontwerper: Esteban
      * Tester: ?
      */
+    /**
+     * @file licentieBewerken.php
+     *
+     * View waarin men met een bepaalde form een licentie kan bewerken.
+     * - Krijgt een $licentie-object binnen
+     */
 
     $licentieBewerkenFormulier = array('id' => 'licentieToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
     echo form_open('Licentie/updateLicentie/' . $licentie->id, $licentieBewerkenFormulier, $licentie->id);
