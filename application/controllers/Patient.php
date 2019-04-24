@@ -67,7 +67,7 @@ class Patient extends CI_Controller
         $data['titel'] = 'Patient beheren';
 
         $data['ontwerper'] = 'Seppe Peeters';
-        $data['tester'] = 'Geen Idee';
+        $data['tester'] = 'Liam&nbspMentens';
 
 
         $this->load->model('Patient_model');
@@ -103,13 +103,12 @@ class Patient extends CI_Controller
         $geboortedatum = $this->input->post('geboortedatum');
         $woonplaats = $this->input->post('woonplaats');
         $adres = $this->input->post('adres');
-        $rekeningnummer = $this->input->post('rekeningnummer');
         $gebruikersnaam = $this->input->post('gebruikersnaam');
         $passwoord = $this->input->post('passwoord');
         $email = $this->input->post('email');
 
         $this->load->model('patient_model');
-        $this->patient_model->insert( $naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email, 4);
+        $this->patient_model->insert( $naam, $voornaam, $geboortedatum, $woonplaats, $adres, $gebruikersnaam, $passwoord, $email, 4);
 
         redirect('patient/toonPatient');
 

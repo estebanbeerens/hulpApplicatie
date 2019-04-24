@@ -111,7 +111,7 @@ echo form_open('verzorger/verzorgersUpdaten/' . $verzorger->id, $verzorgerBewerk
         ?>
         <div class="invalid-feedback">Geef een passwoord op.</div>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
         <?php
         echo form_label('Email', 'email');
 
@@ -125,20 +125,20 @@ echo form_open('verzorger/verzorgersUpdaten/' . $verzorger->id, $verzorgerBewerk
         ?>
         <div class="invalid-feedback">Geef een email op.</div>
     </div>
-    <div class="form-group col-md-6">
-        <?php
-        echo form_label('Rekeningnummer', 'rekeningnummer');
-
-        $dataRekeningnummer = array('id' => 'rekeningnummer',
-            'name' => 'rekeningnummer',
-            'class' => 'form-control',
-            'placeholder' => 'Rekeningnummer',
-            'value' => $verzorger->rekeningnummer,
-            'required' => 'required');
-        echo form_input($dataRekeningnummer) . "\n";
-        ?>
-        <div class="invalid-feedback">Geef een rekeningnummer op.</div>
-    </div>
+<!--    <div class="form-group col-md-6">-->
+<!--        --><?php
+//        echo form_label('Rekeningnummer', 'rekeningnummer');
+//
+//        $dataRekeningnummer = array('id' => 'rekeningnummer',
+//            'name' => 'rekeningnummer',
+//            'class' => 'form-control',
+//            'placeholder' => 'Rekeningnummer',
+//            'value' => $verzorger->rekeningnummer,
+//            'required' => 'required');
+//        echo form_input($dataRekeningnummer) . "\n";
+//        ?>
+<!--        <div class="invalid-feedback">Geef een rekeningnummer op.</div>-->
+<!--    </div>-->
 
     <div class="form-group col-md-3">
         <?php echo form_submit('knop', 'Wijzigen', "class='btn btn-primary'") ?>

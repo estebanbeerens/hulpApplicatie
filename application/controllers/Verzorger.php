@@ -80,9 +80,8 @@ class Verzorger extends CI_Controller
         $verzorger->geboortedatum = $this->input->post('geboortedatum');
         $verzorger->woonplaats = $this->input->post('woonplaats');
         $verzorger->adres = $this->input->post('adres');
-        $verzorger->rekeningnummer = $this->input->post('rekeningnummer');
         $verzorger->gebruikersnaam =$this->input->post('gebruikersnaam');
-        $verzorger->passwoord = $this->input->post('passwoord');
+        $verzorger->passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
         $verzorger->email = $this->input->post('email');
 
 
@@ -131,13 +130,13 @@ class Verzorger extends CI_Controller
         $geboortedatum = $this->input->post('geboortedatum');
         $woonplaats = $this->input->post('woonplaats');
         $adres = $this->input->post('adres');
-        $rekeningnummer = $this->input->post('rekeningnummer');
+
         $gebruikersnaam = $this->input->post('gebruikersnaam');
-        $passwoord = $this->input->post('passwoord');
+        $passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
         $email = $this->input->post('email');
 
         $this->load->model('verzorger_model');
-        $this->verzorger_model->insert($naam, $voornaam, $geboortedatum, $woonplaats, $adres, $rekeningnummer, $gebruikersnaam, $passwoord, $email);
+        $this->verzorger_model->insert($naam, $voornaam, $geboortedatum, $woonplaats, $adres, $gebruikersnaam, $passwoord, $email);
 
         redirect('verzorger/verzorgersBeheren');
 

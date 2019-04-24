@@ -9,6 +9,7 @@
             <td><?php
                 $teller = 0;
                 echo $persoon->naam . " " . $persoon->voornaam;?></td>
+
             <?php
 
             if(count($persoon->persoonEvenementen > 0))
@@ -28,7 +29,7 @@
             <?php }
             else
             {
-                echo "<td></td>";
+                echo "<td>Geen evemenementen gevonden</td>";
             }
             echo "</tr>";
             }

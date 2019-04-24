@@ -21,8 +21,9 @@ class evenement_model extends CI_Model
 
         /**
          *  Evenement gegevens oproepen en en tonen na het klikken op de een bepaalde evenement
+         * @param $id gaat een speciefiek evenement oproepen.
          */
-
+        $event = new stdClass();
         $event->id = $id;
 
         $query = $this->db->get('evenement')->where('id', $id);
@@ -37,6 +38,12 @@ class evenement_model extends CI_Model
 
     function insert($naam, $meldingtijd, $beschrijving, $locatie,$verplicht,$isHerhaling,$datum,$startTijd,$eindTijd)
     {
+
+        /**
+         *  Evenement gegevens oproepen en en tonen na het klikken op de een bepaalde evenement
+         * @param $naam, $meldingtijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd gaan opgeven welke waarde er moet gegeven worden aan het evenement
+         */
+
         // voeg nieuwe gebruiker toe
         $evenement = new stdClass();
         $evenement->naam = $naam;
@@ -58,6 +65,7 @@ class evenement_model extends CI_Model
 
         /**
          * Het updaten van een evenement in het database
+         * @param $evenement geeft de waarde mee die bepaald zijn voor een evenement te kunnen updaten.
          */
 
 
@@ -70,6 +78,7 @@ class evenement_model extends CI_Model
 
         /**
          * Het verwijderen van een evenement uit de database
+         * @param $id gaat het id meegeven van het evenement dat verwijderd moet worden uit de database.
          */
 
         $this->db->where('id',$id);
@@ -79,11 +88,20 @@ class evenement_model extends CI_Model
 
 
     function getSpecificEvenement($id) {
+
+        /**
+         * Het ophalen van een specifiek evenement uit de databasee
+         * @param $id gaat het id meegeven van het evenement dat uit de database gehaald moet worden.
+         */
+
         $this->db->where('id', $id);
         $query = $this->db->get('evenement');
         return $query->row();
     }
     function getPatientenPatientEvenement(){
+
+
+
         $this->db->where('soortPersoonId', 4);
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('persoon');
@@ -104,6 +122,13 @@ class evenement_model extends CI_Model
             $evenement->persoonEvenement = $this->PersoonEvenement_model->getWhereEvenementId($evenement->id);
         }
         return $evenementen;
+    }
+    function getEvenementPersoon($evenementId){
+        $this->db->where('id', $evenementId);
+        $query = $this->db->get('evenement');
+
+        return $query->row();
+
     }
 
 }
