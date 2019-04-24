@@ -5,6 +5,12 @@
  * @property Evenement_model $evenement_model
  */
 
+/**
+ * @class Evenement
+ * @brief Evenement-controller voor alles dat te maken heeft met de Evenement
+ *
+ * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Evenement.
+ */
 class Evenement extends CI_Controller
 {
     public function __construct()

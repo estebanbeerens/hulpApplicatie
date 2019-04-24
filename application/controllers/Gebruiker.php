@@ -4,7 +4,12 @@
      * @property Authex $authex
      * @property Gebruiker_model $gebruiker_model
      */
-
+/**
+ * @class Gebruiker
+ * @brief Gebruiker-controller voor alles dat te maken heeft met de gebruiker Gebruikers
+ *
+ * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Gebruikers.
+ */
     class Gebruiker extends CI_Controller
     {
         public function __construct()

@@ -11,6 +11,12 @@
      * @property Authex $authex
      */
 
+/**
+ * @class Patient
+ * @brief Patiënt-controller voor alles dat te maken heeft met de gebruiker Patiënt
+ *
+ * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Patiënten.
+ */
 class Patient extends CI_Controller
 {
     public function __construct()

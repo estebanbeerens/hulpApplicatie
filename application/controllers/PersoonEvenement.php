@@ -4,6 +4,13 @@
  * @property Authex $authex
  * @property PersoonEvenement_model $evenement_model
  */
+
+/**
+ * @class PersoonEvenement
+ * @brief PersoonEvenement-controller voor alles dat te maken heeft met de PersoonEvenement
+ *
+ * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met PersoonEvenement.
+ */
 class PersoonEvenement extends CI_Controller
 {
     public function __construct()
