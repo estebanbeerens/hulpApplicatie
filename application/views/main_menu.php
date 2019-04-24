@@ -176,11 +176,10 @@
         </div>
     </div>
     <div class="sidebar-footer">
-        <a href="#" title="Instellingen">
-            <i class="fa fa-cog"></i>
-        </a>
+
         <?php
             if (isset($gebruiker)) {
+                echo anchor('', '<i class="fa fa-cog"></i>', 'title="Instellingen"') ;
                 echo anchor('home/meldAf', '<i class="fas fa-sign-out-alt"></i>', 'title="Uitloggen"') ;
             } else {
                 echo anchor('home','<i class="fas fa-sign-in-alt"></i>', 'title="Inloggen"') ;
