@@ -40,6 +40,7 @@
         <?php echo haalJavascriptOp("bootstrap.bundle.js"); ?>
         <?php echo haalJavascriptOp("bs_validator.js") ?>
         <?php echo haalJavascriptOp('menu.js'); ?>
+        <?php echo haalJavascriptOp('tooltip.js'); ?>
     </head>
 
     <body>

@@ -127,6 +127,10 @@
                 'class' => 'form-check-input',
                 'value' => $evenement->verplicht,
                 'checked' => 'checked',
+
+                'data-toggle' => 'tooltip',
+                'data-placement' => 'bottom',
+                'title' => 'Is deelname verplicht?',
             );
         }else{
             $dataVerplicht = array('id' => 'verplicht',
@@ -134,6 +138,12 @@
                 'name' => 'verplicht',
                 'class' => 'form-check-input',
                 'value' => $evenement->verplicht,
+
+                'data-toggle' => 'tooltip',
+                'data-placement' => 'bottom',
+                'title' => 'Is deelname verplicht?',
+
+
             );
         }
 
@@ -155,6 +165,10 @@
                 'class' => 'form-check-input',
                 'value' => $evenement->isHerhaling,
                 'checked' => 'checked',
+
+                'data-toggle' => 'tooltip',
+                'data-placement' => 'bottom',
+                'title' => 'Is er herhaling?',
             );
         }else{
             $dataIsherhaling = array('id' => 'herhaling',
@@ -162,6 +176,10 @@
                 'name' => 'herhaling',
                 'class' => 'form-check-input',
                 'value' => $evenement->isHerhaling,
+
+                'data-toggle' => 'tooltip',
+                'data-placement' => 'bottom',
+                'title' => 'Is er herhaling?',
             );
         }
 
@@ -174,8 +192,8 @@
 
 
     <div class="form-group col-md-3">
-        <?php echo form_submit('knop', 'Wijzigen', "class='btn btn-primary'") ?>
+        <?php echo form_submit('knop', 'Bevestigen', "class='btn btn-primary'") ?>
     </div>
     <?php echo form_close(); ?>
-    <div class='col-12 mt-4'> <?php echo anchor('evenement/evenementBeheren', 'Terug'); ?> </div>
+    <div class='col-12 mt-4'> <?php echo anchor('evenement/evenementBeheren', 'Terug', 'data-toggle="tooltip" data-placement="bottom" title="Terug naar evenementen beheren"'); ?> </div>
 </div>
