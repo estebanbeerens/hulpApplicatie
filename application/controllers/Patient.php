@@ -13,7 +13,7 @@
 
 /**
  * @class Patient
- * @brief Patiënt-controller voor alles dat te maken heeft met de gebruiker Patiënt
+ * @brief Patiënt-controller voor alles dat te maken heeft met de gebruiker Patient
  *
  * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Patiënten.
  */
@@ -161,6 +161,7 @@ class Patient extends CI_Controller
     public function patientUpdaten($id){
         /**
          * Update de patiënt
+         * * @param $id De id van de patiënt die geüpdate gaat worden
          */
 
 
@@ -190,6 +191,7 @@ class Patient extends CI_Controller
 
         /**
          * Bewerkt de patiënt
+         * * @param $id De id van de patiënt die bewerkt gaat worden
          */
 
         $data['titel'] = 'Patient Bewerken';

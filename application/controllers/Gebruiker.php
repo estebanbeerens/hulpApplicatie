@@ -6,7 +6,7 @@
      */
 /**
  * @class Gebruiker
- * @brief Gebruiker-controller voor alles dat te maken heeft met de gebruiker Gebruikers
+ * @brief Gebruiker-controller voor alles dat te maken heeft met de Gebruiker
  *
  * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Gebruikers.
  */
@@ -25,6 +25,7 @@
 
             /**
              * Toont pagina registreer
+             * in de view registreer.php
              */
 
             $data['titel'] = 'Registreren';
@@ -44,7 +45,7 @@
         {
             /**
              * Valideert de validatie zodat er geregistreert kan worden.
-             * in de view verzorgersBeheren.php
+             * in de view registreerValidatie.php
              */
 
             $data['titel'] = 'Registratie gelukt!';
@@ -65,6 +66,7 @@
             /**
              * Maakt een nieuwe patient-record aan via Gebruiker_model en hiermee kan je inloggen
              * in de view registreer.php
+
              */
 
             $gebruiker = new stdClass();
@@ -86,6 +88,14 @@
 
 
         public function gebruikerBewerken($id){
+
+            /**
+             * bewerkt een  patient-record aan via Gebruiker_model en hiermee kan je inloggen
+             * in de view gebruikerBewerken.php
+             * * @param $id De id van de gebruiker die geüpdate gaat worden
+
+             */
+
             $data['titel'] = 'Gebruiker Bewerken';
             $data['ontwerper'] = 'Tomas&nbsp;Marlein';
             $data['tester'] = 'vul mij in';

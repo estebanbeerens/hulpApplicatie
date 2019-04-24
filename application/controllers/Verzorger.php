@@ -5,10 +5,7 @@
  * Date: 14-3-2019
  * Time: 13:52
  *
- * @class Verzorger
- * @brief Controller-klasse voor verzorger
- *
- * Controller-klasse met alle methodes die gebruikt worden in verzorger
+
  */
 
 
@@ -21,10 +18,10 @@ class Verzorger extends CI_Controller
     }
 
     /**
-     * Haalt de verzorger-record op via Verzorger_model en toont het resulterende object
-     * in de view verzorgersBeheren.php
+     * @class Verzorger
+     * @brief Verzorger-controller voor alles dat te maken heeft met Verzorger
      *
-     * @see verzorgersBeheren.php
+     * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Verzorger.
      */
     public function toonVerzorger()
     {
