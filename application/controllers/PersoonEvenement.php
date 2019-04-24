@@ -86,7 +86,10 @@ class PersoonEvenement extends CI_Controller
         $this->load->model('persoonEvenement_model');
 
         $data['agenda'] = $this->persoonEvenement_model->getPersoonEvenement($id);
-
+        $this->load->model('Patient_model');
+        $data['patient'] =$this->Patient_model->getPatient();
+        $this->load->model('Evenement_model');
+        $data['evenement'] =$this->Evenement_model->getEvenement();
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'agendaBewerken',
             'menu' => 'main_menu',
@@ -102,6 +105,10 @@ class PersoonEvenement extends CI_Controller
         $data['tester'] = 'vul mij in';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
+        $this->load->model('Patient_model');
+        $data['patient'] =$this->Patient_model->getPatient();
+        $this->load->model('Evenement_model');
+        $data['evenement'] =$this->Evenement_model->getEvenement();
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'agendaToevoegen',
             'menu' => 'main_menu',
