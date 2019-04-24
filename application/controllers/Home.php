@@ -5,6 +5,13 @@
  * @property Authex $authex
  * @property Gebruiker_model $gebruiker_model
  */
+/**
+ * @class Home
+ * @brief Home-controller voor alles dat te maken heeft met de Home
+ *
+ * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Home.
+ */
+
 class Home extends CI_Controller
 {
 
