@@ -125,6 +125,9 @@ echo form_open('evenement/evenementToevoegenGoed', $evenementToevoegenFormulier)
                 'type' => 'checkbox',
                 'name' => 'verplicht',
                 'class' => 'form-check-input',
+                'data-toggle' => 'tooltip',
+                'data-placement' => 'bottom',
+                'title' => 'Is deelname verplicht?',
                 'value' => '',
             );
 
@@ -145,6 +148,9 @@ echo form_open('evenement/evenementToevoegenGoed', $evenementToevoegenFormulier)
                 'type' => 'checkbox',
                 'name' => 'herhaling',
                 'class' => 'form-check-input',
+                'data-toggle' => 'tooltip',
+                'data-placement' => 'bottom',
+                'title' => 'Is er herhaling?',
                 'value' => '',
             );
 
@@ -161,5 +167,5 @@ echo form_open('evenement/evenementToevoegenGoed', $evenementToevoegenFormulier)
         <?php echo form_submit('knop', 'Toevoegen', "class='btn btn-primary'") ?>
     </div>
     <?php echo form_close(); ?>
-    <div class='col-12 mt-4'> <?php echo anchor('evenement/evenementBeheren', 'Terug'); ?> </div>
+    <div class='col-12 mt-4'> <?php echo anchor('evenement/evenementBeheren', 'Terug', 'data-toggle="tooltip" data-placement="bottom" title="Terug naar evenement beheren"'); ?> </div>
 </div>

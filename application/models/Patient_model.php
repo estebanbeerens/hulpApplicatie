@@ -52,8 +52,15 @@ class Patient_model extends CI_Model
         return $query->row();
     }
 
+
+
+
     function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$gebruikersnaam,$passwoord,$email)
     {
+        /**
+         * //Het toevoegen van een patiënt in de database
+         */
+
         $patient = new stdClass();
 
         $patient->naam = $naam;
@@ -81,7 +88,7 @@ class Patient_model extends CI_Model
     {
 
         /**
-         * Het verwijderen van een evenement uit de database
+         * Het verwijderen van een patiënt uit de database
          */
 
         $this->db->where('id',$id);
@@ -92,7 +99,7 @@ class Patient_model extends CI_Model
     {
 
         /**
-         * Het updaten van een evenement in het database
+         * Het updaten van een patiënt in het database
          */
 
 

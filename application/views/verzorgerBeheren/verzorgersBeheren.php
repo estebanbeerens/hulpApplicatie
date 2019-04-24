@@ -39,7 +39,7 @@
                     <td><?php echo $item->id; ?></td>
                     <td>
 
-                        <?php echo anchor('verzorger/verzorgerBewerken/' . $item->id, $item->naam, 'class="anchorBewerken1 btn btn-primary"'); ?>
+                        <?php echo anchor('verzorger/verzorgerBewerken/' . $item->id, $item->naam, 'class="anchorBewerken1 btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Deze verzorger bewerken"'); ?>
 
                     </td>
                     <td><?php echo $item->voornaam; ?></td>
@@ -50,7 +50,7 @@
                     <td><?php echo $item->gebruikersnaam; ?></td>
                     <td><?php echo $item->passwoord; ?></td>
                     <td><?php echo $item->email; ?></td>
-                    <td class="delete"><?php echo "<a href='verzorgerDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\"></i></a>"; ?></td>
+                    <td class="delete"><?php echo "<a href='verzorgerDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Deze verzorger verwijderen\"></i></a>"; ?></td>
                 </tr>
             <?php } ?>
         </table>

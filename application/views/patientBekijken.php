@@ -10,6 +10,8 @@
                 data: {id: patientId}
 
             })
+            location.reload();
+
         });
 
     });

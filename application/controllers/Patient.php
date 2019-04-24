@@ -11,6 +11,12 @@
      * @property Authex $authex
      */
 
+/**
+ * @class Patient
+ * @brief Patiënt-controller voor alles dat te maken heeft met de gebruiker Patiënt
+ *
+ * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Patiënten.
+ */
 class Patient extends CI_Controller
 {
     public function __construct()
@@ -21,8 +27,14 @@ class Patient extends CI_Controller
 
       public function toonPatient()
 {
+    /**
+     * Toont de lijst van Patienten zodat deze kan bekeken worden
+     * in de view patientbekijken.php
+     */
     $data['titel'] = 'Patient tonen';
-    $data['gebruiker'] = $this->authex->getGebruikerInfo();
+    $gebruiker = $this->authex->getGebruikerInfo();
+    $data['gebruiker'] = $gebruiker;
+
     $data['ontwerper'] = 'René Vanhoof';
     $data['tester'] = 'Geen Idee';
 
@@ -30,15 +42,20 @@ class Patient extends CI_Controller
     $this->load->model('Patient_model');
     $data['patient'] =$this->Patient_model->getPatient();
     $partials = array('hoofding' => 'main_header',
-        'menu' => 'main_menu',
-        'inhoud' => 'patientBekijken',
-        'voetnoot' => 'main_footer');
+            'menu' => 'main_menu',
+            'inhoud' => 'patientBekijken',
+            'voetnoot' => 'main_footer');
 
     $this->template->load('main_master', $partials, $data);
+
+
 }
 
     public function controleerPatientAangemeld(){
 
+        /**
+         * Controleerd of de patiënt is aangemeld.
+         */
         $id = $this->input->get('id');
         if($this->authex->isPatientAangemeld($id)){
             return 1;
@@ -51,7 +68,9 @@ class Patient extends CI_Controller
 
     public function meldPatientAf()
     {
-
+        /**
+         * Meld patient af
+         */
         $id = $this->input->post('id');
 
         $patient = new stdClass();
@@ -63,6 +82,11 @@ class Patient extends CI_Controller
 
 
     public function beheerPatient()
+
+        /**
+         * Toont pagina beheerPatient
+         */
+
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Patient beheren';
 
@@ -80,6 +104,10 @@ class Patient extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
     public function patientViewLaden()
+
+        /**
+         * Toont pagina patientbekijken
+         */
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Patient toevoegen';
 
@@ -95,6 +123,9 @@ class Patient extends CI_Controller
     }
     public function patientToevoegen()
     {
+        /**
+         * Toont pagina patientToevoegen
+         */
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $naam = $this->input->post('naam');
@@ -114,6 +145,10 @@ class Patient extends CI_Controller
 
     }
     public function patientVerwijderen(){
+
+        /**
+         * Toont pagina patientBeherne
+         */
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('patient_model');
 
@@ -124,7 +159,9 @@ class Patient extends CI_Controller
     }
 
     public function patientUpdaten($id){
-
+        /**
+         * Update de patiënt
+         */
 
 
 
@@ -150,6 +187,11 @@ class Patient extends CI_Controller
 
 
     public function patientbewerken($id) {
+
+        /**
+         * Bewerkt de patiënt
+         */
+
         $data['titel'] = 'Patient Bewerken';
         $data['ontwerper'] = 'Seppe Peeters';
         $data['tester'] = 'vul mij in';
@@ -170,6 +212,10 @@ class Patient extends CI_Controller
 
 
     public function agendaPatientBekijken()
+
+        /**
+         * Toont pagina patientbekijken
+         */
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Agenda patient bekijken';
 

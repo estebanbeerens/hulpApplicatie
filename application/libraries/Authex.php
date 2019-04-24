@@ -84,14 +84,20 @@
                 }
         }
 
+        function setAangemeld($id){
+            $CI =& get_instance();
+            $CI->gebruiker_model->setAangemeld($id);
+        }
 
-        function meldAf()
+        function meldAf($id)
         {
             // afmelden, dus sessievariabele wegdoen
             $CI =& get_instance();
 
-            $CI->session->unset_userdata('gebruiker_id');
+            $CI->session->unset_userdata('gebruiker_id', $id);
         }
+
+
 
         function registreer($naam, $email, $wachtwoord, $gebruikersnaam, $adres, $rekeningnummer, $voornaam, $woonplaats, $geboortedatum )
         {

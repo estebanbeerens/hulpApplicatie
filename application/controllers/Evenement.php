@@ -5,12 +5,23 @@
  * @property Evenement_model $evenement_model
  */
 
+/**
+ * @class Evenement
+ * @brief Evenement-controller voor alles dat te maken heeft met de Evenement
+ *
+ * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Evenement.
+ */
 class Evenement extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
         $this->load->helper('form');
+    }
+
+    public function index()
+    {
+
     }
 
     public function toonEvenement()
@@ -22,23 +33,37 @@ class Evenement extends CI_Controller
         $data['titel'] = 'Evenement tonen';
 
         $data['ontwerper'] = 'Liam Mentens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Seppe Peeters';
 
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $partials = array('hoofding' => 'main_header',
-            'menu' => 'main_menu',
-            'inhoud' => 'evenementBekijken',
-            'voetnoot' => 'main_footer');
+        $gebruiker = $this->authex->getGebruikerInfo();
+        $data['gebruiker'] = $gebruiker;
 
-        $this->template->load('main_master', $partials, $data);
+        if($gebruiker->isAangemeld == 1){
+            $partials = array('hoofding' => 'main_header',
+                'menu' => 'main_menu',
+                'inhoud' => 'evenementBekijken',
+                'voetnoot' => 'main_footer');
+
+            $this->template->load('main_master', $partials, $data);
+        }else{
+            redirect('home/meldAf');
+        }
+
     }
 
     public function ajax_haalEventOp()
     {
+        $gebruiker = $this->authex->getGebruikerInfo();
         $this->load->model('evenement_model');
         $data['evenement'] =$this->evenement_model->getEvenement();
 
         $this->load->view("laadEvenement", $data);
+    }
+
+    public function ajax_isAangemeld(){
+        $gebruiker = $this->authex->getGebruikerInfo();
+
+        return $gebruiker->isAangemeld;
     }
 
     Public function agendaBekijken($id)
@@ -80,7 +105,7 @@ class Evenement extends CI_Controller
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Evenement Beheren';
         $data['ontwerper'] = 'Tomas&nbsp;Marlein';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Seppe Peeters';
 
         $this->load->model('evenement_model');
         $data['evenement'] =$this->evenement_model->getEvenement();
@@ -121,7 +146,7 @@ class Evenement extends CI_Controller
 
         $data['titel'] = 'Evenement Bewerken';
         $data['ontwerper'] = 'Tomas&nbsp;Marlein';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Seppe Peeters';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('evenement_model');
@@ -190,7 +215,7 @@ class Evenement extends CI_Controller
         $data['titel'] = 'Evenement Toevoegen';
 
         $data['ontwerper'] = 'Liam Mentens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Seppe Peeters';
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'evenementBeheren/evenementToevoegen',
