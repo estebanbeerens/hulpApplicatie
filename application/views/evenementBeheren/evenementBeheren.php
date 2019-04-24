@@ -16,7 +16,11 @@
 
                 <td>
 
+
                         <?php echo anchor('evenement/evenementBewerken/' . $item->id, 'Bewerken', 'class="anchorBewerken1 btn btn-primary"'); ?>
+
+                        <?php echo anchor('evenement/evenementBewerken/' . $item->id, $item->naam, 'class="anchorBewerken1 btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Dit evenement bewerken"'); ?>
+
 
                 </td>
                 <td><?php echo $item->naam; ?></td>
@@ -25,7 +29,7 @@
                 <td><?php echo $item->eindTijd; ?></td>
                 <td><?php echo $item->locatie; ?></td>
                 <td><?php echo $item->beschrijving; ?></td>
-                <td class="delete"><?php echo "<a href='evenementDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\"></i></a>"; ?></td>
+                <td class="delete"><?php echo "<a href='evenementDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Dit evenement verwijderen\"></i></a>"; ?></td>
             </tr>
             <?php } ?>
         </table>
@@ -34,3 +38,5 @@
     </div>
 
 </div>
+
+

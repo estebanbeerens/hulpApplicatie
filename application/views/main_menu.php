@@ -100,7 +100,7 @@
                                 </ul>
                             </div>
                         </li>
-                        
+
                         <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="far fa-calendar-alt"></i>
@@ -117,7 +117,7 @@
                                 </ul>
                             </div>
                         </li>
-                        
+
                         <li class="header-menu">
                             <span>Evenementen</span>
                         </li>
@@ -134,7 +134,7 @@
                                 </ul>
                             </div>
                         </li>
-                        
+
                         <li class="header-menu">
                             <span>Verzorgers</span>
                         </li>
@@ -148,7 +148,7 @@
                                     <li>
                                         ' . anchor('verzorger/verzorgersBeheren', 'Verzorger beheren') . '
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                         </li>';

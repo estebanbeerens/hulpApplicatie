@@ -40,6 +40,7 @@
         <?php echo haalJavascriptOp("bootstrap.bundle.js"); ?>
         <?php echo haalJavascriptOp("bs_validator.js") ?>
         <?php echo haalJavascriptOp('menu.js'); ?>
+        <?php echo haalJavascriptOp('tooltip.js'); ?>
     </head>
 
     <body>
@@ -49,7 +50,7 @@
             </div>
             <!-- Page content -->
             <main class="page-content">
-                <div class="container">
+                <div class="container" id="main">
                     <h1 class="mb-2"><?php if (isset($titel)) { echo $titel; }?></h1>
                     <div id="inhoud">
                         <?php echo $inhoud; ?>
