@@ -23,7 +23,7 @@ class Licentie extends CI_Controller
     }
 
     /**
-     * Laad de pagina licentieAankopen op met de juiste partials.
+     * Laad de pagina licentieAankopen op met de juiste partials via Licentie_model.
      */
     public function licentieAankopen() {
         $data['titel'] = 'LicentieAankopen';
@@ -43,7 +43,7 @@ class Licentie extends CI_Controller
     }
 
     /**
-     * Laad de pagina licentieAankopenBevestig op met de juiste partials. Op deze pagina wordt gewacht tot de transactie al dan niet voltooid is.
+     * Laad de pagina licentieAankopenBevestig op met de juiste partials via Licentie_model. Op deze pagina wordt gewacht tot de transactie al dan niet voltooid is.
      * @param $id de id van de licentie die aangeduid was om te kopen.
      */
     public function licentieAankopenBevestig($id) {
@@ -63,7 +63,7 @@ class Licentie extends CI_Controller
     }
 
     /**
-     * Laad de pagina licentieAankopenOk op met de juiste partials. Op deze pagina word bevestigd dat de licentie is aangekocht door de gebruiker.
+     * Laad de pagina licentieAankopenOk op met de juiste partials via Licentie_model. Op deze pagina word bevestigd dat de licentie is aangekocht door de gebruiker.
      * @param $id de id van de licentie die aangeduid was om te kopen.
      */
     public function licentieAankopenOk($id) {
@@ -101,7 +101,7 @@ class Licentie extends CI_Controller
     }
 
     /**
-     * Pusht een nieuwe licentie in de database.
+     * Pusht een nieuwe licentie in de database via Licentie_model.
      * Redirect daarna naar een goedkeuringspagina, licentieToevoegenValidatie.
      */
     public function insertLicentie() { //Licentie in database steken
@@ -134,7 +134,7 @@ class Licentie extends CI_Controller
     }
 
     /**
-     * Laad de pagina licentieBeheren op met de juiste partials.
+     * Laad de pagina licentieBeheren op met de juiste partials via Licentie_model.
      */
     public function licentieBeheren() {
         $data['titel'] = 'Licenties Beheren';
@@ -154,7 +154,7 @@ class Licentie extends CI_Controller
     }
 
     /**
-     * Laad de pagina licentieBewerken op met de juiste partials van de geselecteerde licentie.
+     * Laad de pagina licentieBewerken op met de juiste partials van de geselecteerde licentie via Licentie_model.
      * @param $id de id van de gekozen licentie om te bewerken.
      */
     public function licentieBewerken($id) {
@@ -175,7 +175,7 @@ class Licentie extends CI_Controller
     }
 
     /**
-     * Verandert een licentie in de database.
+     * Verandert een licentie in de database via Licentie_model.
      * @param $id de id van de gekozen licentie om te bewerken.
      * Redirect daarna naar een goedkeuringspagina, updateLicentieValidatie.
      */
@@ -224,7 +224,7 @@ class Licentie extends CI_Controller
 
     //Aangekochte licenties
     /**
-     * Laad de pagina persoonlijkeAangekochteLicentieBeheren op met de juiste partials.
+     * Laad de pagina persoonlijkeAangekochteLicentieBeheren op met de juiste partials via Licentie_model.
      */
     public function persoonlijkeAangekochteLicentieBeheren() {
         $data['titel'] = 'Aangekochte licenties beheren';
