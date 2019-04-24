@@ -28,7 +28,7 @@ class Licentie extends CI_Controller
     public function licentieAankopen() {
         $data['titel'] = 'LicentieAankopen';
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Jeroen&nbsp;Jansen';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('licentie_model');
@@ -160,7 +160,7 @@ class Licentie extends CI_Controller
     public function licentieBewerken($id) {
         $data['titel'] = 'Licenties Beheren';
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Arne&nbsp;Vanhoof';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('licentie_model');
@@ -210,7 +210,7 @@ class Licentie extends CI_Controller
     public function updateLicentieValidatie() {
         $data['titel'] = "Licentie toegevoegd";
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Arne&nbsp;Vanhoof';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',
@@ -229,7 +229,7 @@ class Licentie extends CI_Controller
     public function persoonlijkeAangekochteLicentieBeheren() {
         $data['titel'] = 'Aangekochte licenties beheren';
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Jeroen&nbsp;Jansen';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('licentie_model');
