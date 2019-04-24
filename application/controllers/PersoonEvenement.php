@@ -47,4 +47,59 @@ class PersoonEvenement extends CI_Controller
 
         $this->template->load('main_master', $partials, $data);
     }
+    public function persoonEvenementToevoegen()
+    {
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $persoonId = $this->input->post('persoonId');
+        $evenementId = $this->input->post('evenementId');
+
+        $this->load->model('persoonEvenement_model');
+        $this->persoonEvenement_model->insert($persoonId, $evenementId);
+
+        redirect('persoonEvenement/toonPersoonEvenementPatient');
+    }
+    public function persoonEvenementDeleten()
+    {
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+        $this->load->model('persoonEvenement_model');
+
+        $id=$this->input->get('id');
+        $this->persoonEvenement_model->deleten($id);
+
+        redirect('persoonEvenement/toonPersoonEvenementPatient');
+    }
+    public function persoonEvenementBewerken($id)
+    {
+        $data['titel'] = 'Agenda bewerken';
+        $data['ontwerper'] = 'René&nbsp;Vanhoof';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $this->load->model('persoonEvenement_model');
+
+        $data['agenda'] = $this->persoonEvenement_model->getPersoonEvenement($id);
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'agendaBewerken',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
+    public function persoonEvenementViewLaden()
+    {
+        $data['titel'] = 'Agenda toevoegen';
+
+        $data['ontwerper'] = 'René&nbsp;Vanhoof';
+        $data['tester'] = 'vul mij in';
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+        $partials = array('hoofding' => 'main_header',
+            'inhoud' => 'agendaToevoegen',
+            'menu' => 'main_menu',
+            'voetnoot' => 'main_footer');
+
+        $this->template->load('main_master', $partials, $data);
+    }
 }
