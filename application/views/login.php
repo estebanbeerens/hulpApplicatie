@@ -1,4 +1,11 @@
 <?php
+    /**
+     * @file login.php
+     *
+     * View waarin men een persoon kan inloggen.
+     * - Gebruikt Bootstrap form en controle
+     */
+
 $attributes = array('name' => 'mijnFormulier','novalidate' => 'novalidate', 'class' => 'needs-validation');
 echo form_open('home/controleerAanmelden', $attributes);
 ?>

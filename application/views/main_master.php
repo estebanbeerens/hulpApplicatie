@@ -1,3 +1,14 @@
+<?php
+    /**
+     * @file main_master.php
+     *
+     * Een view die de main_master.php toont. Deze wordt via controllers ingeladen op alle pagina's.
+     * De main_master zorgt er voor dat alle andere views op de juiste positie getoond worden
+     * - Gebruikt Bootstrap
+     * - Gebruikt HTML-helpers
+     */
+?>
+
 <!doctype html>
 <html lang="nl">
     <head>

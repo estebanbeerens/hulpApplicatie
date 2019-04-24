@@ -1,3 +1,13 @@
+<?php
+    /**
+     * @file main_menu.php
+     *
+     * Een view die de main_menu.php toont. Deze wordt via controllers ingeladen op alle pagina's.
+     * Dit is eigenlijk de navigatiebalk van de applicatie. Wordt aangepast voor elke andere soort gebruiker.
+     * - Gebruikt Bootstrap
+     */
+?>
+
 <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
     <i class="fas fa-bars"></i>
 </a>

@@ -2,6 +2,14 @@
     /**
      * Ontwerper: Esteban
      */
+
+    /**
+     * @file licentieAankopen.php
+     *
+     * View waarin alle aan licenties getoond worden en deze geselecteerd kunnen worden voor verwijdering of bewerking.
+     * - Krijgt een $licentie-object binnen
+     * - Gebruikt Bootstrap cards
+     */
 ?>
 
 <div class="row">

@@ -3,6 +3,11 @@
      * Ontwerper: Esteban
      * Tester: ?
      */
+    /**
+     * @file licentieToevoegen.php
+     *
+     * View waarin men met een form een licentie kan toevoegen.
+     */
 
     $licentieToevoegenFormulier = array('id' => 'licentieToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
     echo form_open('Licentie/insertLicentie', $licentieToevoegenFormulier);

@@ -2,6 +2,14 @@
     /**
      * Ontwerper: Esteban
      */
+
+    /**
+     * @file licentieAankopenBevestig.php
+     *
+     * View waarin een soort laadscherm getoond word. Hier wordt gewacht to de transactie voltooid wordt. Dit word nu nog gesimuleerd met 2 knoppen.
+     * - Krijgt een $licentie-object binnen
+     * - Gebruikt een custom CSS file loader.css
+     */
     echo pasStylesheetAan('loader.css');
 ?>
 

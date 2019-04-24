@@ -13,11 +13,6 @@ class Evenement extends CI_Controller
         $this->load->helper('form');
     }
 
-    public function index()
-    {
-
-    }
-
     public function toonEvenement()
     {
         /**
@@ -40,7 +35,6 @@ class Evenement extends CI_Controller
 
     public function ajax_haalEventOp()
     {
-
         $this->load->model('evenement_model');
         $data['evenement'] =$this->evenement_model->getEvenement();
 

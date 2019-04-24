@@ -1,7 +1,17 @@
+<?php
+    /**
+     * @file licentieAankopen.php
+     *
+     * View waarin alle aan te kopen licenties getoond worden.
+     * - Krijgt een $licentie-object binnen
+     * - Gebruikt Bootstrap cards
+     */
+?>
+
 <div class="row">
 <?php
     /**
-     * User: Esteban
+     * Ontwerper: Esteban
      */
     foreach ($licentie as $item) {
         if ($item->prijs != 0) {
