@@ -7,7 +7,7 @@
 
     /**
      * @class Licentie
-     * @brief Licentie-controller voor alles dat te maken heeft met licenties
+     * @brief Licentie-controller voor alles dat te maken heeft met Licentie
      *
      * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met licenties.
      */
