@@ -38,7 +38,9 @@ class gebruiker_model extends CI_Model
         }
     }
 
-    function setAangemeld($id, $patient){
+    function setAangemeld($id){
+        $patient = new stdClass();
+        $patient->isAangemeld = 1;
         $this->db->where('id', $id);
         $this->db->update('persoon', $patient);
     }

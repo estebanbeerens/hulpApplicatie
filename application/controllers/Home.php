@@ -19,7 +19,6 @@ class Home extends CI_Controller
         $data['titel'] = 'Inloggen';
         $data['ontwerper'] = 'Jeroen&nbsp;Jansen';
         $data['tester'] = 'Esteban&nbsp;Beerens';
-        $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         if($this->authex->isAangemeld()){
             $this->controleerRol();
@@ -103,7 +102,9 @@ class Home extends CI_Controller
                 break;
 
             case 4:
+                $this->authex->setAangemeld($gebruiker->id);
                 redirect('evenement/toonEvenement');
+
                 break;
             default:
 
@@ -111,8 +112,10 @@ class Home extends CI_Controller
     }
 
     public function meldAf()
-    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $this->authex->meldAf();
+    {
+        $gebruiker = $this->authex->getGebruikerInfo();
+        $data['gebruiker'] = $gebruiker;
+        $this->authex->meldAf($gebruiker->id);
         redirect('home/index');
     }
 

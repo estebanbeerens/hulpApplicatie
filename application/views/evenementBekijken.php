@@ -2,6 +2,8 @@
     evenementen();
     function evenementen()
     {
+
+
         $.ajax({
             type: "GET",
             url: "ajax_haalEventOp",
