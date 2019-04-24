@@ -128,8 +128,8 @@ echo form_open('verzorger/verzorgersUpdaten/' . $verzorger->id, $verzorgerBewerk
 
 
     <div class="form-group col-md-3">
-        <?php echo form_submit('knop', 'Bevestigen', "class='btn btn-primary' data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Wijziging opslaan\"") ?>
+        <?php echo form_submit('knop', 'Bevestigen', "class='btn btn-primary' data-toggle=\"tooltip\" data-placement=\"right\" title=\"Wijziging opslaan\"") ?>
     </div>
     <?php echo form_close(); ?>
-    <div class='col-12 mt-4'> <?php echo anchor('verzorger/verzorgersBeheren', 'Terug', 'data-toggle="tooltip" data-placement="bottom" title="Terug naar verzorgers beheren"'); ?> </div>
+    <div class='col-12 mt-4'> <?php echo anchor('verzorger/verzorgersBeheren', 'Terug'); ?> </div>
 </div>

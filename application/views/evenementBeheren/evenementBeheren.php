@@ -1,5 +1,4 @@
-<div id="eventbeheren">
-    <div class="eventbeheren table-responsive">
+<div class="table-responsive">
         <table class="table">
             <tr>
                 <th class="text-center"><i class="fas fa-edit"></i></th>
@@ -9,7 +8,7 @@
                 <th>Eindtijd</th>
                 <th>Locatie</th>
                 <th>Beschrijving</th>
-                <th></th>
+                <th class="text-center"><i class="fas fa-trash-alt"></i></th>
             </tr>
             <?php foreach ($evenement as $item){ ?>
             <tr>
@@ -25,8 +24,6 @@
             <?php } ?>
         </table>
         <?php echo anchor('evenement/evenementToevoegen', 'Evenement toevoegen',  'class="anchorBewerken2 btn btn-primary eventToevoegen"'); ?>
-
-    </div>
 
 </div>
 

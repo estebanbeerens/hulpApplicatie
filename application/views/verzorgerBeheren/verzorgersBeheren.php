@@ -11,6 +11,7 @@
                 <th>gebruikersnaam</th>
                 <th>wachtwoord</th>
                 <th>email</th>
+                <th class="text-center"><i class="fas fa-trash-alt"></i></th>
             </tr>
             <?php foreach ($verzorger as $item){ ?>
                 <tr>

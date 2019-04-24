@@ -16,8 +16,7 @@
 <div class="table-responsive">
     <table class="table">
         <tr>
-            <th>Beheer</th>
-            <th>Id</th>
+            <th class="text-center"><i class="fas fa-edit"></i></th>
             <th>Naam</th>
             <th>Voornaam</th>
             <th>geboortedatum</th>
@@ -32,11 +31,8 @@
         <?php foreach ($patient as $item){ ?>
             <tr>
                 <td>
-
-                    <?php echo anchor('patient/patientBewerken/' . $item->id, $item->naam, 'class="anchorBewerken btn btn-primary"'); ?>
-
+                    <?php echo anchor('patient/patientBewerken/' . $item->id, 'Bewerken', 'class="anchorBewerken btn btn-primary"'); ?>
                 </td>
-                <td><?php echo $item->id; ?></td>
                 <td><?php echo $item->naam; ?></td>
                 <td><?php echo $item->voornaam; ?></td>
                 <td><?php echo $item->geboortedatum; ?></td>

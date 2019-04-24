@@ -2,7 +2,6 @@
     <?php
     $attributes = array('name' => 'patientToevoegenFormulier' ,'novalidate' => 'novalidate', 'class' => 'needs-validation');
     echo form_open('patient/patientToevoegen', $attributes);
-    echo $titel;
     ?>
 
         <div class="form-group col-md-7">
