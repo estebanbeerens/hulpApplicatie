@@ -70,19 +70,6 @@
             ?>
             <div class="invalid-feedback">Geef een adres op.</div>
         </div>
-        <div class="form-group col-md-7">
-            <?php
-            echo form_label('rekeningnummer', 'rekeningnummer');
-
-            $rekeningnummer = array('id' => 'rekeningnummer',
-                'name' => 'rekeningnummer',
-                'class' => 'form-control',
-                'placeholder' => 'rekeningnummer',
-                'required' => 'required');
-            echo form_input($rekeningnummer) . "\n";
-            ?>
-            <div class="invalid-feedback">Geef een rekeningnummer op.</div>
-        </div>
 
         <div class="form-group col-md-7">
             <?php
