@@ -34,9 +34,10 @@
                 <td>
                 <?php if($item->isAangemeld == 1){ ?>
 
-                    <button class="afmeldKnop" value="<?php echo $item->id; ?>">
+                    <button type="button" class="btn btn-primary afmeldKnop" value="<?php echo $item->id; ?>">
                         Afmelden
                     </button>
+
 
                 <?php } ?>
                 </td>
@@ -49,6 +50,4 @@
             </tr>
         <?php } ?>
     </table>
-
-    <a class="test"></a>
 </div>
