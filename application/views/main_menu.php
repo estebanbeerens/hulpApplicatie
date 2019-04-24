@@ -179,7 +179,7 @@
 
         <?php
             if (isset($gebruiker)) {
-                echo anchor('', '<i class="fa fa-cog"></i>', 'title="Instellingen"') ;
+                echo anchor('gebruiker/gebruikerBewerken/' . $gebruiker->soortPersoonId, '<i class="fa fa-cog"></i>', 'title="Instellingen"') ;
                 echo anchor('home/meldAf', '<i class="fas fa-sign-out-alt"></i>', 'title="Uitloggen"') ;
             } else {
                 echo anchor('home','<i class="fas fa-sign-in-alt"></i>', 'title="Inloggen"') ;

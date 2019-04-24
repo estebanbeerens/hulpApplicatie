@@ -76,5 +76,26 @@ class gebruiker_model extends CI_Model
         $query = $this->db->get('persoon');
         return $query->result();
     }
+
+
+    function getSpecificPersoon($id) {
+
+        /**
+         *
+         *
+         */
+
+        $this->db->where('id', $id);
+        $query = $this->db->get('persoon');
+        return $query->row();
+    }
+
+
+
+
+
+
+
+
 }
 ?>

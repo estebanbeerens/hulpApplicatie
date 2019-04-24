@@ -61,4 +61,30 @@
 
             redirect('Gebruiker/registreerValidatie');
         }
+
+
+        public function gebruikerBewerken($id){
+            $data['titel'] = 'Gebruiker Bewerken';
+            $data['ontwerper'] = 'Tomas&nbsp;Marlein';
+            $data['tester'] = 'vul mij in';
+            $data['gebruiker'] = $this->authex->getGebruikerInfo();
+
+            $this->load->model('gebruiker_model');
+
+            $data['gebruiker'] = $this->gebruiker_model->getSpecificPersoon($id);
+
+
+            $partials = array('hoofding' => 'main_header',
+                'inhoud' => 'gebruiker/gebruikerBewerken',
+                'menu' => 'main_menu',
+                'voetnoot' => 'main_footer');
+
+            $this->template->load('main_master', $partials, $data);
+        }
+
+
+
+
+
+
     }
