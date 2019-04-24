@@ -16,6 +16,12 @@
 
         public function registreer()
         {
+
+
+            /**
+             * Toont pagina registreer
+             */
+
             $data['titel'] = 'Registreren';
             $data['gebruiker'] = $this->authex->getGebruikerInfo();
             $data['ontwerper'] = 'Seppe&nbsp;Peeters';
@@ -31,6 +37,11 @@
 
         public function registreerValidatie()
         {
+            /**
+             * Valideert de validatie zodat er geregistreert kan worden.
+             * in de view verzorgersBeheren.php
+             */
+
             $data['titel'] = 'Registratie gelukt!';
             $data['gebruiker'] = $this->authex->getGebruikerInfo();
             $data['ontwerper'] = 'Seppe&nbsp;Peeters';
@@ -45,6 +56,12 @@
         }
 
         public function registreerGebruiker() {
+
+            /**
+             * Maakt een nieuwe patient-record aan via Gebruiker_model en hiermee kan je inloggen
+             * in de view registreer.php
+             */
+
             $gebruiker = new stdClass();
             $gebruiker->voornaam = $this->input->post('voornaam');
             $gebruiker->naam = $this->input->post('naam');

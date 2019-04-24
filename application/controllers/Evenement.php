@@ -27,7 +27,7 @@ class Evenement extends CI_Controller
         $data['titel'] = 'Evenement tonen';
 
         $data['ontwerper'] = 'Liam Mentens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Seppe Peeters';
 
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $partials = array('hoofding' => 'main_header',
@@ -86,7 +86,7 @@ class Evenement extends CI_Controller
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Evenement Beheren';
         $data['ontwerper'] = 'Tomas&nbsp;Marlein';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Seppe Peeters';
 
         $this->load->model('evenement_model');
         $data['evenement'] =$this->evenement_model->getEvenement();
@@ -127,7 +127,7 @@ class Evenement extends CI_Controller
 
         $data['titel'] = 'Evenement Bewerken';
         $data['ontwerper'] = 'Tomas&nbsp;Marlein';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Seppe Peeters';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('evenement_model');
@@ -196,7 +196,7 @@ class Evenement extends CI_Controller
         $data['titel'] = 'Evenement Toevoegen';
 
         $data['ontwerper'] = 'Liam Mentens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Seppe Peeters';
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'evenementBeheren/evenementToevoegen',

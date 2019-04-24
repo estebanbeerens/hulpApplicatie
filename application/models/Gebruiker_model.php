@@ -55,9 +55,13 @@ class gebruiker_model extends CI_Model
             return false;
         }
     }
-
+    //
     function insert($persoon)
     {
+
+        /**
+         * Persoon toevoegen in de databank om te kunnen inloggen
+         */
         $this->db->insert('persoon', $persoon);
         return $this->db->insert_id();
     }
