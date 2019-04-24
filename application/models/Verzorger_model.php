@@ -37,7 +37,7 @@ class Verzorger_model extends CI_Model
     /**
      * Maakt een nieuwe verzorger in de database-tabel persoon  met soortPersoonId = 3
      */
-    function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$rekeningnummer,$gebruikersnaam,$passwoord,$email)
+    function insert($naam,$voornaam,$geboortedatum,$woonplaats,$adres,$gebruikersnaam,$passwoord,$email)
     {
 
         $verzorger = new stdClass();
@@ -46,7 +46,6 @@ class Verzorger_model extends CI_Model
         $verzorger->geboortedatum = $geboortedatum;
         $verzorger->woonplaats = $woonplaats;
         $verzorger->adres = $adres;
-        $verzorger->rekeningnummer = $rekeningnummer;
         $verzorger->gebruikersnaam = $gebruikersnaam;
         $verzorger->passwoord = $passwoord;
         $verzorger->email = $email;

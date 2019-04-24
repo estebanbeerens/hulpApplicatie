@@ -138,9 +138,7 @@
                                     <li>
                                         ' . anchor('verzorger/verzorgersBeheren', 'Verzorger beheren') . '
                                     </li>
-                                    <li>
-                                        ' . anchor('verzorger/verzorgerViewLaden', 'Verzorger toevoegen') . '
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </li>';

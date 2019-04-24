@@ -29,7 +29,7 @@
                 <th>geboortedatum</th>
                 <th>woonplaats</th>
                 <th>adres</th>
-                <th>rekeningnummer</th>
+<!--                <th>rekeningnummer</th>-->
                 <th>gebruikersnaam</th>
                 <th>wachtwoord</th>
                 <th>email</th>
@@ -46,7 +46,7 @@
                     <td><?php echo $item->geboortedatum; ?></td>
                     <td><?php echo $item->woonplaats; ?></td>
                     <td><?php echo $item->adres; ?></td>
-                    <td><?php echo $item->rekeningnummer; ?></td>
+<!--                    <td>--><?php //echo $item->rekeningnummer; ?><!--</td>-->
                     <td><?php echo $item->gebruikersnaam; ?></td>
                     <td><?php echo $item->passwoord; ?></td>
                     <td><?php echo $item->email; ?></td>

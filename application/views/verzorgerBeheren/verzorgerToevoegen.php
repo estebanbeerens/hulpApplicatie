@@ -104,7 +104,7 @@ echo form_open('verzorger/verzorgerToevoegen/' , $verzorgerToevoegenFormulier);
         ?>
         <div class="invalid-feedback">Geef een passwoord op.</div>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
         <?php
         echo form_label('Email', 'email');
 
@@ -116,19 +116,6 @@ echo form_open('verzorger/verzorgerToevoegen/' , $verzorgerToevoegenFormulier);
         echo form_input($dataEmail) . "\n";
         ?>
         <div class="invalid-feedback">Geef een email op.</div>
-    </div>
-    <div class="form-group col-md-6">
-        <?php
-        echo form_label('Rekeningnummer', 'rekeningnummer');
-
-        $dataRekeningnummer = array('id' => 'rekeningnummer',
-            'name' => 'rekeningnummer',
-            'class' => 'form-control',
-            'placeholder' => 'Rekeningnummer',
-            'required' => 'required');
-        echo form_input($dataRekeningnummer) . "\n";
-        ?>
-        <div class="invalid-feedback">Geef een rekeningnummer op.</div>
     </div>
 
     <div class="form-group col-md-3">
