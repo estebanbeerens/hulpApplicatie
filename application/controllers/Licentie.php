@@ -208,7 +208,7 @@ class Licentie extends CI_Controller
      * Laad de pagina updateLicentieValidatie op met de juiste partials.
      */
     public function updateLicentieValidatie() {
-        $data['titel'] = "Licentie toegevoegd";
+        $data['titel'] = "Licentie bewerkt";
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
         $data['tester'] = 'Arne&nbsp;Vanhoof';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();

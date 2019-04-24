@@ -11,7 +11,7 @@
      * - Gebruikt Bootstrap cards
      */
 ?>
-
+<p><?php echo anchor(base_url("assets/tutorials/Handleiding_licenties_beheren.pdf"), '<i class="fas fa-info-circle"></i> Hulp nodig?', 'target="_blank"')?></p>
 <div class="row">
 <?php
     /**
