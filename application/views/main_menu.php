@@ -287,3 +287,56 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="verzorger" role="dialog">
+    <div class="modal-dialog">
+        <!-- Inhoud dialoogvenster -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Verzorger</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body info-body">
+                <h5>Agenda patiënt:</h5>
+                <p>Als verzorger kun je de agenda van patiënten beheren. dat wil zeggen dat je:</p>
+                <ul>
+                    <li>Evenementen kunt toevoegen aan de agenda van de patiënt.</li>
+                    <li>Evenementen kunt verwijderen van de agenda van de patiënt.</li>
+                </ul>
+
+                <h5>Patiënten:</h5>
+                <p>Als verzoger kun je evenementen beheren. dat wil zeggen dat je:</p>
+                <ul>
+                    <li>Patiënten kunt bekijken.</li>
+                    <li>Patiënten kunt afmelden van hun apparaat.</li>
+                </ul>
+
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="patient" role="dialog">
+    <div class="modal-dialog">
+        <!-- Inhoud dialoogvenster -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Patiënt</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body info-body">
+
+                <p>Als patiënt kun je alleen de agenda bekijken. In deze agenda kan je per evenement de details bekijken van waar en wanneer een evenement plaatsvind.</p>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
