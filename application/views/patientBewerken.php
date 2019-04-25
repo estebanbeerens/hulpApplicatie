@@ -129,5 +129,5 @@ echo form_open('patient/patientUpdaten/' . $patient->id, $patientToevoegenFormul
         <?php echo form_submit('knop', 'Bevestigen', "class='btn btn-primary' data-toggle=\"tooltip\" data-placement=\"right\" title=\"Wijziging opslaan\"") ?>
     </div>
     <?php echo form_close(); ?>
-    <div class='col-12 mt-4'> <?php echo anchor('evenement/evenementBeheren', 'Terug'); ?> </div>
+    <div class='col-12 mt-4'> <?php echo anchor('patient/beheerPatient', 'Terug'); ?> </div>
 </div>

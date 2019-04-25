@@ -187,10 +187,7 @@
         echo form_label('Herhaling?', 'herhaling', 'class="form-check-label" for="herhaling"');
         ?>
 
-        <i class="fas fa-info-circle ml-2" data-toggle="tooltip" data-placement="right" title="Vink hier aan wanneer er een herhaling of een verplichte deelname nodig is"></i>
     </div>
-
-
     <div class="form-group col-md-3">
         <?php echo form_submit('knop', 'Bevestigen', "class='btn btn-primary' data-toggle=\"tooltip\" data-placement=\"right\" title=\"Wijziging opslaan\"") ?>
     </div>
