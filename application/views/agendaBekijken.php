@@ -33,6 +33,7 @@
             }
             echo "</tr>";
             }
+            var_dump($persoonEvenement->evenement->naam);
             ?>
     </table>
 </div>
