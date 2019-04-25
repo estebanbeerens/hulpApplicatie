@@ -1,18 +1,19 @@
 <div class="table-responsive">
         <table class="table">
             <tr>
-                <th class="text-center"><i class="fas fa-edit"></i></th>
+                <th>Bewerken</th>
                 <th>Naam</th>
                 <th>Datum</th>
                 <th>Starttijd</th>
                 <th>Eindtijd</th>
                 <th>Locatie</th>
                 <th>Beschrijving</th>
-                <th class="text-center"><i class="fas fa-trash-alt"></i></th>
+                <th>Verwijderen</th>
+
             </tr>
             <?php foreach ($evenement as $item){ ?>
             <tr>
-                <td><?php echo anchor('evenement/evenementBewerken/' . $item->id, 'Bewerken', 'class="anchorBewerken1 btn btn-primary"'); ?></td>
+                <td><?php echo anchor('evenement/evenementBewerken/' . $item->id, '<i class="fas fa-edit"></i>', 'class="anchorBewerken1 btn btn-primary"'); ?></td>
                 <td><?php echo $item->naam; ?></td>
                 <td><?php echo $item->datum; ?></td>
                 <td><?php echo $item->startTijd; ?></td>

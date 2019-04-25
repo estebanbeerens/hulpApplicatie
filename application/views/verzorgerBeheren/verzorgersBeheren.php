@@ -2,7 +2,7 @@
     <div class="table-responsive">
         <table class="table">
             <tr>
-                <th class="text-center"><i class="fas fa-edit"></i></th>
+                <th>Bewerken</th>
                 <th>Naam</th>
                 <th>Voornaam</th>
                 <th>geboortedatum</th>
@@ -11,11 +11,11 @@
                 <th>gebruikersnaam</th>
                 <th>wachtwoord</th>
                 <th>email</th>
-                <th class="text-center"><i class="fas fa-trash-alt"></i></th>
+                <th>Verwijderen</th>
             </tr>
             <?php foreach ($verzorger as $item){ ?>
                 <tr>
-                    <td><?php echo anchor('verzorger/verzorgerBewerken/' . $item->id, 'Bewerken', 'class="anchorBewerken1 btn btn-primary" data-toggle="tooltip"'); ?></td>
+                    <td><?php echo anchor('verzorger/verzorgerBewerken/' . $item->id, '<i class="fas fa-edit"></i>', 'class="anchorBewerken1 btn btn-primary" data-toggle="tooltip"'); ?></td>
                     <td><?php echo $item->naam; ?></td>
                     <td><?php echo $item->voornaam; ?></td>
                     <td><?php echo $item->geboortedatum; ?></td>
