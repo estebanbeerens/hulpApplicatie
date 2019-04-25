@@ -55,6 +55,6 @@
               </div>';
     }
 ?>
-    <div class='col-12 mt-4'> <?php echo anchor('licentie/licentieToevoegen', 'Nieuwe licentie toevoegen'); ?> </div>
+    <div class='col-12 mt-4'> <?php echo anchor('licentie/licentieToevoegen', 'Nieuwe licentie toevoegen', 'class="btn btn-primary"'); ?> </div>
     <div class='col-12 mt-4'> <?php echo anchor('home', 'Terug'); ?> </div>
 </div>

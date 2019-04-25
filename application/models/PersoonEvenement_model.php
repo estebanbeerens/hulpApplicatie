@@ -32,7 +32,17 @@ class PersoonEvenement_model extends CI_Model
     {
         $this->db->where('persoonId', $persoonId);
         $query = $this->db->get('persoonEvenement');
-        return $query->result();
+        $evenementen = $query->result();
+
+        foreach($evenementen as $evenement){
+            $this->db->where('id', $evenement->evenementId);
+            $query = $this->db->get('evenement');
+
+            $evenementenlijst[] = $query->result();
+
+        }
+
+        return $evenementenlijst;
     }
     function getWhereEvenementId($evenementId){
         $this->db->where('evenementId', $evenementId);

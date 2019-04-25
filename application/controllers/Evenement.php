@@ -54,8 +54,8 @@ class Evenement extends CI_Controller
     public function ajax_haalEventOp()
     {
         $gebruiker = $this->authex->getGebruikerInfo();
-        $this->load->model('evenement_model');
-        $data['evenement'] =$this->evenement_model->getEvenement();
+        $this->load->model('PersoonEvenement_model');
+        $data['evenement'] =$this->PersoonEvenement_model->getWherePersoonId($gebruiker->id);
 
         $this->load->view("laadEvenement", $data);
     }

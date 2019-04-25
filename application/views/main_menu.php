@@ -189,10 +189,101 @@
 
         <?php
             if (isset($gebruiker)) {
-                echo anchor('gebruiker/gebruikerBewerken/' . $gebruiker->soortPersoonId, '<i class="fa fa-cog"></i>', 'title="Instellingen"') ;
+                echo anchor('gebruiker/gebruikerBewerken/' . $gebruiker->id, '<i class="fa fa-cog"></i>', 'title="Instellingen"') ;
+
+
+            switch ($gebruiker->soortPersoonId) {
+                case 1:
+                    $informatie = '<a href="#" data-toggle="modal" data-target="#admin" title="informatie"><i class="fas fa-info-circle"></i></a>';
+                    break;
+                case 2:
+                    $informatie = '<a href="#" data-toggle="modal" data-target="#verantwoordelijke" title="informatie"><i class="fas fa-info-circle"></i></a>';
+                    break;
+                case 3:
+                    $informatie = '<a href="#" data-toggle="modal" data-target="#verzorger" title="informatie"><i class="fas fa-info-circle"></i></a>';
+                    break;
+                case 4:
+                    $informatie = '<a href="#" data-toggle="modal" data-target="#patient" title="informatie"><i class="fas fa-info-circle"></i></a>';
+                    break;
+                default:
+                    $informatie = '';
+                    break;
+            }
+
+
+                echo $informatie;
                 echo anchor('home/meldAf', '<i class="fas fa-sign-out-alt"></i>', 'title="Uitloggen"') ;
             } else {
                 echo anchor('home','<i class="fas fa-sign-in-alt"></i>', 'title="Inloggen"') ;
             }?>
     </div>
 </nav>
+
+
+
+<div class="modal fade" id="admin" role="dialog">
+    <div class="modal-dialog">
+        <!-- Inhoud dialoogvenster -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Admin</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body info-body">
+                <p>Als admin kan je licenties beheren, dat wil zeggen dat je controle hebt over de licenties die je aanbied. Je kan licenties toevoegen, verwijderen of bewereken.
+                Bij het toevoegen van een licentie kun je de naam opgeven van uw licentie met een prijs en beschrijving om deze licentie duidelijk te maken.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="verantwoordelijke" role="dialog">
+    <div class="modal-dialog">
+        <!-- Inhoud dialoogvenster -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Verantwoordelijke</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body info-body">
+                <h5>Patiënt:</h5>
+                <p>Als verantwoordelijke kun je patiënten beheren. dat wil zeggen dat je:</p>
+                <ul>
+                    <li>Patiënten kunt toevoegen.</li>
+                    <li>Patiënten kunt verwijderen.</li>
+                    <li>Patiënten kunt bewerken.</li>
+                </ul>
+
+                <h5>Agenda patiënt:</h5>
+                <p>Als verantwoordelijke kun je de agenda van patiënten beheren. dat wil zeggen dat je:</p>
+                <ul>
+                    <li>Evenementen kunt toevoegen aan de agenda van de patiënt.</li>
+                    <li>Evenementen kunt verwijderen van de agenda van de patiënt.</li>
+                </ul>
+
+                <h5>Evenementen:</h5>
+                <p>Als verantwoordelijke kun je evenementen beheren. dat wil zeggen dat je:</p>
+                <ul>
+                    <li>Evenementen kunt toevoegen.</li>
+                    <li>Evenementen kunt verwijderen.</li>
+                    <li>Evenementen kunt bewerken.</li>
+                </ul>
+
+                <h5>Verzorgers:</h5>
+                <p>Als verantwoordelijke kun je verzorgers beheren. dat wil zeggen dat je:</p>
+                <ul>
+                    <li>Verzorgers kunt toevoegen.</li>
+                    <li>Verzorgers kunt verwijderen.</li>
+                    <li>Verzorgers kunt bewerken.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
