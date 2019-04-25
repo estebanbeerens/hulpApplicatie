@@ -195,24 +195,29 @@
             switch ($gebruiker->soortPersoonId) {
                 case 1:
                     $informatie = '<a href="#" data-toggle="modal" data-target="#admin" title="informatie"><i class="fas fa-info-circle"></i></a>';
+                    $uitloggen = anchor('home/meldAf', '<i class="fas fa-sign-out-alt"></i>', 'title="Uitloggen"');
                     break;
                 case 2:
                     $informatie = '<a href="#" data-toggle="modal" data-target="#verantwoordelijke" title="informatie"><i class="fas fa-info-circle"></i></a>';
+                    $uitloggen = anchor('home/meldAf', '<i class="fas fa-sign-out-alt"></i>', 'title="Uitloggen"');
                     break;
                 case 3:
                     $informatie = '<a href="#" data-toggle="modal" data-target="#verzorger" title="informatie"><i class="fas fa-info-circle"></i></a>';
+                    $uitloggen = anchor('home/meldAf', '<i class="fas fa-sign-out-alt"></i>', 'title="Uitloggen"');
                     break;
                 case 4:
                     $informatie = '<a href="#" data-toggle="modal" data-target="#patient" title="informatie"><i class="fas fa-info-circle"></i></a>';
+                    $uitloggen = '';
                     break;
                 default:
                     $informatie = '';
+                    $uitloggen = '';
                     break;
             }
 
 
                 echo $informatie;
-                echo anchor('home/meldAf', '<i class="fas fa-sign-out-alt"></i>', 'title="Uitloggen"') ;
+                echo  $uitloggen;
             } else {
                 echo anchor('home','<i class="fas fa-sign-in-alt"></i>', 'title="Inloggen"') ;
             }?>

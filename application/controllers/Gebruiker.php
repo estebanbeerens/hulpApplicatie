@@ -81,6 +81,7 @@
             $gebruiker->passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
             $gebruiker->soortPersoonId = 2;
 
+
             $this->load->model('gebruiker_model');
             $this->gebruiker_model->insert($gebruiker);
 
@@ -132,32 +133,17 @@
             $gebruiker->postcode = $this->input->post('postcode');
             $gebruiker->adres = $this->input->post('adres');
             $gebruiker->gebruikersnaam = $this->input->post('gebruikersnaam');
-            $gebruiker->passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
             $gebruiker->email = $this->input->post('email');
 
             $this->load->model('gebruiker_model');
+
             $this->gebruiker_model->updaten($gebruiker);
 
-            redirect('gebruiker/gebruikerBewerkenOK');
+            redirect('gebruiker/gebruikerBewerken/' . $id);
         }
 
 
-        public function gebruikerBewerkenOK(){
 
-            $data['titel'] = 'Gebruiker Succesvol bewerkt';
-            $data['ontwerper'] = 'Tomas&nbsp;Marlein';
-            $data['tester'] = 'vul mij in';
-            $data['gebruiker'] = $this->authex->getGebruikerInfo();
-
-            $this->load->model('gebruiker_model');
-
-            $partials = array('hoofding' => 'main_header',
-                'inhoud' => 'gebruiker/gebruikerBewerkenOK',
-                'menu' => 'main_menu',
-                'voetnoot' => 'main_footer');
-
-            $this->template->load('main_master', $partials, $data);
-        }
 
 
 

@@ -90,7 +90,6 @@ class gebruiker_model extends CI_Model
          *
          *
          */
-
         $this->db->where('id', $id);
         $query = $this->db->get('persoon');
         return $query->row();
@@ -104,8 +103,6 @@ class gebruiker_model extends CI_Model
          * Het updaten van een gebruiker in de database
          * @param $gebruiker geeft de waarde mee die bepaald zijn voor een gebruiker te kunnen updaten.
          */
-
-
         $this->db->where('id', $gebruiker->id);
         $this->db->update('persoon', $gebruiker);
     }
