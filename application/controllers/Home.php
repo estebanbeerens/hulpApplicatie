@@ -12,6 +12,28 @@
  * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Home.
  */
 
+/**
+ * @mainpage Doxygen rapport van de HulpApplicatie.
+ *
+ * # Wat?
+ * Je vind hier ons doxygen commentaar van ons PHP-project <b>Team29</b>.
+ * - De commentaar bij onze model- en controllerklassen vind je onder het menu Data Structures.
+ * - De commentaar bij onze viewbestanden kan je vinden onder het menu.
+ *
+ * # Wie?
+ *  - Dit project is geschreven en becommentarieerd door alle teamleden van Team29
+ *
+ * # Team29
+ *  - Seppe Peeters
+ *  - Esteban Beerens
+ *  - Rene Vanhoof
+ *  - Liam Mentens
+ *  - Tomas Marlein
+ *  - Jeroen Jansen
+ */
+
+
+
 class Home extends CI_Controller
 {
 
@@ -21,7 +43,15 @@ class Home extends CI_Controller
         $this->load->helper('form');
     }
 
+    /**
+     * Zorgt voor de pagina index.
+     * in de view index.php
+     *
+     * @see index.php
+     */
+
     public function index() {
+
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Inloggen';
         $data['ontwerper'] = 'Jeroen&nbsp;Jansen';
@@ -40,6 +70,12 @@ class Home extends CI_Controller
         }
     }
 
+    /**
+     * Zorgt voor de pagina evenementBeheren.
+     * in de view evenementBeheren.php
+     *
+     * @see evenementBeheren.php
+     */
     public function evenementBeheren()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Evenement Beheren';
@@ -53,6 +89,13 @@ class Home extends CI_Controller
         $this->template->load('main_master', $partials, $data);
     }
 
+    /**
+     * Zorgt voor de pagina patientBekijken.
+     * in de view patientBekijken.php
+     *
+     * @see patientBekijken.php
+     */
+
     public function patientBekijken()
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Patient Bekijken';
@@ -65,9 +108,14 @@ class Home extends CI_Controller
 
         $this->template->load('main_master', $partials, $data);
     }
+    /**
+     * Dit zorgt voor de foutmelding die eventueel mogelijk is bij incorrecte gegevens.
 
+     *
+     */
     public function toonFout()
     {
+
         $data['titel'] = 'Fout';
         $data['ontwerper'] = 'Jeroen&nbsp;Jansen';
         $data['tester'] = 'Esteban&nbsp;Beerens';
@@ -80,9 +128,17 @@ class Home extends CI_Controller
 
         $this->template->load('main_master', $partials, $data);
     }
+    /**
+     * Dit controleert of de gegevens correct zijn of aanmelden mogelijk is
 
+     *
+     *
+     */
     public function controleerAanmelden()
-    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
+    {
+
+
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $gebruikersnaam = $this->input->post('naam');
         $passwoord = $this->input->post('passwoord');
 
@@ -94,8 +150,12 @@ class Home extends CI_Controller
             redirect('home/toonFout');
         }
     }
+    /**
+     * Dit controleert de rol van de gebruiker, dit is ook verantwoordelijk voor de permissies.
 
+     */
     public function controleerRol(){
+
         $gebruiker = $this->authex->getGebruikerInfo();
         switch ($gebruiker->soortPersoonId) {
             case 1:
@@ -117,8 +177,14 @@ class Home extends CI_Controller
 
         }
     }
+    /**
+     * Dit zorgt voor de afmelding.
 
+     *
+     *
+     */
     public function meldAf()
+
     {
         $gebruiker = $this->authex->getGebruikerInfo();
         $data['gebruiker'] = $gebruiker;
@@ -126,10 +192,18 @@ class Home extends CI_Controller
         redirect('home/index');
     }
 
-
+    /**
+     * Dit stuurt de mail voor de verificatie
+     * @param $geadresseerde Het mailadres van de gebruiker
+     * @param $boodschap De inhoud van de mail
+     * @param $titel Titel van de mail
+     *
+     */
 
     private function stuurMail($geadresseerde, $boodschap, $titel)
+
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
+
         $this->load->library('email');
 
         $this->email->from('info@tvshop.be', 'TV Shop');
@@ -146,8 +220,14 @@ class Home extends CI_Controller
             return true;
         }
     }
-
+    /**
+     * Dit zorgt voor de activatie.
+     * @param $id de id van diegene die geactiveerd word
+     *
+     *
+     */
     public function activeer($id)
+
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->authex->activeer($id);
         $this->session->set_userdata('titel', 'Activeren');
@@ -155,8 +235,14 @@ class Home extends CI_Controller
         $this->session->set_userdata('link', null);
         redirect('/gebruiker/toonMelding');
     }
+    /**
+     * Dit toont de melding van de verificatie.
 
+     *
+     *
+     */
     public function toonMelding()
+
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = $this->session->userdata('titel');
         $data['boodschap'] = $this->session->userdata('boodschap');
