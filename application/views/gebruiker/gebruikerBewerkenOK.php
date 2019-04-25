@@ -1,12 +1,3 @@
-<?php
-    /**
-     * Ontwerper: Tomas
-     * Tester: ?
-     */
-
-    $gebruikerBewerkenFormulier = array('id' => 'gebruikerBewerkenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
-    echo form_open('gebruiker/gebruikerUpdaten/' . $gebruiker->id, $gebruikerBewerkenFormulier, $gebruiker->id);
-?>
 
 <div class="form-row">
     <div class="form-group col-md-6">

@@ -98,6 +98,8 @@ class evenement_model extends CI_Model
         $query = $this->db->get('evenement');
         return $query->row();
     }
+
+
     function getPatientenPatientEvenement(){
 
 

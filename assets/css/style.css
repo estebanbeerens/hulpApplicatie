@@ -56,3 +56,8 @@ body{
 .eventToevoegen{
     margin-top: 1%;
 }
+
+
+.info-body h5{
+    font-weight: bold;
+}
