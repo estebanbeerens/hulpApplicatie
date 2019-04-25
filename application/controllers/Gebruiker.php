@@ -79,6 +79,7 @@
             $gebruiker->adres = $this->input->post('adres');
             $gebruiker->gebruikersnaam = $this->input->post('gebruikersnaam');
             $gebruiker->passwoord = password_hash($this->input->post('passwoord'), PASSWORD_DEFAULT);
+            $gebruiker->soortPersoonId = 2;
 
             $this->load->model('gebruiker_model');
             $this->gebruiker_model->insert($gebruiker);
