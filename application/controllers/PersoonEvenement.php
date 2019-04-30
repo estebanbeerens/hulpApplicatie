@@ -64,7 +64,7 @@ class PersoonEvenement extends CI_Controller
         $this->load->model('persoonEvenement_model');
         $this->persoonEvenement_model->insert($persoonId, $evenementId);
 
-        redirect('persoonEvenement/toonPersoonEvenementPatient');
+        redirect('persoonEvenement/beheerPersoonEvenementPatient');
     }
     public function persoonEvenementDeleten()
     {
@@ -74,7 +74,13 @@ class PersoonEvenement extends CI_Controller
         $id=$this->input->get('id');
         $this->persoonEvenement_model->deleten($id);
 
-        redirect('persoonEvenement/toonPersoonEvenementPatient');
+        redirect('persoonEvenement/beheerPersoonEvenementPatient');
+    }
+    public function persoonEvenementAanpassen(){
+        $data['gebruiker'] = $this->authex->getGebruikerInfo();
+        $this->load->model('persoonEvenement_model');
+
+        $id=$this->input->
     }
     public function persoonEvenementBewerken($id)
     {

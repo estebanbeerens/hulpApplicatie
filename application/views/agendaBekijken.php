@@ -3,6 +3,9 @@
         <tr>
             <th>Naam</th>
             <th>Evenement</th>
+            <th>Datum</th>
+            <th>Starttijd</th>
+            <th>Eindtijd</th>
         </tr>
         <?php foreach ($personen as $persoon){ ?>
         <tr>
@@ -24,12 +27,19 @@
                     }
                     ?>
                     <td><?php echo $persoonEvenement->evenement->naam;?></td>
+                    <td><?php echo $persoonEvenement->evenement->datum ?></td>
+                    <td><?php echo $persoonEvenement->evenement->startTijd ?></td>
+                    <td><?php echo $persoonEvenement->evenement->eindTijd ?></td>
                     <?php $teller++;
                 }?>
             <?php }
             else
             {
                 echo "<td>Geen evemenementen gevonden</td>";
+                echo "<td></td>";
+                echo "<td></td>";
+                echo "<td></td>";
+
             }
             echo "</tr>";
             }

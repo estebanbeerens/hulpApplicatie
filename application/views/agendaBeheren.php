@@ -4,6 +4,9 @@
             <th>Naam</th>
             <th>Beheer</th>
             <th>Evenement</th>
+            <th>Datum</th>
+            <th>Starttijd</th>
+            <th>Eindtijd</th>
         </tr>
         <?php foreach ($personen as $persoon){ ?>
         <tr>
@@ -31,6 +34,10 @@
                     <td><?php echo $persoonEvenement->evenement->naam;?></td>
                     <?php $teller++;
                     ?>
+                    <td><?php echo $persoonEvenement->evenement->datum ?></td>
+                    <td><?php echo $persoonEvenement->evenement->startTijd ?></td>
+                    <td><?php echo $persoonEvenement->evenement->eindTijd ?></td>
+
                     <td class="delete"><?php echo "<a href='persoonEvenementDeleten?id=".$persoonEvenement->id."'><i class=\"fas fa-trash-alt\"></i></a>"; ?></td>
                     <?php
                 }?>
