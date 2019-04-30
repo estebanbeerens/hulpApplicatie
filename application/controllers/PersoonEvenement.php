@@ -76,11 +76,19 @@ class PersoonEvenement extends CI_Controller
 
         redirect('persoonEvenement/beheerPersoonEvenementPatient');
     }
-    public function persoonEvenementAanpassen(){
+    public function persoonEvenementUpdaten(){
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $this->load->model('persoonEvenement_model');
 
-        $id=$this->input->
+        $persoonEvenement = new stdClass();
+        $persoonEvenement->id = $id;
+        $persoonEvenement->persoonId = $this->input->post('persoonId');
+        $persoonEvenement->evenementid = $this->input->post('evenementId');
+
+        $this->load->model('persoonEvenement_model');
+        $this->persoonEvenement_model->updaten($persoonEvenement);
+
+
+        //redirect('persoonEvenement/beheerPersoonEvenementPatient');
     }
     public function persoonEvenementBewerken($id)
     {

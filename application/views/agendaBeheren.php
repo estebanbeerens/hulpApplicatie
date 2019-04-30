@@ -29,7 +29,7 @@
                     }
                     ?>
                     <td>
-                        <?php echo anchor('persoonEvenement/persoonEvenementBewerken/' . $persoonEvenement->id, "Bewerken", 'class="anchorBewerken btn btn-primary"'); ?>
+                        <?php echo anchor('persoonEvenement/persoonEvenementBewerken/' . $persoonEvenement->id, "<i class=\"fas fa-edit\"></i>", 'class="anchorBewerken btn btn-primary"'); ?>
                     </td>
                     <td><?php echo $persoonEvenement->evenement->naam;?></td>
                     <?php $teller++;
