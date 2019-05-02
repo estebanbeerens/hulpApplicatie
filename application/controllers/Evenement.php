@@ -32,7 +32,7 @@ class Evenement extends CI_Controller
 
         $data['titel'] = 'Evenement tonen';
 
-        $data['ontwerper'] = 'Liam Mentens';
+        $data['ontwerper'] = 'Liam Mentens & Jeroen Jansen';
         $data['tester'] = 'Seppe Peeters';
 
         $gebruiker = $this->authex->getGebruikerInfo();
