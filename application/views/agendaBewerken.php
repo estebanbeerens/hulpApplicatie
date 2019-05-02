@@ -4,15 +4,21 @@ $evenementOpties=array();
 foreach ($evenement as $item) {
     $evenementOpties[$item->id] = $item->naam;
 }
-
+foreach ($patient as $item) {
+    $patientOpties[$item->id] = $item->naam . " " . $item->voornaam;
+}
 ?>
 
 <?php
 $agendaBewerkenFormulier = array('id' => 'agendaBewerkenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
-echo form_open('persoonEvenement/persoonEvenementUpdaten/'. $persoonEvenement->id , $agendaBewerkenFormulier);
+echo form_open('PersoonEvenement/persoonEvenementUpdaten/'. $persoonEvenement , $agendaBewerkenFormulier);
 
 
 ?>
+<p>Patient veranderen naar:
+
+    <?php echo form_dropdown('persoonId', $patientOpties, '0');?>
+</p>
 <p>Evenement veranderen naar:
 
     <?php echo form_dropdown('evenementId', $evenementOpties, '0');?>
