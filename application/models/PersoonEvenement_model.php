@@ -39,13 +39,14 @@ class PersoonEvenement_model extends CI_Model
 
             $evenementId = $evenement->evenementId;
 
-            $evenementPatient = $this->getEvenementenByDateAndId($evenementId);
+            $evenementPatient = $this->getEvenementenById($evenementId);
             array_push($evenementenlijst, $evenementPatient);
         }
 
+
         return $evenementenlijst;    }
 
-    function getEvenementenByDateAndId($evenementId){
+    function getEvenementenById($evenementId){
 
         $condities = array('id' => $evenementId);
         $this->db->where($condities);
