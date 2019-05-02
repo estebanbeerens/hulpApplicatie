@@ -28,12 +28,39 @@ class PersoonEvenement_model extends CI_Model
         return $query->row();
     }
 
-    function getWherePersoonId($persoonId)
+    function getEvenementWherePersoonId($persoonId)
     {
+        $this->db->where('persoonId', $persoonId);
+        $query = $this->db->get('persoonEvenement');
+        $evenementen = $query->result();
+        $evenementenlijst = array();
+
+        foreach($evenementen as $evenement){
+
+            $evenementId = $evenement->evenementId;
+
+            $evenementPatient = $this->getEvenementenByDateAndId($evenementId);
+            array_push($evenementenlijst, $evenementPatient);
+        }
+
+        return $evenementenlijst;    }
+
+    function getEvenementenByDateAndId($evenementId){
+
+        $condities = array('id' => $evenementId);
+        $this->db->where($condities);
+        $query = $this->db->get('evenement');
+
+
+        return $query->result();
+    }
+
+    function getWherePersoonId($persoonId){
         $this->db->where('persoonId', $persoonId);
         $query = $this->db->get('persoonEvenement');
         return $query->result();
     }
+
     function getWhereEvenementId($evenementId){
         $this->db->where('evenementId', $evenementId);
         $query = $this->db->get('persoonEvenement');

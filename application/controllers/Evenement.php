@@ -55,7 +55,7 @@ class Evenement extends CI_Controller
     {
         $gebruiker = $this->authex->getGebruikerInfo();
         $this->load->model('PersoonEvenement_model');
-        $data['evenement'] =$this->PersoonEvenement_model->getWherePersoonId($gebruiker->id);
+        $data['evenementen'] =$this->PersoonEvenement_model->getEvenementWherePersoonId($gebruiker->id);
 
         $this->load->view("laadEvenement", $data);
     }
