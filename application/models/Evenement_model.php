@@ -81,8 +81,15 @@ class evenement_model extends CI_Model
          * @param $id gaat het id meegeven van het evenement dat verwijderd moet worden uit de database.
          */
 
+        $this->db->where('evenementId',$id);
+        $this->db->delete('persoonEvenement');
+
         $this->db->where('id',$id);
         $this->db->delete('evenement');
+
+
+
+
 
     }
 
