@@ -17,7 +17,8 @@
     setInterval(evenementen, 5000);
 </script>
 
+
+
 <div id="resultaat">
+
 </div>
-
-

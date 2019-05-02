@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
     $counter = 0;
 
@@ -17,6 +18,16 @@
             echo $evenement[0]->eindTijd . '<br>';
         }
 
+=======
+<?php foreach($evenementen as $evenement){
+    if($evenement[0]->datum == date("Y-m-d")){
+        echo '<div class="card mx-auto mt-5 p-3" style="width: 25rem">';
+        echo '<div class="card-boy" style="width: 25rem">';
+        echo '<h2 class="card-title">'.$evenement[0]->naam .'</h2>';
+        echo '<h5>'.$evenement[0]->datum .'</h5>';
+        echo '<p>'.$evenement[0]->beschrijving .'</p>';
+        echo '</div>';
+        echo '</div>';
+>>>>>>> layout evenement tonen
     }
-
 }
