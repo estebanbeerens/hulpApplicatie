@@ -162,10 +162,10 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        ' . anchor('patient/agendaPatientBekijken', 'Agenda patiënt bekijken') . '
+                                        ' . anchor('persoonEvenement/toonPersoonEvenementPatient', 'Agenda patiënt bekijken') . '
                                     </li>
                                     <li>
-                                        ' . anchor('patient/beheerAgendaPatient', 'Agenda patiënt beheren') . '
+                                        ' . anchor('persoonEvenement/beheerPersoonEvenementPatient', 'Agenda patiënt beheren') . '
                                     </li>
                                 </ul>
                             </div>

@@ -48,10 +48,10 @@ class PersoonEvenement_model extends CI_Model
         $this->db->insert('persoonEvenement',$agenda);
         return $this->db->insert_id();
     }
-    function updaten($agenda)
+    function updaten($persoonEvenement)
     {
-        $this->db->where('id', $agenda->id);
-        $this->db->update('persoonEvenement', $agenda);
+        $this->db->where('id', $persoonEvenement->id);
+        $this->db->update('persoonEvenement', $persoonEvenement);
     }
     function deleten($id)
     {

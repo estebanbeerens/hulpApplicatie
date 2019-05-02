@@ -9,7 +9,7 @@ foreach ($evenement as $item) {
 
 <?php
 $agendaBewerkenFormulier = array('id' => 'agendaBewerkenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
-echo form_open('persoonEvenement/persoonEvenementUpdaten/' , $agendaBewerkenFormulier);
+echo form_open('persoonEvenement/persoonEvenementUpdaten/'. $persoonEvenement->id , $agendaBewerkenFormulier);
 
 
 ?>

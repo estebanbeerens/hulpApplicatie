@@ -76,7 +76,7 @@ class PersoonEvenement extends CI_Controller
 
         redirect('persoonEvenement/beheerPersoonEvenementPatient');
     }
-    public function persoonEvenementUpdaten(){
+    public function persoonEvenementUpdaten($id){
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $persoonEvenement = new stdClass();
