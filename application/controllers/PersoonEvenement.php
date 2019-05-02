@@ -32,7 +32,7 @@ class PersoonEvenement extends CI_Controller
         $data['evenementen'] = $this->Evenement_model->getEvenementenPersoonEvenement();
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
-            'inhoud' => 'agendaBekijken',
+            'inhoud' => 'agenda/agendaBekijken',
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);
@@ -49,7 +49,7 @@ class PersoonEvenement extends CI_Controller
         $data['personen'] =$this->Patient_model->getPatientenPatientEvenement();
         $partials = array('hoofding' => 'main_header',
             'menu' => 'main_menu',
-            'inhoud' => 'agendaBeheren',
+            'inhoud' => 'agenda/agendaBeheren',
             'voetnoot' => 'main_footer');
 
         $this->template->load('main_master', $partials, $data);
@@ -106,7 +106,7 @@ class PersoonEvenement extends CI_Controller
         $this->load->model('Evenement_model');
         $data['evenement'] =$this->Evenement_model->getEvenement();
         $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'agendaBewerken',
+            'inhoud' => 'agenda/agendaBewerken',
             'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 
@@ -125,7 +125,7 @@ class PersoonEvenement extends CI_Controller
         $this->load->model('Evenement_model');
         $data['evenement'] =$this->Evenement_model->getEvenement();
         $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'agendaToevoegen',
+            'inhoud' => 'agenda/agendaToevoegen',
             'menu' => 'main_menu',
             'voetnoot' => 'main_footer');
 
