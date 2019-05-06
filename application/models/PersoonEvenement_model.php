@@ -56,7 +56,12 @@ class PersoonEvenement_model extends CI_Model
         return $query->result();
     }
 
-    function getWherePersoonId($persoonId){
+    function getWherePersoonId($persoonId)
+    {
+        /**
+         * Evenementen van personen ophalen en tonen op pagina agenda beheren
+         */
+
         $this->db->where('persoonId', $persoonId);
         $query = $this->db->get('persoonEvenement');
         return $query->result();
@@ -69,6 +74,9 @@ class PersoonEvenement_model extends CI_Model
     }
     function insert($persoonId, $evenementId)
     {
+        /**
+         * persoonEvenement toevoegen via pagina agenda toevoegen
+         */
         $agenda = new stdClass();
         $agenda->persoonId = $persoonId;
         $agenda->evenementId = $evenementId;
@@ -78,12 +86,17 @@ class PersoonEvenement_model extends CI_Model
     }
     function updaten($persoonEvenement)
     {
+        /**
+         * persoonEvenement updaten via pagina agenda bewerken
+         */
         $this->db->where('id', $persoonEvenement->id);
         $this->db->update('persoonEvenement', $persoonEvenement);
     }
     function deleten($id)
     {
-
+        /**
+         * persoonEvenement verwijderen via pagina agenda beheren
+         */
         $this->db->where('id',$id);
         $this->db->delete('persoonEvenement');
     }

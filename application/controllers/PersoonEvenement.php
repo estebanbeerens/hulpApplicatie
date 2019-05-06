@@ -2,7 +2,7 @@
 /**
  * @property Template $template
  * @property Authex $authex
- * @property PersoonEvenement_model $evenement_model
+ * @property PersoonEvenement_model $Persoonevenement_model
  */
 
 /**
@@ -20,6 +20,9 @@ class PersoonEvenement extends CI_Controller
     }
     public function toonPersoonEvenementPatient()
     {
+        /**
+         * roept de pagina agenda bekijken op
+         */
         $data['titel'] = 'Agenda patient tonen';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['ontwerper'] = 'René Vanhoof';
@@ -39,6 +42,9 @@ class PersoonEvenement extends CI_Controller
     }
     public function beheerPersoonEvenementPatient()
     {
+        /**
+         * roept de pagina agenda beheren op
+         */
         $data['titel'] = 'Agenda patient bekijken';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['ontwerper'] = 'René Vanhoof';
@@ -56,6 +62,10 @@ class PersoonEvenement extends CI_Controller
     }
     public function persoonEvenementToevoegen()
     {
+        /**
+         * Voegt de gegevens van de agenda (persoonEvenement) met de geselecteerde id toe
+         *
+         */
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $persoonId = $this->input->post('persoonId');
@@ -68,6 +78,10 @@ class PersoonEvenement extends CI_Controller
     }
     public function persoonEvenementDeleten()
     {
+        /**
+         * Verwijdert de gegevens van de agenda (persoonEvenement) met de geselecteerde id toe
+         *
+         */
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $this->load->model('persoonEvenement_model');
 
@@ -77,6 +91,12 @@ class PersoonEvenement extends CI_Controller
         redirect('persoonEvenement/beheerPersoonEvenementPatient');
     }
     public function persoonEvenementUpdaten($id){
+        /**
+         * Update de gegevens van de agenda (persoonEvenement) met de geselecteerde id
+         * @param $id De id van de persoonEvenement die geüpdate gaat worden
+         *
+         */
+
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $persoonEvenement = new stdClass();
@@ -92,6 +112,9 @@ class PersoonEvenement extends CI_Controller
     }
     public function persoonEvenementBewerken($id)
     {
+        /**
+         * roept de pagina agenda bewerken op
+         */
         $data['titel'] = 'Agenda bewerken';
         $data['ontwerper'] = 'René&nbsp;Vanhoof';
         $data['tester'] = 'vul mij in';
