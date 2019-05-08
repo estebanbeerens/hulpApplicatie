@@ -20,7 +20,7 @@
                 <td><?php echo $item->eindTijd; ?></td>
                 <td><?php echo $item->locatie; ?></td>
                 <td><?php echo $item->beschrijving; ?></td>
-                <td class="delete"><?php echo "<a href='evenementDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Dit evenement verwijderen\"></i></a>"; ?></td>
+                <td class="delete text-center"><?php echo "<a href='evenementDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Dit evenement verwijderen\"></i></a>"; ?></td>
             </tr>
             <?php } ?>
         </table>

@@ -97,21 +97,8 @@ echo form_open('verzorger/verzorgersUpdaten/' . $verzorger->id, $verzorgerBewerk
         ?>
         <div class="invalid-feedback">Geef een gebruikersnaam op.</div>
     </div>
-    <div class="form-group col-md-6">
-        <?php
-        echo form_label('Passwoord', 'passwoord');
 
-        $dataPasswoord = array('id' => 'passwoord',
-            'name' => 'passwoord',
-            'class' => 'form-control',
-            'placeholder' => 'Passwoord',
-            'value' => $verzorger->passwoord,
-            'required' => 'required');
-        echo form_input($dataPasswoord) . "\n";
-        ?>
-        <div class="invalid-feedback">Geef een passwoord op.</div>
-    </div>
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-6">
         <?php
         echo form_label('Email', 'email');
 

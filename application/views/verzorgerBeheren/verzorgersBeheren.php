@@ -9,7 +9,6 @@
                 <th>woonplaats</th>
                 <th>adres</th>
                 <th>gebruikersnaam</th>
-                <th>wachtwoord</th>
                 <th>email</th>
                 <th>Verwijderen</th>
             </tr>
@@ -22,9 +21,8 @@
                     <td><?php echo $item->woonplaats; ?></td>
                     <td><?php echo $item->adres; ?></td>
                     <td><?php echo $item->gebruikersnaam; ?></td>
-                    <td><?php echo $item->passwoord; ?></td>
                     <td><?php echo $item->email; ?></td>
-                    <td class="delete"><?php echo "<a href='verzorgerDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Deze verzorger verwijderen\"></i></a>"; ?></td>
+                    <td class="delete text-center"><?php echo "<a href='verzorgerDeleten?id=".$item->id."'><i class=\"fas fa-trash-alt\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Deze verzorger verwijderen\"></i></a>"; ?></td>
                 </tr>
             <?php } ?>
         </table>
