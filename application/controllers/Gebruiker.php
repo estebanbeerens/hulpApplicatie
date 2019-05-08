@@ -14,6 +14,9 @@
     {
         public function __construct()
         {
+            /**
+             * Constructor
+             */
             parent::__construct();
             $this->load->helper('form');
             $this->load->helper('notation');

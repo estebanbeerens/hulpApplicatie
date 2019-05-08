@@ -13,11 +13,12 @@
      */
 class Licentie extends CI_Controller
 {
-    /**
-     * Constructor
-     */
+
     public function __construct()
     {
+        /**
+         * Constructor
+         */
         parent::__construct();
         $this->load->helper('form');
     }

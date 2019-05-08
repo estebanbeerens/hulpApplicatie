@@ -15,6 +15,9 @@ class PersoonEvenement extends CI_Controller
 {
     public function __construct()
     {
+        /**
+         * Constructor
+         */
         parent::__construct();
         $this->load->helper('form');
     }
