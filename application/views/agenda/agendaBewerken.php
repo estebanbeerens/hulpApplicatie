@@ -1,4 +1,10 @@
 <?php
+/**
+ * Ontwerper: René Vanhoof
+ * Tester: ?
+ */
+?>
+<?php
 $evenementOpties=array();
 
 foreach ($evenement as $item) {

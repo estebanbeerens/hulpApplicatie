@@ -1,3 +1,9 @@
+<?php
+/**
+* Ontwerper: René Vanhoof
+* Tester: ?
+*/
+?>
 <div class="table-responsive">
     <table class="table">
         <tr>
