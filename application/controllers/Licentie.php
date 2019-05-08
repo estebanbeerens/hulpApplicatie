@@ -210,7 +210,7 @@ class Licentie extends CI_Controller
     public function updateLicentieValidatie() {
         $data['titel'] = "Licentie bewerkt";
         $data['ontwerper'] = 'Esteban&nbsp;Beerens';
-        $data['tester'] = 'Arne&nbsp;Vanhoof';
+        $data['tester'] = 'René&nbsp;Vanhoof';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $partials = array('hoofding' => 'main_header',

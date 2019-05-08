@@ -174,7 +174,7 @@ class Verzorger extends CI_Controller
     {
         $data['titel'] = 'Verzorger bewerken';
         $data['ontwerper'] = 'Liam&nbsp;Mentens';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Tomas&nbsp;Marlein';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('verzorger_model');

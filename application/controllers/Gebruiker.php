@@ -100,7 +100,7 @@
 
             $data['titel'] = 'Gebruiker Bewerken';
             $data['ontwerper'] = 'Tomas&nbsp;Marlein';
-            $data['tester'] = 'vul mij in';
+            $data['tester'] = 'Jeroen&nbsp;Jansen';
             $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
             $this->load->model('gebruiker_model');
