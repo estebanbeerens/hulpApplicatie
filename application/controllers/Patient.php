@@ -213,24 +213,5 @@ class Patient extends CI_Controller
     }
 
 
-    public function agendaPatientBekijken()
 
-        /**
-         * Toont pagina patientbekijken
-         */
-    {$data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $data['titel'] = 'Agenda patient bekijken';
-
-        $data['ontwerper'] = 'René Vanhoof';
-        $data['tester'] = 'vul mij in';
-
-        $this->load->model('Patient_model');
-        $data['agenda'] =$this->Patient_model->getAgendaPatient();
-        $partials = array('hoofding' => 'main_header',
-            'inhoud' => 'agendaBekijken',
-            'menu' => 'main_menu',
-            'voetnoot' => 'main_footer');
-
-        $this->template->load('main_master', $partials, $data);
-    }
 }
