@@ -1,9 +1,17 @@
 <?php
-
+/**
+ * @class Evenement_model
+ * @brief Model-klasse voor Evenement
+ *
+ * Model-klasse die alle methodes bevat om te interageren met de database-tabel evenement
+ */
 class evenement_model extends CI_Model
 {
     function __construct()
     {
+        /**
+         * Constructor
+         */
         parent::__construct();
     }
 

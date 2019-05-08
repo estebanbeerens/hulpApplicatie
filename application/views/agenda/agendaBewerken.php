@@ -21,7 +21,7 @@ echo form_open('PersoonEvenement/persoonEvenementUpdaten/'. $persoonEvenement , 
 
 
 ?>
-<p>Patient veranderen naar:
+<p>Patiënt veranderen naar:
 
     <?php echo form_dropdown('persoonId', $patientOpties, '0');?>
 </p>

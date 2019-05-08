@@ -7,7 +7,18 @@
  *
 
  */
+/**
+ * @property Template $template
+ * @property Authex $authex
+ * @property Verzorger_model $verzorger_model
+ */
 
+/**
+ * @class Verzorger
+ * @brief Verzorger-controller voor alles dat te maken heeft met de Verzorger
+ *
+ * Controller-klasse die alle controllers bevat voor het correct tonen van alles dat te maken heeft met Verzorger.
+ */
 
 class Verzorger extends CI_Controller
 {

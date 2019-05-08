@@ -1,12 +1,17 @@
 <?php
 /**
- * @property evenement_model $evenement_model
- * @property  persoonevenement_model $persoonevenement_model
+ * @class Gebruiker_model
+ * @brief Model-klasse voor Gebruiker
+ *
+ * Model-klasse die alle methodes bevat om te interageren met de database-tabel persoon
  */
 class gebruiker_model extends CI_Model
 {
     function __construct()
     {
+        /**
+         * Constructor
+         */
         parent::__construct();
     }
 

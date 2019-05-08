@@ -11,13 +11,16 @@
  * @class PersoonEvenement_model
  * @brief Model-klasse voor PersoonEvenement
  *
- * Model-klasse die alle methodes bevat om te
+ * Model-klasse die alle methodes bevat om te interageren met de database-tabel persoonEvenement
  */
 
 class PersoonEvenement_model extends CI_Model
 {
     function __construct()
     {
+        /**
+         * Constructor
+         */
         parent::__construct();
     }
 

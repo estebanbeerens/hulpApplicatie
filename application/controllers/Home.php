@@ -26,7 +26,7 @@
  * # Team29
  *  - Seppe Peeters
  *  - Esteban Beerens
- *  - Rene Vanhoof
+ *  - René Vanhoof
  *  - Liam Mentens
  *  - Tomas Marlein
  *  - Jeroen Jansen

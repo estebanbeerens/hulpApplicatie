@@ -11,12 +11,15 @@
  * @class Patient_model
  * @brief Model-klasse voor patienten
  *
- * Model-klasse die alle methodes bevat om te
+ * Model-klasse die alle methodes bevat om te interageren met de database-tabel persoon waar soortPersoonId 4 is
  */
 class Patient_model extends CI_Model
 {
     function __construct()
     {
+        /**
+         * Constructor
+         */
         parent::__construct();
     }
     function getPatient()

@@ -6,6 +6,8 @@
      * - Gebruikt Bootstrap form en controle
      */
 
+
+
 $attributes = array('name' => 'mijnFormulier','novalidate' => 'novalidate', 'class' => 'needs-validation');
 echo form_open('home/controleerAanmelden', $attributes);
 ?>

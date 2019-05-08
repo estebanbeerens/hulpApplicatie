@@ -11,7 +11,12 @@
  * Model-klasse die alle methodes bevat om te interageren met de
  * database-tabel persoon
  */
-
+/**
+ * @class Verzorger_model
+ * @brief Model-klasse voor Verzorger
+ *
+ * Model-klasse die alle methodes bevat om te interageren met de database-tabel persoon waar de soortPersoonId 3 is
+ */
 class Verzorger_model extends CI_Model
 {
     public function __construct()
