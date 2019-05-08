@@ -91,7 +91,7 @@ class Patient extends CI_Controller
         $data['titel'] = 'Patient beheren';
 
         $data['ontwerper'] = 'Seppe Peeters';
-        $data['tester'] = 'Liam&nbspMentens';
+        $data['tester'] = 'Liam&nbspMentens / Afmeldfunctie vanop afstand : Seppe Peeters';
 
 
         $this->load->model('Patient_model');
