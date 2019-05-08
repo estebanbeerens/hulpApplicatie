@@ -17,7 +17,9 @@ class gebruiker_model extends CI_Model
 
     function get($id)
     {
-        // geef gebruiker-object met opgegeven $id
+        /**
+         * geef gebruiker-object met opgegeven $id
+         */
         $this->db->where('id', $id);
         $query = $this->db->get('persoon');
         return $query->row();
@@ -25,13 +27,17 @@ class gebruiker_model extends CI_Model
 
     function getGebruiker($gebruikersnaam, $passwoord)
     {
-        // geef gebruiker-object met $email en $wachtwoord EN geactiveerd = 1
+        /**
+         * geef gebruiker-object met $email en $wachtwoord EN geactiveerd = 1
+        */
         $this->db->where('gebruikersnaam', $gebruikersnaam);
         $query = $this->db->get('persoon');
 
         if ($query->num_rows() == 1) {
             $gebruiker = $query->row();
-            // controleren of het wachtwoord overeenkomt
+            /**
+            * controleren of het wachtwoord overeenkomt
+            */
             if (password_verify($passwoord, $gebruiker->passwoord)) {
                 return $gebruiker;
 
@@ -52,7 +58,9 @@ class gebruiker_model extends CI_Model
 
     function controleerEmailVrij($email)
     {
-        // is email al dan niet aanwezig
+        /**
+         * is email al dan niet aanwezig
+         */
         $this->db->where('email', $email);
         $query = $this->db->get('persoon');
 
@@ -62,7 +70,7 @@ class gebruiker_model extends CI_Model
             return false;
         }
     }
-    //
+
     function insert($persoon)
     {
 
@@ -75,7 +83,9 @@ class gebruiker_model extends CI_Model
 
     function updateGeactiveerd($id)
     {
-        // zet geactiveerd op 1
+        /**
+         * zet geactiveerd op 1
+         */
         $gebruiker = new stdClass();
         $gebruiker->geactiveerd = 1;
         $this->db->where('id', $id);
