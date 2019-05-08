@@ -8,11 +8,12 @@
     <table class="table">
         <tr>
             <th>Naam</th>
-            <th>Beheer</th>
+            <th>Bewerken</th>
             <th>Evenement</th>
             <th>Datum</th>
             <th>Starttijd</th>
             <th>Eindtijd</th>
+            <th>Verwijderen</th>
         </tr>
         <?php foreach ($personen as $persoon){ ?>
         <tr>
@@ -44,7 +45,7 @@
                     <td><?php echo $persoonEvenement->evenement->startTijd ?></td>
                     <td><?php echo $persoonEvenement->evenement->eindTijd ?></td>
 
-                    <td class="delete"><?php echo "<a href='persoonEvenementDeleten?id=".$persoonEvenement->id."'><i class=\"fas fa-trash-alt\"></i></a>"; ?></td>
+                    <td class="delete text-center"><?php echo "<a href='persoonEvenementDeleten?id=".$persoonEvenement->id."'><i class=\"fas fa-trash-alt\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Dit evenement verwijderen\"></i></a>"; ?></td>
                     <?php
                 }?>
             <?php }

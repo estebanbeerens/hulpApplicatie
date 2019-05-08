@@ -5,11 +5,11 @@
                 <th>Bewerken</th>
                 <th>Naam</th>
                 <th>Voornaam</th>
-                <th>geboortedatum</th>
-                <th>woonplaats</th>
-                <th>adres</th>
-                <th>gebruikersnaam</th>
-                <th>email</th>
+                <th>Geboortedatum</th>
+                <th>Woonplaats</th>
+                <th>Adres</th>
+                <th>Gebruikersnaam</th>
+                <th>Email</th>
                 <th>Verwijderen</th>
             </tr>
             <?php foreach ($verzorger as $item){ ?>
