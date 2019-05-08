@@ -21,6 +21,7 @@ class PersoonEvenement extends CI_Controller
     public function toonPersoonEvenementPatient()
     {
         /**
+         * Roept een lijst van persoonEvenementen op zodat deze bekeken kan worden
          * roept de pagina agenda bekijken op
          */
         $data['titel'] = 'Agenda patient tonen';
@@ -43,6 +44,7 @@ class PersoonEvenement extends CI_Controller
     public function beheerPersoonEvenementPatient()
     {
         /**
+         * Roept een lijst van persoonEvenementen op zodat deze bekeken kan worden
          * roept de pagina agenda beheren op
          */
         $data['titel'] = 'Agenda patient bekijken';
@@ -63,6 +65,7 @@ class PersoonEvenement extends CI_Controller
     public function persoonEvenementToevoegen()
     {
         /**
+         *
          * Voegt de gegevens van de agenda (persoonEvenement) met de geselecteerde id toe
          *
          */
@@ -113,6 +116,7 @@ class PersoonEvenement extends CI_Controller
     public function persoonEvenementBewerken($id)
     {
         /**
+         * geeft een lijst met alle evenementen en patienten om te selecteren
          * roept de pagina agenda bewerken op
          */
         $data['titel'] = 'Agenda bewerken';

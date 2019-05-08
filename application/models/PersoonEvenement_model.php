@@ -26,6 +26,11 @@ class PersoonEvenement_model extends CI_Model
 
     function get($id)
     {
+        /**
+         *  persoonEvenement gegevens oproepen en tonen na het klikken op het bepaalde persoonEvenement
+         * @param $id gaat een speciefiek persoonEvenement oproepen.
+         * @return Het opgevraagde record
+         */
         $this->db->where('id', $id);
         $query = $this->db->get('persoonEvenement');
         return $query->row();
@@ -33,6 +38,9 @@ class PersoonEvenement_model extends CI_Model
 
     function getEvenementWherePersoonId($persoonId)
     {
+        /**
+         * Evenementen van persoon ophalen en tonen op pagina laadevenement
+         */
         $this->db->where('persoonId', $persoonId);
         $query = $this->db->get('persoonEvenement');
         $evenementen = $query->result();

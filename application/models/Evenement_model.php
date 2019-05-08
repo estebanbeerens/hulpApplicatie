@@ -30,6 +30,7 @@ class evenement_model extends CI_Model
         /**
          *  Evenement gegevens oproepen en en tonen na het klikken op de een bepaalde evenement
          * @param $id gaat een speciefiek evenement oproepen.
+         * @return Het opgevraagde record
          */
         $event = new stdClass();
         $event->id = $id;
@@ -48,7 +49,7 @@ class evenement_model extends CI_Model
     {
 
         /**
-         *  Evenement gegevens oproepen en en tonen na het klikken op de een bepaalde evenement
+         *  Evenement gegevens oproepen en en tonen na het klikken op het bepaalde evenement
          * @param $naam, $meldingtijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd gaan opgeven welke waarde er moet gegeven worden aan het evenement
          */
 
