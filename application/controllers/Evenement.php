@@ -146,7 +146,7 @@ class Evenement extends CI_Controller
 
         $data['titel'] = 'Evenement Bewerken';
         $data['ontwerper'] = 'Tomas&nbsp;Marlein';
-        $data['tester'] = 'Seppe Peeters';
+        $data['tester'] = 'Seppe&nbsp;Peeters';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('evenement_model');
@@ -214,8 +214,8 @@ class Evenement extends CI_Controller
     $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['titel'] = 'Evenement Toevoegen';
 
-        $data['ontwerper'] = 'Liam Mentens';
-        $data['tester'] = 'Seppe Peeters';
+        $data['ontwerper'] = 'Tomas&nbsp;Marlein';
+        $data['tester'] = 'Seppe&nbsp;Peeters';
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'evenementBeheren/evenementToevoegen',

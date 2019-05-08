@@ -36,7 +36,7 @@ class Patient extends CI_Controller
     $data['gebruiker'] = $gebruiker;
 
     $data['ontwerper'] = 'René Vanhoof';
-    $data['tester'] = 'Geen Idee';
+    $data['tester'] = 'Liam&nbsp;Mentens';
 
 
     $this->load->model('Patient_model');
@@ -112,7 +112,7 @@ class Patient extends CI_Controller
         $data['titel'] = 'Patient toevoegen';
 
         $data['ontwerper'] = 'Seppe Peeters';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Liam&nbsp;Mentens';
 
         $partials = array('hoofding' => 'main_header',
             'inhoud' => 'patientToevoegenPage',
@@ -196,7 +196,7 @@ class Patient extends CI_Controller
 
         $data['titel'] = 'Patient Bewerken';
         $data['ontwerper'] = 'Seppe Peeters';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Liam&nbsp;Mentens';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('patient_model');

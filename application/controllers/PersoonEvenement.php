@@ -26,7 +26,7 @@ class PersoonEvenement extends CI_Controller
         $data['titel'] = 'Agenda patient tonen';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['ontwerper'] = 'René Vanhoof';
-        $data['tester'] = 'Geen Idee';
+        $data['tester'] = 'Jeroen&nbsp;Jansen';
 
 
         $this->load->model('Patient_model');
@@ -48,7 +48,7 @@ class PersoonEvenement extends CI_Controller
         $data['titel'] = 'Agenda patient bekijken';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
         $data['ontwerper'] = 'René Vanhoof';
-        $data['tester'] = 'Geen Idee';
+        $data['tester'] = 'Jeroen&nbsp;Jansen';
 
 
         $this->load->model('Patient_model');
@@ -117,7 +117,7 @@ class PersoonEvenement extends CI_Controller
          */
         $data['titel'] = 'Agenda bewerken';
         $data['ontwerper'] = 'René&nbsp;Vanhoof';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Jeroen&nbsp;Jansen';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('persoonEvenement_model');
@@ -140,7 +140,7 @@ class PersoonEvenement extends CI_Controller
         $data['titel'] = 'Agenda toevoegen';
 
         $data['ontwerper'] = 'René&nbsp;Vanhoof';
-        $data['tester'] = 'vul mij in';
+        $data['tester'] = 'Jeroen&nbsp;Jansen';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
 
         $this->load->model('Patient_model');
