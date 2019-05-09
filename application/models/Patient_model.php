@@ -26,6 +26,7 @@ class Patient_model extends CI_Model
     {
         /**
          * Alle patienten ophalen
+         * @return de gevraagde records
          */
         $this->db->order_by("naam", "asc");
         $this->db->where('soortPersoonId', 4);
@@ -35,6 +36,7 @@ class Patient_model extends CI_Model
     function getPatientenPatientEvenement(){
         /**
          * Alle evenementen ophalen die aan een patient gelinkt zijn
+         * @return de gevraagde records
          */
         $this->db->where('soortPersoonId', 4);
         $this->db->order_by('naam', 'asc');
@@ -61,6 +63,7 @@ class Patient_model extends CI_Model
     {
         /**
          * //Het toevoegen van een patiënt in de database
+         * @param $naam,$voornaam,$geboortedatum,$woonplaats,$adres,$gebruikersnaam,$passwoord,$email gaan opgeven welke waarde er moet gegeven worden aan de patient
          */
 
         $patient = new stdClass();
@@ -81,6 +84,8 @@ class Patient_model extends CI_Model
     function getSpecificPatient($id) {
         /**
          * Een specifieke patient ophalen
+         * @param $id de id van de patient die opgevraagd wordt
+         * @return het gevraagde record
          */
         $this->db->where('id', $id);
         $query = $this->db->get('persoon');
@@ -94,6 +99,7 @@ class Patient_model extends CI_Model
 
         /**
          * Het verwijderen van een patiënt uit de database
+         * @param $id de id van de gevraagde patient
          */
 
         $this->db->where('id',$id);
@@ -105,6 +111,7 @@ class Patient_model extends CI_Model
 
         /**
          * Het updaten van een patiënt in het database
+         * @param $patient de gegevens van patient die geupdate worden
          */
 
 
@@ -130,6 +137,8 @@ class Patient_model extends CI_Model
     function patientAfmelden($id, $patient){
         /**
          * Een patient afmelden via de database
+         * @param $id de id van de gevraagde patient
+         * @param $patient de patient afmelden
          */
 
         $this->db->where('id', $id);

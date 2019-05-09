@@ -82,6 +82,10 @@
         }
 
         function delete($id) {
+            /**
+             * Licentie verwijderen uit database
+             * @param $id de id van de gevraagde licentie
+             */
             $this->db->where('id', $id);
             $this->db->delete('soortLicentie');
         }
