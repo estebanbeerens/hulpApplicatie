@@ -51,7 +51,7 @@
             <!-- Page content -->
             <main class="page-content">
                 <div class="container" id="main">
-                    <h1 class="mb-2"><?php if (isset($titel)) { echo $titel; }?></h1>
+                    <?php if (isset($titel)) { echo '<h1 class="mb-2">' . $titel . '</h1>'; }?>
                     <div id="inhoud">
                         <?php echo $inhoud; ?>
                     </div>

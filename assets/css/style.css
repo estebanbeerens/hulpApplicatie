@@ -61,3 +61,11 @@ body{
 .info-body h5{
     font-weight: bold;
 }
+
+.bg-custom {
+    background-color: #88BBD6;
+}
+
+.eventBeschrijving {
+    font-size: larger;
+}
