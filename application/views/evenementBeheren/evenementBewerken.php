@@ -4,8 +4,6 @@ if($gebruiker->soortPersoonId == 2){
 
 <?php
     /**
-     * Ontwerper: Tomas
-     * Tester: ?
      *
      * @file evenementBewerken.php
      * View waarin het geselecteerde evenement bewerkt kan worden
@@ -113,38 +111,18 @@ if($gebruiker->soortPersoonId == 2){
     <div class="form-group col-md-12">
         <?php
         echo form_label('Beschrijving', 'beschrijving');
+
+        $dataBeschrijving = array('id' => 'beschrijving',
+            'name' => 'beschrijving',
+            'class' => 'form-control',
+            'placeholder' => 'Beschrijving',
+            'value' => $evenement->beschrijving,
+            'required' => 'required');
+
+        echo form_textarea($dataBeschrijving) . "\n";
         ?>
 
-        <div class="input-group mb-3">
-            <select class="custom-select" id="beschrijving"
-                    name="beschrijving">
-                <option selected><?php echo $evenement->beschrijving; ?></option>
-                <?php
-                    if($evenement->beschrijving == 'Activiteit'){
-                        ?>
-                            <option value="Ontbijt">Ontbijt</option>
-                            <option value="Avondeten">Avondeten</option>
-                        <?php
-                    }
-                    if($evenement->beschrijving == 'Ontbijt'){
-                        ?>
-                        <option value="Activiteit">Activiteit</option>
-                        <option value="Avondeten">Avondeten</option>
-                        <?php
-                    }
-                    if($evenement->beschrijving == 'Avondeten'){
-                        ?>
-                        <option value="Activiteit">Activiteit</option>
-                        <option value="Ontbijt">Ontbijt</option>
-                        <?php
-                    }
 
-                ?>
-            </select>
-            <div class="input-group-append">
-                <label class="input-group-text" for="beschrijving">Opties</label>
-            </div>
-        </div>
 
         <div class="invalid-feedback">Geef een beschrijving op.</div>
     </div>

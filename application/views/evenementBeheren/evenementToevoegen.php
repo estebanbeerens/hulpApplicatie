@@ -4,8 +4,6 @@ if($gebruiker->soortPersoonId == 2){
 
 <?php
 /**
- * Ontwerper: Tomas
- * Tester: ?
  *
  * @file evenementToevoegen.php
  * View waarin een evenement aangemaakt kan worden
@@ -114,21 +112,16 @@ echo form_open('evenement/evenementToevoegenGoed', $evenementToevoegenFormulier)
     <div class="form-group col-md-12">
         <?php
         echo form_label('Beschrijving', 'beschrijving');
+
+        $dataBeschrijving = array('id' => 'beschrijving',
+            'name' => 'beschrijving',
+            'class' => 'form-control',
+            'placeholder' => 'Beschrijving',
+            'value' => '',
+            'required' => 'required');
+
+        echo form_textarea($dataBeschrijving) . "\n";
         ?>
-
-        <div class="input-group mb-3">
-            <select class="custom-select" id="beschrijving"
-                    name="beschrijving">
-                <option selected>Kies...</option>
-                <option value="Activiteit">Activiteit</option>
-                <option value="Ontbijt">Ontbijt</option>
-                <option value="Avondeten">Avondeten</option>
-            </select>
-            <div class="input-group-append">
-                <label class="input-group-text" for="beschrijving">Opties</label>
-            </div>
-        </div>
-
 
         <div class="invalid-feedback">Geef een beschrijving op.</div>
     </div>

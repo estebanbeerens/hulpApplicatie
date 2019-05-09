@@ -24,8 +24,8 @@
             if ($evenement[0]->datum == date("Y-m-d") && $evenement[0]->eindTijd < date("H:i:sa")) {
             } else {
 
-    //            $originalDate = $evenement[0]->datum;
-    //            $newDate = date("d/m/Y", strtotime($originalDate));
+                $originalDate = $evenement[0]->datum;
+                $newDate = date("d/m/Y", strtotime($originalDate));
 
                 $counter++;
                 echo '<div class="card mx-auto p-3 mt-4 col-md-3 bg-custom shadow">';
@@ -38,10 +38,8 @@
                     echo '<div class="card-body">';
                         echo '<p class="text-center eventBeschrijving">' . $evenement[0]->beschrijving . '</p>';
 
-//                        echo '<h5>' . $newDate . '</h5>';
-//                        if ($evenement[0]->beschrijving == 'Bingo'){
-//                            echo '<div><i class="fas fa-dice fa-10x"></i></div>';
-//                        }
+                        echo '<h5 class="text-center">' . $newDate . '</h5>';
+
                     echo '</div>';
                 echo '</div>';
 

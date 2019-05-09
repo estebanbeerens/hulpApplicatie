@@ -1,7 +1,5 @@
 <?php
     /**
-     * Ontwerper: Tomas
-     * Tester: ?
      *
      * @file gebruikerBewerken.php
      *

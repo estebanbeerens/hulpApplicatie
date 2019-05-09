@@ -1,7 +1,7 @@
 <?php
 
 if($gebruiker->soortPersoonId == 2 ||$gebruiker->soortPersoonId == 3){
-} else { redirect('home/meldaf'); } ?>s
+} else { redirect('home/meldaf'); } ?>
 
 <?php
 /**@file patientBekijken.php
