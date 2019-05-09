@@ -22,11 +22,6 @@ class Evenement extends CI_Controller
         $this->load->helper('form');
     }
 
-    public function index()
-    {
-
-    }
-
     public function toonEvenement()
     {
         /**
@@ -52,6 +47,9 @@ class Evenement extends CI_Controller
 
     }
 
+    /**
+     * Haalt de evenementen op voor een bepaalde persoon met Ajax
+     */
     public function ajax_haalEventOp()
     {
         $gebruiker = $this->authex->getGebruikerInfo();
@@ -61,6 +59,9 @@ class Evenement extends CI_Controller
         $this->load->view("laadEvenement", $data);
     }
 
+    /**
+     * Controleert of de gebruiker is aangemeld.
+     */
     public function ajax_isAangemeld(){
         $gebruiker = $this->authex->getGebruikerInfo();
 
