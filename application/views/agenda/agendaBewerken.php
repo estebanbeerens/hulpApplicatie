@@ -2,6 +2,13 @@
 /**
  * Ontwerper: René Vanhoof
  * Tester: ?
+ *
+ * @file agendaBewerken.php
+ * View waarin de agenda bewerkt kan worden
+ * - krijgt een $evenement-object binnen
+ * - krijgt een $patient-object binnen
+ * - maakt gebruik van een Bootstrap-form
+ *
  */
 ?>
 <?php

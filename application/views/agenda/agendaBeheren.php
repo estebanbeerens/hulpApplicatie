@@ -2,6 +2,11 @@
 /**
 * Ontwerper: René Vanhoof
 * Tester: ?
+ *
+ * @file agendaBeheren.php
+ * View waarin de agenda's weergeven en aangepast kunnen worden
+ * - krijgt een $persoonEvenement-object binnen
+ *
 */
 ?>
 <div class="table-responsive">

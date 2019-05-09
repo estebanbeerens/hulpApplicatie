@@ -2,6 +2,10 @@
 /**
  * Ontwerper: René Vanhoof
  * Tester: ?
+ *
+ * @file agendaBekijken.php
+ * View waarin de agenda weergeven wordt
+ * - krijgt een $persoonEvenement object binnen
  */
 ?>
 <div class="table-responsive">

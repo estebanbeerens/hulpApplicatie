@@ -2,7 +2,16 @@
 /**
  * Ontwerper: René Vanhoof
  * Tester: ?
+ *
+ * @file agendaToevoegen.php
+ * View waarin een agenda toegevoegd kan worden
+ * - krijgt een $evenement-object binnen
+ * - krijgt een $patient-object binnen
+ * - maakt een $persoonEvenement-object aan
+ * - maakt gebruik van een Bootstrap-form
+ *
  */
+
 ?>
 <?php
 $evenementOpties=array();

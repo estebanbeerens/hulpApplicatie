@@ -1,3 +1,15 @@
+<?
+/**
+ * @file evenementBekijken.php
+ * View waarin de opgehaalde agenda via laadEvenement.php weergeven wordt
+ * - maakt gebruik van Ajax
+ *
+ *
+ */
+
+?>
+
+
 <script>
     evenementen();
     function evenementen()

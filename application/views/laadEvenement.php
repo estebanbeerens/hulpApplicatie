@@ -1,3 +1,13 @@
+<?
+/**
+ * @file laadEvenement.php
+ * View waarin de agenda van een patiënt opgehaald wordt
+ * - maakt gebruik van een $evenement-object
+ */
+?>
+
+
+
 <!--<div class="row">-->
 <!--    <div class="card mx-auto p-3 col-md-5 shadow">-->
 <!--        <h2 class="text-center font-weight-bold">--><?php //echo "Tijd" ?><!--</h2>-->
