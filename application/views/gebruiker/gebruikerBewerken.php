@@ -2,6 +2,12 @@
     /**
      * Ontwerper: Tomas
      * Tester: ?
+     *
+     * @file gebruikerBewerken.php
+     *
+     * View waarin een gebriuker bewerkt kan worden
+     * - krijgt een $gebruiker-object binnen
+     * - maakt gebruik van een Bootstrap-form
      */
 
     $gebruikerBewerkenFormulier = array('id' => 'gebruikerBewerkenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');

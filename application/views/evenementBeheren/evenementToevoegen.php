@@ -2,6 +2,11 @@
 /**
  * Ontwerper: Tomas
  * Tester: ?
+ *
+ * @file evenementToevoegen.php
+ * View waarin een evenement aangemaakt kan worden
+ * - maakt een $evenement-object aan
+ * - maakt gebruik van een Bootstrap-form
  */
 
 $evenementToevoegenFormulier = array('id' => 'evenementToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');

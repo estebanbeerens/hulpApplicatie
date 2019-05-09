@@ -1,3 +1,16 @@
+<?php
+/**
+ *
+ * @file evenementBeheren.php
+ * View waarin de evenementen worden weergeven en bewerkt kunnen worden
+ * - krijgt een $evenement-object binnen
+ *
+ */
+
+?>
+
+
+
 <div class="table-responsive">
         <table class="table">
             <tr>

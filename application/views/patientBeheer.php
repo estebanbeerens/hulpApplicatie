@@ -1,3 +1,13 @@
+<?php
+/**
+ * @file patientBeheer.php
+ * View waarin patiënten worden weergeven en aangepast kunnen worden
+ * - krijgt een $patient-object binnen
+ */
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>

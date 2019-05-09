@@ -3,6 +3,12 @@
 /**
  * Ontwerper: Liam
  * Tester: ?
+ *
+ * @file verzorgerBewerken.php
+ * View waarin een geselecteerde verzorger bewerkt kan worden
+ * - krijgt een $verzorger-object binnen
+ * - maakt gebruik van een Bootstrap-form
+ *
  */
 
 $verzorgerBewerkenFormulier = array('id' => 'verzorgerToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');

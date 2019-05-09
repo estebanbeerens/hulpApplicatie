@@ -2,6 +2,12 @@
     /**
      * Ontwerper: Tomas
      * Tester: ?
+     *
+     * @file evenementBewerken.php
+     * View waarin het geselecteerde evenement bewerkt kan worden
+     * - krijgt een $evenement-object binnen
+     * - maakt gebruikt van een Bootstrap-form
+     *
      */
 
     $evenementBewerkenFormulier = array('id' => 'evenementToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');

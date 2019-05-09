@@ -1,3 +1,11 @@
+<?php
+/**@file patientBekijken.php
+ * View waarin de patiënten weergeven worden
+ * - krijgt een $patient-object binnen
+ *
+ */
+?>
+
 <script>
     $(document).ready(function(){
         $('.afmeldKnop').click(function(){

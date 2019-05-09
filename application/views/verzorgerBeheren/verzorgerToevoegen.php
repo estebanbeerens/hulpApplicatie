@@ -3,6 +3,12 @@
 /**
  * Ontwerper: Liam
  * Tester: ?
+ *
+ * @file verzorgerToevoegen.php
+ * View waarin een verzorger kan worden aangemaakt
+ * - maakt een $verzorger-object aan
+ * - maakt gebruikt van een Bootstrap-form
+ *
  */
 
 $verzorgerToevoegenFormulier = array('id' => 'verzorgerToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');

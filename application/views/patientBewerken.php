@@ -1,4 +1,15 @@
 <?php
+/**
+ * @file patientBewerken.php
+ * View waarin een geselecteerde patient bewerkt kan worden
+ * - krijgt een $patient-object binnen
+ * - maakt gebruikt van een Bootstrap-form
+ */
+
+?>
+
+
+<?php
 $patientToevoegenFormulier = array('id' => 'patientToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
 echo form_open('patient/patientUpdaten/' . $patient->id, $patientToevoegenFormulier, $patient->id);
 ?>

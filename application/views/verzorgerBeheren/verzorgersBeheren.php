@@ -1,3 +1,15 @@
+<?php
+/**
+ * @file verzorgersBeheren.php
+ *
+ * View waarin de verzorgers worden weergegeven en aangepast kunnen worden
+ * - krijgt een $verzorger-object binnen
+ *
+ *
+*/
+?>
+
+
 <div>
     <div class="table-responsive">
         <table class="table">

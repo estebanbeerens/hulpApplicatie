@@ -1,5 +1,15 @@
 <div>
     <?php
+    /**
+     * @file patientToevoegen.php
+     * View waarin een patiënt aangemaakt kan worden
+     * - maakt een $patient-object aan
+     * - maakt gebruik van een Bootstrap-form
+     */
+    ?>
+
+
+    <?php
     $attributes = array('name' => 'patientToevoegenFormulier' ,'novalidate' => 'novalidate', 'class' => 'needs-validation');
     echo form_open('patient/patientToevoegen', $attributes);
     ?>
