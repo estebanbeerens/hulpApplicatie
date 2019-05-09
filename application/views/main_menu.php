@@ -15,9 +15,11 @@
     <div class="sidebar-content">
         <div class="sidebar-brand">
             <?php echo anchor('home', 'Hulpapplicatie') ?>
+            <?php if (isset($gebruiker)) { if ($gebruiker->soortPersoonId === 4) {?>
             <div id="close-sidebar">
                 <i class="fas fa-times"></i>
             </div>
+            <?php }} ?>
         </div>
         <div class="sidebar-header">
             <?php

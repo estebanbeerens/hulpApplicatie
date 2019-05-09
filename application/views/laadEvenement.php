@@ -8,7 +8,6 @@
 </div>
 <div class="row">
 <?php
-
     $counter = 0;
     foreach($evenementen as $evenement) {
         if (($counter < 6) && $evenement[0]->datum >= date("Y-m-d")) {
@@ -21,7 +20,7 @@
                 $counter++;
                 echo '<div class="card mx-auto p-3 mt-4 col-md-3 bg-custom shadow">';
                     echo '<h3 class="text-center text-white font-weight-bold">'. $evenement[0]->startTijd .'</h3>';
-                    echo '<i class="fas fa-dice fa-5x text-center text-white m-2"></i>';
+                    echo '<i class="far fa-calendar-alt fa-5x text-center text-white m-2"></i>';
                     echo '<h3 class="text-center text-white font-weight-bold"> Tot '. $evenement[0]->eindTijd .'</h3>';
                 echo '</div>';
                 echo '<div class="card mx-auto p-3 mt-4 col-md-9 shadow">';
