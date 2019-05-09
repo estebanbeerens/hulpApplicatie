@@ -19,6 +19,7 @@ class evenement_model extends CI_Model
     {
         /**
          * Evenementen ophalen en tonen op pagina Evenement beheren
+         * @return Alle records van evenement
          */
 
         $query = $this->db->get('evenement');
@@ -49,7 +50,7 @@ class evenement_model extends CI_Model
     {
 
         /**
-         *  Evenement gegevens oproepen en en tonen na het klikken op het bepaalde evenement
+         *  Evenement tabel aanvullen met de ingevulde variabelen
          * @param $naam, $meldingtijd, $beschrijving, $locatie, $verplicht, $isHerhaling, $datum, $startTijd, $eindTijd gaan opgeven welke waarde er moet gegeven worden aan het evenement
          */
 
@@ -108,6 +109,7 @@ class evenement_model extends CI_Model
         /**
          * Het ophalen van een specifiek evenement uit de databasee
          * @param $id gaat het id meegeven van het evenement dat uit de database gehaald moet worden.
+         * @return de opgevraagde record
          */
 
         $this->db->where('id', $id);
@@ -117,7 +119,11 @@ class evenement_model extends CI_Model
 
 
     function getPatientenPatientEvenement(){
-
+        /**
+         * Alle evenementen ophalen die aan een persoon gekoppeld zijn
+         * @param soortPersoonId geeft aan dat enkel patienten moeten opgpenomen worden
+         * @return de opgevraagde records
+         */
 
 
         $this->db->where('soortPersoonId', 4);
@@ -132,6 +138,7 @@ class evenement_model extends CI_Model
         return $personen;
     }
     function getEvenementenPersoonEvenement(){
+
         $query = $this->db->get('evenement');
         $evenementen = $query->result();
         $this->load->model('PersoonEvenement_model');

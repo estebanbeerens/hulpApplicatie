@@ -24,12 +24,18 @@ class Patient_model extends CI_Model
     }
     function getPatient()
     {
+        /**
+         * Alle patienten ophalen
+         */
         $this->db->order_by("naam", "asc");
         $this->db->where('soortPersoonId', 4);
         $query = $this->db->get('persoon');
         return $query->result();
     }
     function getPatientenPatientEvenement(){
+        /**
+         * Alle evenementen ophalen die aan een patient gelinkt zijn
+         */
         $this->db->where('soortPersoonId', 4);
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('persoon');
@@ -46,14 +52,7 @@ class Patient_model extends CI_Model
     }
 
 
-    function getPatientById($id)
-    {
-        /**Klopt nog niet, chill*/
-        $array = array('id' => $id,'soortPersoonId' => 5);
-        $this->db->where('id', $id);
-        $query = $this->db->get('persoon');
-        return $query->row();
-    }
+
 
 
 
@@ -80,6 +79,9 @@ class Patient_model extends CI_Model
         return $this->db->insert_id();
     }
     function getSpecificPatient($id) {
+        /**
+         * Een specifieke patient ophalen
+         */
         $this->db->where('id', $id);
         $query = $this->db->get('persoon');
         return $query->row();
@@ -126,7 +128,9 @@ class Patient_model extends CI_Model
     }
 
     function patientAfmelden($id, $patient){
-
+        /**
+         * Een patient afmelden via de database
+         */
 
         $this->db->where('id', $id);
         $this->db->update('persoon', $patient);

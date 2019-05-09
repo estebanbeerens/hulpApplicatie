@@ -24,7 +24,7 @@ class PersoonEvenement extends CI_Controller
     public function toonPersoonEvenementPatient()
     {
         /**
-         * Roept een lijst van persoonEvenementen op zodat deze bekeken kan worden
+         * Roept een lijst van persoonEvenementen(aangevuld met de records van evenement en persoon) op zodat deze bekeken kan worden
          * roept de pagina agenda bekijken op
          */
         $data['titel'] = 'Agenda patient tonen';
@@ -47,7 +47,7 @@ class PersoonEvenement extends CI_Controller
     public function beheerPersoonEvenementPatient()
     {
         /**
-         * Roept een lijst van persoonEvenementen op zodat deze bekeken kan worden
+         * Roept een lijst van persoonEvenementen(aangevuld met de records van evenement en persoon) op zodat deze bekeken kan worden
          * roept de pagina agenda beheren op
          */
         $data['titel'] = 'Agenda patient bekijken';
@@ -69,7 +69,7 @@ class PersoonEvenement extends CI_Controller
     {
         /**
          *
-         * Voegt de gegevens van de agenda (persoonEvenement) met de geselecteerde id toe
+         * Voegt de gegevens van de agenda (persoonEvenement) met de geselecteerde id van evenement en persoon toe
          *
          */
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
@@ -85,7 +85,7 @@ class PersoonEvenement extends CI_Controller
     public function persoonEvenementDeleten()
     {
         /**
-         * Verwijdert de gegevens van de agenda (persoonEvenement) met de geselecteerde id toe
+         * Verwijdert de gegevens van de agenda (persoonEvenement) met de geselecteerde id
          *
          */
         $data['gebruiker'] = $this->authex->getGebruikerInfo();
@@ -120,6 +120,7 @@ class PersoonEvenement extends CI_Controller
     {
         /**
          * geeft een lijst met alle evenementen en patienten om te selecteren
+         * @param $id De id van de persoonEvenement die geüpdate gaat worden
          * roept de pagina agenda bewerken op
          */
         $data['titel'] = 'Agenda bewerken';
@@ -144,6 +145,10 @@ class PersoonEvenement extends CI_Controller
     }
     public function persoonEvenementViewLaden()
     {
+        /**
+         * geeft een dropdown lijst met alle evenementen en patienten om te selecteren
+         * roept de pagina agenda toevoegen op
+         */
         $data['titel'] = 'Agenda toevoegen';
 
         $data['ontwerper'] = 'René&nbsp;Vanhoof';
