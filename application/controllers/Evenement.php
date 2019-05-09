@@ -27,7 +27,7 @@ class Evenement extends CI_Controller
         /**
          * roept de pagina evenement bekijken op
          */
-
+        $data['titel'] = 'Agenda';
         $data['ontwerper'] = 'Liam&nbsp;Mentens, Jeroen&nbsp;Jansen, Esteban&nbsp;Beerens';
         $data['tester'] = 'Seppe Peeters';
 
