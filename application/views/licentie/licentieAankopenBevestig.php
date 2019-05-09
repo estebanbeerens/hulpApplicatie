@@ -1,9 +1,4 @@
 <?php
-
-if($gebruiker->soortPersoonId == 1){
-} else { redirect('home/meldaf'); } ?>
-
-<?php
     /**
      * Ontwerper: Esteban
      */
