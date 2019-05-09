@@ -174,12 +174,6 @@
                             ' . anchor('patient/toonPatient', '<i class="fas fa-procedures"></i><span>Patient bekijken</span>') . '
                         </li>';
                         break;
-                    case 4:
-
-                        break;
-                    default:
-                        echo '<p>Functie niet toegewezen</p>';
-                        break;
                     }
                 }?>
             </ul>
@@ -189,8 +183,9 @@
 
         <?php
             if (isset($gebruiker)) {
-                echo anchor('gebruiker/gebruikerBewerken/' . $gebruiker->id, '<i class="fa fa-cog"></i>', 'title="Instellingen"') ;
-
+                if ($gebruiker->soortPersoonId != 4) {
+                    echo anchor('gebruiker/gebruikerBewerken/' . $gebruiker->id, '<i class="fa fa-cog"></i>', 'title="Instellingen"') ;
+                }
 
             switch ($gebruiker->soortPersoonId) {
                 case 1:
@@ -210,12 +205,9 @@
                     $uitloggen = '';
                     break;
                 default:
-                    $informatie = '';
-                    $uitloggen = '';
+                    $uitloggen = anchor('home/meldAf', '<i class="fas fa-sign-out-alt"></i>', 'title="Uitloggen"');
                     break;
             }
-
-
                 echo $informatie;
                 echo  $uitloggen;
             } else {
