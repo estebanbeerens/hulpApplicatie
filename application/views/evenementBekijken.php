@@ -30,7 +30,6 @@
 </script>
 
 
-
 <div id="resultaat">
 
 </div>

@@ -1,3 +1,4 @@
+
 <?php
     /**
      * Ontwerper: Esteban
@@ -12,6 +13,12 @@
     $licentieToevoegenFormulier = array('id' => 'licentieToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
     echo form_open('Licentie/insertLicentie', $licentieToevoegenFormulier);
 ?>
+
+
+<?php
+
+if($gebruiker->soortPersoonId == 1){
+} else { redirect('home/meldaf'); } ?>
 
 <div class="form-row">
     <div class="form-group col-md-5">

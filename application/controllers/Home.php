@@ -178,6 +178,7 @@ class Home extends CI_Controller
                 break;
             default:
 
+
         }
     }
     /**

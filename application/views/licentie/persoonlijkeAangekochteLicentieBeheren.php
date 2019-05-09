@@ -1,3 +1,4 @@
+
 <?php
     /**
      * Ontwerper: Esteban
@@ -9,3 +10,9 @@
      */
 
 ?>
+
+<?php
+
+if($gebruiker->soortPersoonId == 1){
+} else { redirect('home/meldaf'); } ?>
+

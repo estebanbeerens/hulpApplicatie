@@ -15,6 +15,12 @@ $verzorgerToevoegenFormulier = array('id' => 'verzorgerToevoegenFormulier', 'nov
 echo form_open('verzorger/verzorgerToevoegen/' , $verzorgerToevoegenFormulier);
 ?>
 
+<?php
+
+if($gebruiker->soortPersoonId == 2){
+} else { redirect('home/meldaf'); } ?>
+
+
 <div class="form-row">
     <div class="form-group col-md-6">
         <?php

@@ -1,4 +1,9 @@
 <?php
+
+if($gebruiker->soortPersoonId == 2){
+} else { redirect('home/meldaf'); } ?>
+
+<?php
 /**
  * @file patientBewerken.php
  * View waarin een geselecteerde patient bewerkt kan worden

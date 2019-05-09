@@ -15,6 +15,11 @@ $verzorgerBewerkenFormulier = array('id' => 'verzorgerToevoegenFormulier', 'nova
 echo form_open('verzorger/verzorgersUpdaten/' . $verzorger->id, $verzorgerBewerkenFormulier, $verzorger->id);
 ?>
 
+<?php
+
+if($gebruiker->soortPersoonId == 2){
+} else { redirect('home/meldaf'); } ?>
+
 <div class="form-row">
     <div class="form-group col-md-6">
         <?php

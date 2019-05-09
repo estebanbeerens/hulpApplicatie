@@ -1,4 +1,9 @@
 <?php
+
+if($gebruiker->soortPersoonId == 1){
+} else { redirect('home/meldaf'); } ?>
+
+<?php
     /**
      * Ontwerper: Esteban
      */
@@ -13,6 +18,15 @@
 ?>
 <p><?php echo anchor(base_url("assets/tutorials/Handleiding_licenties_beheren.pdf"), '<i class="fas fa-info-circle"></i> Hulp nodig?', 'target="_blank"')?></p>
 <div class="row">
+
+    <?php
+
+    if($gebruiker->soortPersoonId == 1){
+
+    } else{
+        redirect('home/meldaf');
+    }
+    ?>
 <?php
     /**
      * User: Esteban

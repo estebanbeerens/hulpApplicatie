@@ -1,4 +1,9 @@
 <?php
+
+if($gebruiker->soortPersoonId == 2 ||$gebruiker->soortPersoonId == 3){
+} else { redirect('home/meldaf'); } ?>s
+
+<?php
 /**@file patientBekijken.php
  * View waarin de patiënten weergeven worden
  * - krijgt een $patient-object binnen
@@ -23,7 +28,10 @@
         });
 
     });
+
+
 </script>
+
 <div class="table-responsive">
     <table class="table">
         <tr>

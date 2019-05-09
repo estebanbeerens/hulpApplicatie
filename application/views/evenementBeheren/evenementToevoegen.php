@@ -1,4 +1,8 @@
 <?php
+if($gebruiker->soortPersoonId == 2){
+} else{ redirect('home/meldaf'); } ?>
+
+<?php
 /**
  * Ontwerper: Tomas
  * Tester: ?
@@ -12,6 +16,8 @@
 $evenementToevoegenFormulier = array('id' => 'evenementToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
 echo form_open('evenement/evenementToevoegenGoed', $evenementToevoegenFormulier);
 ?>
+
+
 
 <div class="form-row">
     <div class="form-group col-md-6">

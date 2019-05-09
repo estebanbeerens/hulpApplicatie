@@ -1,4 +1,9 @@
 <?php
+
+if($gebruiker->soortPersoonId == 1){
+} else { redirect('home/meldaf'); } ?>
+
+<?php
     /**
      * Ontwerper: Esteban
      * Tester: ?
@@ -12,6 +17,15 @@
 
     $licentieBewerkenFormulier = array('id' => 'licentieToevoegenFormulier', 'novalidate' => 'novalidate', 'class' => 'needs-validation');
     echo form_open('Licentie/updateLicentie/' . $licentie->id, $licentieBewerkenFormulier, $licentie->id);
+?>
+
+<?php
+
+if($gebruiker->soortPersoonId == 2 || $gebruiker->soortPersoonId == 3){
+
+} else{
+    redirect('home/meldaf');
+}
 ?>
 
 <div class="form-row">

@@ -1,3 +1,8 @@
+<?php
+
+if($gebruiker->soortPersoonId == 2){
+} else { redirect('home/meldaf'); } ?>
+
 <div>
     <?php
     /**

@@ -12,6 +12,12 @@
  */
 ?>
 <?php
+
+if($gebruiker->soortPersoonId == 2 || $gebruiker->soortPersoonId == 3){
+} else{ redirect('home/meldaf'); } ?>
+
+
+<?php
 $evenementOpties=array();
 
 foreach ($evenement as $item) {
