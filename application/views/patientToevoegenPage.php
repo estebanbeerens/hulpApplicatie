@@ -124,13 +124,5 @@ if($gebruiker->soortPersoonId == 2){
             ?>
             <div class="invalid-feedback">Geef een email op.</div>
         </div>
-    <?php echo form_submit('knop', 'Verzenden', "class='btn btn-primary'") ?>
-
-
-
-        <tr>
-            <td></td>
-
-        </tr>
-    </table>
+    <?php echo form_submit('knop', 'Gebruiker aanmaken & licentie aankopen', "class='btn btn-primary'") ?>
 </div>

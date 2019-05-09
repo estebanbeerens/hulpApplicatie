@@ -34,7 +34,7 @@ class Patient extends CI_Controller
      * Toont de lijst van Patienten zodat deze kan bekeken worden
      * in de view patientbekijken.php
      */
-    $data['titel'] = 'Patient tonen';
+    $data['titel'] = 'Patiënt tonen';
     $gebruiker = $this->authex->getGebruikerInfo();
     $data['gebruiker'] = $gebruiker;
 
@@ -91,7 +91,7 @@ class Patient extends CI_Controller
          */
 
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $data['titel'] = 'Patient beheren';
+        $data['titel'] = 'Patiënt beheren';
 
         $data['ontwerper'] = 'Seppe Peeters';
         $data['tester'] = 'Liam&nbspMentens / Afmeldfunctie vanop afstand : Seppe Peeters';
@@ -112,7 +112,7 @@ class Patient extends CI_Controller
          * Toont pagina patientbekijken
          */
     {$data['gebruiker'] = $this->authex->getGebruikerInfo();
-        $data['titel'] = 'Patient toevoegen';
+        $data['titel'] = 'Patiënt toevoegen';
 
         $data['ontwerper'] = 'Seppe Peeters';
         $data['tester'] = 'Liam&nbsp;Mentens';
@@ -144,7 +144,7 @@ class Patient extends CI_Controller
         $this->load->model('patient_model');
         $this->patient_model->insert( $naam, $voornaam, $geboortedatum, $woonplaats, $adres, $gebruikersnaam, $passwoord, $email, 4);
 
-        redirect('patient/toonPatient');
+        redirect('licentie/licentieAankopen');
 
     }
     public function patientVerwijderen(){
@@ -197,7 +197,7 @@ class Patient extends CI_Controller
          * * @param $id De id van de patiënt die bewerkt gaat worden
          */
 
-        $data['titel'] = 'Patient Bewerken';
+        $data['titel'] = 'Patiënt Bewerken';
         $data['ontwerper'] = 'Seppe Peeters';
         $data['tester'] = 'Liam&nbsp;Mentens';
         $data['gebruiker'] = $this->authex->getGebruikerInfo();

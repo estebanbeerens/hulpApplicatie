@@ -8,15 +8,6 @@
      */
 ?>
 
-<?php
-
-if($gebruiker->soortPersoonId == 2 || $gebruiker->soortPersoonId == 3){
-
-} else{
-    redirect('home/meldaf');
-}
-?>
-
 <div class="row">
 <?php
     /**
